@@ -234,8 +234,8 @@
             filePath = "CricInsider/Controller/ContainerViewController/SquadsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "binder()"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,8 +250,8 @@
             filePath = "CricInsider/Controller/ContainerViewController/SquadsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "binder()"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,8 +266,8 @@
             filePath = "CricInsider/Controller/ContainerViewController/SquadsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "binder()"
             landmarkType = "7">
          </BreakpointContent>
@@ -348,7 +348,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "tableView(_:heightForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -364,7 +364,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "tableView(_:heightForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -619,6 +619,101 @@
             startingLineNumber = "58"
             endingLineNumber = "58"
             landmarkName = "getAllPlayers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "962BAC36-4F50-41C6-A994-EC4D2B15CE2F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/CustomController/SquadListTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "SquadListTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "962BAC36-4F50-41C6-A994-EC4D2B15CE2F - 73dc9252be31062f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for identifier"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/CustomController/SquadListTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "962BAC36-4F50-41C6-A994-EC4D2B15CE2F - 305039f0f992a0a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricInsider.SquadListTableViewCell.identifier.unsafeMutableAddressor : Swift.String"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/CustomController/SquadListTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "962BAC36-4F50-41C6-A994-EC4D2B15CE2F - af2573bac58f34e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CricInsider.SquadListTableViewCell.identifier.getter : Swift.String"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/CustomController/SquadListTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BFD7244-2C42-4233-AE2F-80FE93CD638F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/ContainerViewController/ScoreCardContainerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "330683B7-8608-4A44-952A-79435CF1E02F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/ContainerViewController/ScoreCardContainerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

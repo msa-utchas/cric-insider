@@ -15,6 +15,8 @@ class SquadsViewController: UIViewController {
     var squadInfoViewModel = MatchDetailsViewModel.shared
     var localTeamSquad: [Player] = []
     var visitorTeamSquad: [Player] = []
+    var localTeamName : String?
+    var visitorTeamName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,8 @@ class SquadsViewController: UIViewController {
             guard let self = self else {return}
             self.localTeamSquad = matchDetails?.localTeamSquad ?? []
             self.visitorTeamSquad = matchDetails?.VisitorTeamSquad ?? []
+            self.localTeamName = matchDetails?.localTeamName
+            self.visitorTeamName = matchDetails?.visitorTeamName
             DispatchQueue.main.async {
                 self.tableViewLineup.reloadData()
             }
@@ -46,10 +50,10 @@ extension SquadsViewController: UITableViewDataSource,UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-            return "local Team"
+            return localTeamName
         }
         else{
-            return "visitorteam" 
+            return visitorTeamName
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,13 +68,55 @@ extension SquadsViewController: UITableViewDataSource,UITableViewDelegate{
         let cell = tableViewLineup.dequeueReusableCell(withIdentifier: SquadListTableViewCell.identifier, for: indexPath) as! SquadListTableViewCell
         if indexPath.section == 0{
             cell.labelName.text = localTeamSquad[indexPath.row].fullname
+            cell.imageViewPlayer.sd_setImage(with: URL(string: localTeamSquad[indexPath.row].image_path ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
+
+
         }
         else
         {
             cell.labelName.text = visitorTeamSquad[indexPath.row].fullname
+            cell.imageViewPlayer.sd_setImage(with: URL(string: visitorTeamSquad[indexPath.row].image_path ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         }
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .white
+        headerView.layer.shadowColor = UIColor.gray.cgColor
+        headerView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        headerView.layer.shadowOpacity = 0.2
+        headerView.layer.shadowRadius = 2
+        headerView.layer.cornerRadius = 5
+        
+        let titleLabel = UILabel()
+        //set team name
+        if section == 0{
+            titleLabel.text = localTeamName
+            //set background color
+        }
+        else{
+            titleLabel.text = visitorTeamName
+        }
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        titleLabel.textColor = UIColor(red: 0, green: 0, blue: 128/255, alpha: 1)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerView.addSubview(titleLabel)
+
+
+        titleLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
+
+
+
+
+        
+        return headerView
+    }
+
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+
     
 }

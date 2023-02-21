@@ -42,6 +42,7 @@ extension ScoreCardContainerViewController: UITableViewDataSource, UITableViewDe
         
         if section == 0 {
             header.labelCountryName.text = ((localTeamName ?? "") + "- Batter")
+
         }
         if section == 1 {
             header.labelCountryName.text = ((localTeamName ?? "") + "-Bowler")
@@ -50,6 +51,10 @@ extension ScoreCardContainerViewController: UITableViewDataSource, UITableViewDe
             header.labelT3.text = "R"
             header.labelT4.text = "W"
             header.labelT5.text = "ER"
+            //set dark blue color background
+            header.backView.backgroundColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 102.0/255.0, alpha: 1.0)
+
+
         }
         if section == 2 {
             header.labelCountryName.text = ((visitorTeamName ?? "") + "- Batter")
@@ -61,7 +66,8 @@ extension ScoreCardContainerViewController: UITableViewDataSource, UITableViewDe
             header.labelT3.text = "R"
             header.labelT4.text = "W"
             header.labelT5.text = "ER"
-            header.labelCountryName.text = visitorTeamName
+         
+            header.backView.backgroundColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 102.0/255.0, alpha: 1.0)
         }
         return header
     }

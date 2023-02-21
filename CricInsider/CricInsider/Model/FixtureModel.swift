@@ -36,6 +36,8 @@ struct Fixture: Codable {
     let stage: Stage?
     let bowling: [Bowling]?
     let batting: [Batting]?
+    let manofmatch: Player?
+    let venue: Venue?
 
 }
 
@@ -134,3 +136,24 @@ struct Batting:Codable {
     let batsman: Player?
 }
 
+//"venue": {
+//    "resource": "venues",
+//    "id": 13,
+//    "country_id": 98,
+//    "name": "Brisbane Cricket Ground",
+//    "city": "Woolloongabba,  Brisbane, Queensland",
+//    "image_path": "https://cdn.sportmonks.com/images/cricket/venues/13/13.png",
+//    "capacity": 37000,
+//    "floodlight": true,
+//    "updated_at": "2018-11-14T14:16:53.000000Z"
+//}
+//make struct for venue
+struct Venue:Codable {
+    let resource: String?
+    let id, country_id: Int?
+    let name, city: String?
+    let image_path: String?
+    let capacity: Double?
+    let floodlight: Bool?
+    let updated_at: String?
+}

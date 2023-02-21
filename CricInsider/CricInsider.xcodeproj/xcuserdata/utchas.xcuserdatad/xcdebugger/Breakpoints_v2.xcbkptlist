@@ -300,7 +300,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "8912">
+                  offsetFromSymbolStart = "12168">
                </Location>
                <Location
                   uuid = "EF790C50-5993-499F-98E9-B91EDDCF84AF - ab3ba0de3ef126f3"
@@ -315,7 +315,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "8936">
+                  offsetFromSymbolStart = "12192">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -714,6 +714,133 @@
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "tableView(_:viewForHeaderInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E51CCF6F-D7F1-470F-9B9A-F0A3CFE3C55C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Repositories/FixturesRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getMatchDetails(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E51CCF6F-D7F1-470F-9B9A-F0A3CFE3C55C - ab3ba0de3ef1276c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CricInsider.FixturesRepository.getMatchDetails(id: Swift.Int) async -&gt; Swift.Result&lt;CricInsider.MatchDetailsModel, Swift.Error&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Repositories/FixturesRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "3804">
+               </Location>
+               <Location
+                  uuid = "E51CCF6F-D7F1-470F-9B9A-F0A3CFE3C55C - ab3ba0de3ef1276c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CricInsider.FixturesRepository.getMatchDetails(id: Swift.Int) async -&gt; Swift.Result&lt;CricInsider.MatchDetailsModel, Swift.Error&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Repositories/FixturesRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "7064">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0B65EE2-840A-43DF-8E29-2256D953B8D0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Repositories/FixturesRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getMatchDetails(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B0B65EE2-840A-43DF-8E29-2256D953B8D0 - 7e74b22ea075e2a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for CricInsider.FixturesRepository.getMatchDetails(id: Swift.Int) async -&gt; Swift.Result&lt;CricInsider.MatchDetailsModel, Swift.Error&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Repositories/FixturesRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "B0B65EE2-840A-43DF-8E29-2256D953B8D0 - 96a46a1986de1e50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for CricInsider.FixturesRepository.getMatchDetails(id: Swift.Int) async -&gt; Swift.Result&lt;CricInsider.MatchDetailsModel, Swift.Error&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Repositories/FixturesRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "B0B65EE2-840A-43DF-8E29-2256D953B8D0 - ab3ba0de3ef127ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CricInsider.FixturesRepository.getMatchDetails(id: Swift.Int) async -&gt; Swift.Result&lt;CricInsider.MatchDetailsModel, Swift.Error&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Repositories/FixturesRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "313134F9-C3CD-48D1-B33E-2DD1625D4751"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Repositories/FixturesRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getMatchDetails(id:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

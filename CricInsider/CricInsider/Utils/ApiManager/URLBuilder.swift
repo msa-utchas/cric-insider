@@ -63,7 +63,7 @@ class URLBuilder {
     func getMatchDetails(id : Int) -> URL? {
         let endpoint = "/fixtures/\(id)"
         let queryItems = [
-            URLQueryItem(name: "include", value: "lineup,bowling.bowler,batting.batsman,localteam,visitorteam,runs,league,season"),
+            URLQueryItem(name: "include", value: "lineup,bowling.bowler,batting.batsman,localteam,visitorteam,runs,league,season,venue,manofmatch"),
             URLQueryItem(name: "api_token", value: apiToken)
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)

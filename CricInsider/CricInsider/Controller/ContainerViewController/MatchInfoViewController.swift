@@ -25,7 +25,11 @@ class MatchInfoViewController: UIViewController {
     @IBOutlet weak var labelTeamAName: UILabel!
     @IBOutlet weak var labelTeamBName: UILabel!
     @IBOutlet weak var viewBackground: UIView!
+    @IBOutlet weak var labelStadiumName: UILabel!
 
+    @IBOutlet weak var imageViewStadium: UIImageView!
+    @IBOutlet weak var labelCapacity: UILabel!
+    @IBOutlet weak var labelCity: UILabel!
     
     
     override func viewDidLoad() {
@@ -38,12 +42,9 @@ class MatchInfoViewController: UIViewController {
         labelType.layer.cornerRadius = 8
         labelType.layer.masksToBounds = true
         // give view background Shadow
-        viewBackground.layer.cornerRadius = 8
-        viewBackground.layer.shadowColor = UIColor.systemGray3.cgColor
-        viewBackground.layer.shadowOffset = CGSize(width: 0, height: 2)
-        viewBackground.layer.shadowOpacity = 0.8
-        viewBackground.layer.shadowRadius = 4
+        viewBackground.addShadow()
         venueBackgroundView.addShadow()
+        
 
     }
     
@@ -62,6 +63,10 @@ class MatchInfoViewController: UIViewController {
                     self.labelTeamAScore.text = String(matchDetails.localTeamRun?.score ?? 0) + "-" + String(matchDetails.localTeamRun?.wickets ?? 0) + "(" + String(matchDetails.localTeamRun?.overs ?? 0.0) + ")"
                     self.labelTeamBScore.text = String(matchDetails.visitorTeamRun?.score ?? 0) + "-" + String(matchDetails.visitorTeamRun?.wickets ?? 0) + "(" + String(matchDetails.visitorTeamRun?.overs ?? 0.0) + ")"
                     self.labelDate.text = matchDetails.date
+                    self.labelStadiumName.text = matchDetails.venue?.name ?? "N\\A"
+                    self.labelCity.text = matchDetails.venue?.city ?? "N\\A"
+                    self.labelCapacity.text = String(matchDetails.venue?.capacity ?? 0)
+                    self.imageViewStadium.sd_setImage(with: URL(string: matchDetails.venue?.image_path ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
 
                 }
                 

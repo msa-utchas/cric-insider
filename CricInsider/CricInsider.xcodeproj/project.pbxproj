@@ -36,6 +36,7 @@
 		898304F9299CCCD600CBBC7E /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898304F8299CCCD600CBBC7E /* URLBuilder.swift */; };
 		898304FB299CCD6700CBBC7E /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898304FA299CCD6700CBBC7E /* ApiManager.swift */; };
 		898304FE299CE1CB00CBBC7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898304FD299CE1CB00CBBC7E /* HomeViewController.swift */; };
+		D912795829A53DAC006BF1B8 /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912795729A53DAC006BF1B8 /* UIViewExtention.swift */; };
 		D94C837329A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */; };
 		D953EAAE29A14931006E47F4 /* FinishedMatchAdepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */; };
 		D9A6154E29A1FBAF004FA85B /* MatchDetailsAdepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6154D29A1FBAF004FA85B /* MatchDetailsAdepter.swift */; };
@@ -83,6 +84,7 @@
 		898304F8299CCCD600CBBC7E /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		898304FA299CCD6700CBBC7E /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		898304FD299CE1CB00CBBC7E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D912795729A53DAC006BF1B8 /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchAdepter.swift; sourceTree = "<group>"; };
 		D9A6154D29A1FBAF004FA85B /* MatchDetailsAdepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsAdepter.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				8926C3A3299E14A70033E5E1 /* DateExtensions.swift */,
+				D912795729A53DAC006BF1B8 /* UIViewExtention.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				89074F5E299CBF5200256BC5 /* CoreDataStack.swift in Sources */,
 				D9D4EEDF299D4BCB002407C0 /* FixturesRepository.swift in Sources */,
 				D9A6155D29A22C3B004FA85B /* PlayersInfo+CoreDataClass.swift in Sources */,
+				D912795829A53DAC006BF1B8 /* UIViewExtention.swift in Sources */,
 				8926C3A1299DDE8A0033E5E1 /* FinishedMatchesTableViewCell.swift in Sources */,
 				898304FB299CCD6700CBBC7E /* ApiManager.swift in Sources */,
 				D9DFE31E29A0FAE20079ACFA /* ScoreCardContainerViewController.swift in Sources */,

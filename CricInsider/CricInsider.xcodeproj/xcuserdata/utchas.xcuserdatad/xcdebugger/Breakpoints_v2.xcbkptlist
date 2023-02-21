@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "matchHeaderStackView"
-            landmarkType = "24">
+            landmarkName = "MatchInfoCollectionViewCell"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "60AB5667-BE90-4E09-A9D7-03626DFB8602 - 36e1c52be3144e40"

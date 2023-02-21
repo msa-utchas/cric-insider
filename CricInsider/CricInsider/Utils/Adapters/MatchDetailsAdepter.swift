@@ -19,6 +19,10 @@ class MatchDetailsAdepter{
         var VisitorTeamRuns: Run?
         
         let fixture = fixtureModel.data
+        
+        let formattedDateData = Date.formatDateTimeData(fixture.starting_at)
+        let startDate = ((formattedDateData?.0 ?? "") + " " + (formattedDateData?.1 ?? ""))
+        
         if let runs = fixture.runs {
             if runs.count == 1 {
                 if fixture.localteam_id == runs[0].team_id {
@@ -68,6 +72,7 @@ class MatchDetailsAdepter{
             }
         }
         
+        
         return MatchDetailsModel(
             localTeamName: fixtureModel.data.localteam?.name,
             visitorTeamName: fixtureModel.data.visitorteam?.name,
@@ -84,7 +89,7 @@ class MatchDetailsAdepter{
             localTeamRun: localTeamRuns,
             visitorTeamRun: VisitorTeamRuns,
             matchType: fixtureModel.data.type,
-            round: fixtureModel.data.round
+            round: fixtureModel.data.round, date: startDate
     
         )
     }
@@ -107,6 +112,7 @@ struct MatchDetailsModel{
     let visitorTeamRun: Run?
     let matchType: String?
     let round: String?
+    let date: String?
 
 }
 

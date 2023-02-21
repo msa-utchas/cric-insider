@@ -10,10 +10,12 @@ import Combine
 import SDWebImage
 
 class MatchInfoViewController: UIViewController {
+    @IBOutlet weak var venueBackgroundView: UIView!
     private var cancelable: Set<AnyCancellable> = []
     let matchInfoViewModel = MatchDetailsViewModel.shared
 
    
+    @IBOutlet var labelDate: UILabel!
     @IBOutlet weak var teamBImageView: UIImageView!
     @IBOutlet weak var labelLeagueInfo: UILabel!
     @IBOutlet weak var labelTeamBScore: UILabel!
@@ -41,7 +43,7 @@ class MatchInfoViewController: UIViewController {
         viewBackground.layer.shadowOffset = CGSize(width: 0, height: 2)
         viewBackground.layer.shadowOpacity = 0.8
         viewBackground.layer.shadowRadius = 4
-        
+        venueBackgroundView.addShadow()
 
     }
     
@@ -59,6 +61,7 @@ class MatchInfoViewController: UIViewController {
                     self.labelLeagueInfo.text = matchDetails.leagueName ?? "" + "\n" + "hello0" 
                     self.labelTeamAScore.text = String(matchDetails.localTeamRun?.score ?? 0) + "-" + String(matchDetails.localTeamRun?.wickets ?? 0) + "(" + String(matchDetails.localTeamRun?.overs ?? 0.0) + ")"
                     self.labelTeamBScore.text = String(matchDetails.visitorTeamRun?.score ?? 0) + "-" + String(matchDetails.visitorTeamRun?.wickets ?? 0) + "(" + String(matchDetails.visitorTeamRun?.overs ?? 0.0) + ")"
+                    self.labelDate.text = matchDetails.date
 
                 }
                 

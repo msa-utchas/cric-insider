@@ -5,6 +5,7 @@
 //  Created by Md. Sakibul Alam Utchas on 19/2/23.
 //
 
+
 import Foundation
 class MatchDetailsAdepter{
     static func adapt(_ fixtureModel: FixtureModel) -> MatchDetailsModel {
@@ -14,7 +15,27 @@ class MatchDetailsAdepter{
         var visitorTeamBowling : [Bowling] = []
         var localTeamBatting : [Batting] = []
         var visitorTeamBatting : [Batting] = []
+        var localTeamRuns: Run?
+        var VisitorTeamRuns: Run?
         
+        let fixture = fixtureModel.data
+        if let runs = fixture.runs {
+            if runs.count == 1 {
+                if fixture.localteam_id == runs[0].team_id {
+                    localTeamRuns = runs[0]
+                } else {
+                    VisitorTeamRuns = runs[0]
+                }
+            } else if runs.count >= 2 {
+                if fixture.localteam_id == runs[0].team_id {
+                    localTeamRuns = runs[0]
+                    VisitorTeamRuns = runs[1]
+                } else {
+                    localTeamRuns = runs[1]
+                    VisitorTeamRuns = runs[0]
+                }
+            }
+        }
         
         if let players = fixtureModel.data.lineup{
             for player in players{
@@ -55,7 +76,15 @@ class MatchDetailsAdepter{
             localTeamBowling: localTeamBowling,
             visitorTeamBowling: visitorTeamBowling,
             localTeamBatting: localTeamBatting,
-            visitorTeamBatting: visitorTeamBatting
+            visitorTeamBatting: visitorTeamBatting,
+            leagueName: fixtureModel.data.league?.name,
+            season: fixtureModel.data.season?.name,
+            localTeamImage: fixtureModel.data.localteam?.image_path,
+            visitorTeamImage: fixtureModel.data.visitorteam?.image_path,
+            localTeamRun: localTeamRuns, visitorTeamRun: VisitorTeamRuns
+            
+            
+            
         )
     }
     
@@ -69,8 +98,16 @@ struct MatchDetailsModel{
     let visitorTeamBowling: [Bowling]?
     let localTeamBatting: [Batting]
     let visitorTeamBatting: [Batting]
+    let leagueName: String?
+    let season: String?
+    let localTeamImage: String?
+    let visitorTeamImage: String?
+    let localTeamRun: Run?
+    let visitorTeamRun: Run?
+    
+    
+   
+    
     
     
 }
-
-

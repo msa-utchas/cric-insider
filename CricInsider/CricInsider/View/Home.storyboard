@@ -338,6 +338,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTS-bi-79y">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="788"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emz-Qs-S5e">
+                                        <rect key="frame" x="0.0" y="-185" width="430" height="617.33333333333326"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohV-EJ-201">
@@ -448,27 +455,29 @@
                                     <constraint firstAttribute="trailing" secondItem="X57-8y-fk6" secondAttribute="trailing" id="kcx-m9-OLg"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emz-Qs-S5e">
-                                <rect key="frame" x="0.0" y="170.66666666666669" width="430" height="617.33333333333326"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LRo-Yh-BB2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CTS-bi-79y" firstAttribute="bottom" secondItem="LRo-Yh-BB2" secondAttribute="bottom" id="7mr-pV-lsB"/>
                             <constraint firstItem="CTS-bi-79y" firstAttribute="trailing" secondItem="LRo-Yh-BB2" secondAttribute="trailing" id="HUj-2V-LnS"/>
-                            <constraint firstItem="emz-Qs-S5e" firstAttribute="leading" secondItem="LRo-Yh-BB2" secondAttribute="leading" id="OQp-Ij-Tci"/>
                             <constraint firstItem="CTS-bi-79y" firstAttribute="top" secondItem="xn6-37-NML" secondAttribute="top" id="QwR-zX-47U"/>
-                            <constraint firstItem="LRo-Yh-BB2" firstAttribute="bottom" secondItem="emz-Qs-S5e" secondAttribute="bottom" id="Sz4-C0-B8c"/>
                             <constraint firstItem="ohV-EJ-201" firstAttribute="top" secondItem="xn6-37-NML" secondAttribute="top" constant="10" id="Ydf-XA-0rH"/>
-                            <constraint firstItem="emz-Qs-S5e" firstAttribute="top" secondItem="ohV-EJ-201" secondAttribute="bottom" id="enq-Z0-Wca"/>
                             <constraint firstItem="CTS-bi-79y" firstAttribute="leading" secondItem="LRo-Yh-BB2" secondAttribute="leading" id="geD-Yz-oBq"/>
                             <constraint firstItem="LRo-Yh-BB2" firstAttribute="trailing" secondItem="ohV-EJ-201" secondAttribute="trailing" constant="10" id="jLl-Al-8aa"/>
-                            <constraint firstItem="LRo-Yh-BB2" firstAttribute="trailing" secondItem="emz-Qs-S5e" secondAttribute="trailing" id="l5P-Rk-tzn"/>
                             <constraint firstItem="ohV-EJ-201" firstAttribute="leading" secondItem="LRo-Yh-BB2" secondAttribute="leading" constant="10" id="mqp-9U-z44"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelLeagueInfo" destination="yz0-Xe-Tb4" id="zBd-bm-71l"/>
+                        <outlet property="labelTeamAName" destination="Urb-c0-Dhm" id="i9S-hD-4ia"/>
+                        <outlet property="labelTeamAScore" destination="JEC-cG-ymx" id="5Pk-k9-I7N"/>
+                        <outlet property="labelTeamBName" destination="0i1-Is-EFK" id="ixf-2w-ERe"/>
+                        <outlet property="labelTeamBScore" destination="lz9-yw-Y7f" id="NYO-68-dRs"/>
+                        <outlet property="labelType" destination="hqE-cp-EWr" id="LBC-gf-SB6"/>
+                        <outlet property="teamAImageView" destination="Dr7-qd-Eky" id="FLB-VU-E6M"/>
+                        <outlet property="teamBImageView" destination="E8v-tJ-IJU" id="7vo-d3-oek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZ1-LO-T8e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -210,9 +210,9 @@
 		893CF06B299F49F3009DEF6B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				898304FD299CE1CB00CBBC7E /* HomeViewController.swift */,
 				D9D4EED4299D16FD002407C0 /* SearchPlayerViewController.swift */,
 				893CF06C299F4EC0009DEF6B /* MatchDetailsViewController.swift */,
+				898304FD299CE1CB00CBBC7E /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

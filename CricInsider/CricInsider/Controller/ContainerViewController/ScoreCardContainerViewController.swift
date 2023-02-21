@@ -39,16 +39,28 @@ extension ScoreCardContainerViewController: UITableViewDataSource, UITableViewDe
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ScoreCardHeader") as! ScoreCardHeader
+        
         if section == 0 {
-            header.labelCountryName.text = localTeamName
+            header.labelCountryName.text = ((localTeamName ?? "") + "- Batter")
         }
         if section == 1 {
-            header.labelCountryName.text = localTeamName
+            header.labelCountryName.text = ((localTeamName ?? "") + "-Bowler")
+            header.labelT1.text = "O"
+            header.labelT2.text = "M"
+            header.labelT3.text = "R"
+            header.labelT4.text = "W"
+            header.labelT5.text = "ER"
         }
         if section == 2 {
-            header.labelCountryName.text = visitorTeamName
+            header.labelCountryName.text = ((visitorTeamName ?? "") + "- Batter")
         }
         if section == 3 {
+            header.labelCountryName.text = ((localTeamName ?? "") + "-Bowler")
+            header.labelT1.text = "O"
+            header.labelT2.text = "M"
+            header.labelT3.text = "R"
+            header.labelT4.text = "W"
+            header.labelT5.text = "ER"
             header.labelCountryName.text = visitorTeamName
         }
         return header
@@ -143,7 +155,7 @@ extension ScoreCardContainerViewController: UITableViewDataSource, UITableViewDe
     // height for cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 50
+        return 40
     }
 
 

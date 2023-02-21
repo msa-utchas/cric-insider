@@ -81,7 +81,10 @@ class MatchDetailsAdepter{
             season: fixtureModel.data.season?.name,
             localTeamImage: fixtureModel.data.localteam?.image_path,
             visitorTeamImage: fixtureModel.data.visitorteam?.image_path,
-            localTeamRun: localTeamRuns, visitorTeamRun: VisitorTeamRuns
+            localTeamRun: localTeamRuns,
+            visitorTeamRun: VisitorTeamRuns,
+            matchType: fixtureModel.data.type
+            
             
             
             
@@ -104,10 +107,9 @@ struct MatchDetailsModel{
     let visitorTeamImage: String?
     let localTeamRun: Run?
     let visitorTeamRun: Run?
-    
-    
-   
-    
-    
-    
+    let matchType: String?
+
 }
+
+
+

@@ -196,7 +196,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B4B7A417-CD81-4025-BCCC-FCE7F6FE7E7A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
@@ -212,7 +212,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "20407DCB-E20B-49D2-A244-E235A428A195"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
@@ -276,7 +276,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EF790C50-5993-499F-98E9-B91EDDCF84AF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
@@ -300,7 +300,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "8864">
+                  offsetFromSymbolStart = "8912">
                </Location>
                <Location
                   uuid = "EF790C50-5993-499F-98E9-B91EDDCF84AF - ab3ba0de3ef126f3"
@@ -315,7 +315,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "8888">
+                  offsetFromSymbolStart = "8936">
                </Location>
             </Locations>
          </BreakpointContent>

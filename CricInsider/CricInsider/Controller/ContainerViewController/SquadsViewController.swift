@@ -11,6 +11,7 @@ import Combine
 class SquadsViewController: UIViewController {
     private var cancelable: Set<AnyCancellable> = []
 
+
     @IBOutlet weak var tableViewLineup: UITableView!
     var squadInfoViewModel = MatchDetailsViewModel.shared
     var localTeamSquad: [Player] = []
@@ -69,6 +70,7 @@ extension SquadsViewController: UITableViewDataSource,UITableViewDelegate{
         if indexPath.section == 0{
             cell.labelName.text = localTeamSquad[indexPath.row].fullname
             cell.imageViewPlayer.sd_setImage(with: URL(string: localTeamSquad[indexPath.row].image_path ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
+            cell.labelPlayerType.text = localTeamSquad[indexPath.row].position?.name ?? "N\\A"
 
 
         }
@@ -82,11 +84,7 @@ extension SquadsViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = .white
-        headerView.layer.shadowColor = UIColor.gray.cgColor
-        headerView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        headerView.layer.shadowOpacity = 0.2
-        headerView.layer.shadowRadius = 2
-        headerView.layer.cornerRadius = 5
+        //headerView.addShadow()
         
         let titleLabel = UILabel()
         //set team name
@@ -97,8 +95,8 @@ extension SquadsViewController: UITableViewDataSource,UITableViewDelegate{
         else{
             titleLabel.text = visitorTeamName
         }
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
-        titleLabel.textColor = UIColor(red: 0, green: 0, blue: 128/255, alpha: 1)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel.textColor = UIColor.darkGray
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(titleLabel)
 

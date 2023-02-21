@@ -8,6 +8,7 @@
 import UIKit
 
 class SquadListTableViewCell: UITableViewCell {
+    @IBOutlet weak var labelPlayerType: UILabel!
     @IBOutlet var backView: UIView!
     @IBOutlet weak var labelName: UILabel!
     static let identifier = "SquadListTableViewCell"

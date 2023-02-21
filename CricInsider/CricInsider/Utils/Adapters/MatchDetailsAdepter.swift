@@ -83,11 +83,9 @@ class MatchDetailsAdepter{
             visitorTeamImage: fixtureModel.data.visitorteam?.image_path,
             localTeamRun: localTeamRuns,
             visitorTeamRun: VisitorTeamRuns,
-            matchType: fixtureModel.data.type
-            
-            
-            
-            
+            matchType: fixtureModel.data.type,
+            round: fixtureModel.data.round
+    
         )
     }
     
@@ -108,6 +106,7 @@ struct MatchDetailsModel{
     let localTeamRun: Run?
     let visitorTeamRun: Run?
     let matchType: String?
+    let round: String?
 
 }
 

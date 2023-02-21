@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "0C973B37-0C87-4831-890A-B1C8FB660674"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "737749F1-6365-498B-8B34-7C033EE6B6B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Utils/Adapters/UpcomingMatchesAdapter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "UpcomingMatchModel"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6039C18-A78C-4CA7-AEBB-B48003661142"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Utils/Adapters/UpcomingMatchesAdapter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "adapt(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C61475E0-4E57-436C-BAB8-6D3E21817C44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Utils/Adapters/UpcomingMatchesAdapter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "adapt(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04251A4F-4C60-4DBB-86A1-805C2CAD1795"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getUpcomingMatches()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76951787-9B76-42E9-99E0-FBA9FA52BDD0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getUpcomingMatches()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "475B367A-FDCF-40DA-9A96-8F92F1144E17"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "MatchInfoCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "475B367A-FDCF-40DA-9A96-8F92F1144E17 - ec71d3268b4638cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricInsider.MatchInfoCollectionViewCell.matchStartTime.getter : Swift.Optional&lt;Foundation.Date&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Desktop/FinalProjecrt/CricInsider-Bjit-Final-Project/CricInsider/CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "475B367A-FDCF-40DA-9A96-8F92F1144E17 - 335e45b0284d4db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricInsider.MatchInfoCollectionViewCell.matchStartTime.setter : Swift.Optional&lt;Foundation.Date&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Desktop/FinalProjecrt/CricInsider-Bjit-Final-Project/CricInsider/CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "475B367A-FDCF-40DA-9A96-8F92F1144E17 - b1df93e58c9a9fc8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricInsider.MatchInfoCollectionViewCell.matchStartTime.modify : Swift.Optional&lt;Foundation.Date&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Desktop/FinalProjecrt/CricInsider-Bjit-Final-Project/CricInsider/CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "475B367A-FDCF-40DA-9A96-8F92F1144E17 - d1842ba0cf4f6b0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricInsider.MatchInfoCollectionViewCell.matchStartTime.modify : Swift.Optional&lt;Foundation.Date&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Desktop/FinalProjecrt/CricInsider-Bjit-Final-Project/CricInsider/CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "475B367A-FDCF-40DA-9A96-8F92F1144E17 - f59e470d1b9422c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricInsider.MatchInfoCollectionViewCell.init(frame: __C.CGRect) -&gt; CricInsider.MatchInfoCollectionViewCell"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Desktop/FinalProjecrt/CricInsider-Bjit-Final-Project/CricInsider/CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "475B367A-FDCF-40DA-9A96-8F92F1144E17 - d296be215d250e0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricInsider.MatchInfoCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CricInsider.MatchInfoCollectionViewCell&gt;"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Desktop/FinalProjecrt/CricInsider-Bjit-Final-Project/CricInsider/CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "664">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

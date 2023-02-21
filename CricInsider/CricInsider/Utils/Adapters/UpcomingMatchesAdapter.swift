@@ -23,7 +23,7 @@ class UpcomingMatchesAdapter {
                 visitorTeamName: fixture.visitorteam?.code,
                 localTeamImagePath: fixture.localteam?.image_path,
                 visitorTeamImagePath: fixture.visitorteam?.image_path,
-                dateObject: formattedDateData?.2
+                dateObject: formattedDateData?.2, matchType: fixture.type
             )
             upcomingMatches.append(upcomingMatch)
         }
@@ -43,4 +43,5 @@ struct UpcomingMatchModel{
     let localTeamImagePath: String?
     let visitorTeamImagePath: String?
     let dateObject: Date?
+    let matchType: String?
 }

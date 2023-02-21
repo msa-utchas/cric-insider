@@ -184,11 +184,13 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <outlet property="labelDate" destination="abc-mq-dfL" id="NQc-rl-okg"/>
                                                     <outlet property="labelLeagueInfo" destination="DWb-sl-eGC" id="XK6-PQ-bI7"/>
                                                     <outlet property="labelTeamAName" destination="BYX-MA-Xsi" id="0jq-dz-nD6"/>
                                                     <outlet property="labelTeamAScore" destination="u6G-9Y-FNK" id="euJ-Il-fbd"/>
                                                     <outlet property="labelTeamBName" destination="yoT-t4-Lex" id="rzB-wc-SX1"/>
                                                     <outlet property="labelTeamBScore" destination="LD9-l7-7D9" id="jrt-cN-vuS"/>
+                                                    <outlet property="labelType" destination="lA2-7F-Xtd" id="znV-KU-LdQ"/>
                                                     <outlet property="labelWiningInfo" destination="a06-lc-DWS" id="pos-li-0oY"/>
                                                     <outlet property="teamAImageView" destination="0Gf-tN-Hbo" id="o8R-7j-bWa"/>
                                                     <outlet property="teamBImageView" destination="Gww-kv-YIx" id="huh-hf-KY2"/>

@@ -125,6 +125,8 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
 
         cell.teamAImageView.sd_setImage(with: URL(string: match.localTeam?.image_path ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
         cell.teamBImageView.sd_setImage(with: URL(string: match.visitorTeam?.image_path ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.labelDate.text = ((match.date ?? "") + " " + (match.time ?? ""))
+        cell.labelType.text = match.matchType
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -175,6 +177,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.visitorTeamLogo.sd_setImage(with: URL(string: upcomingMatchList[indexPath.row].visitorTeamImagePath ?? ""))
         cell.localTeamLogo.sd_setImage(with: URL(string: upcomingMatchList[indexPath.row].localTeamImagePath ?? ""))
         cell.matchStartTime = upcomingMatchList[indexPath.row].dateObject
+        cell.labelType.text = upcomingMatchList[indexPath.row].matchType
         //cell.inputViewController?.loadView()
         //cell.viewModel.startTimer(matchStartTime: upcomingMatchList[indexPath.row].dateObject!)
         

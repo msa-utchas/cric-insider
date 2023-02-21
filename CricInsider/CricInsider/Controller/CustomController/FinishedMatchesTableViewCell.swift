@@ -10,10 +10,12 @@ import UIKit
 class FinishedMatchesTableViewCell: UITableViewCell {
     static let identifier = "FinishedMatchesTableViewCell"
 
+    @IBOutlet var labelDate: UILabel!
     @IBOutlet weak var teamBImageView: UIImageView!
     @IBOutlet weak var labelLeagueInfo: UILabel!
     @IBOutlet weak var labelTeamBScore: UILabel!
     @IBOutlet weak var labelTeamAScore: UILabel!
+    @IBOutlet var labelType: UILabel!
     @IBOutlet weak var teamAImageView: UIImageView!
     @IBOutlet weak var labelWiningInfo: UILabel!
     @IBOutlet weak var labelTeamAName: UILabel!

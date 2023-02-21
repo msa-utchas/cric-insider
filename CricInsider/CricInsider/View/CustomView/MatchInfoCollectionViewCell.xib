@@ -168,7 +168,8 @@
             <size key="customSize" width="510" height="258"/>
             <connections>
                 <outlet property="labelStarsIn" destination="i4k-BV-NK4" id="Icj-Zb-DAK"/>
-                <outlet property="leagueAndSeasonName" destination="xqS-1K-Uej" id="exB-Qh-jys"/>
+                <outlet property="labelType" destination="drp-DY-yyI" id="h0D-eW-cUr"/>
+                <outlet property="leagueAndSeasonName" destination="xqS-1K-Uej" id="Xs6-el-Asr"/>
                 <outlet property="localTeamLogo" destination="XvG-he-2UB" id="wdL-nV-nvg"/>
                 <outlet property="localTeamName" destination="Oho-KD-XdD" id="xBk-m0-Bju"/>
                 <outlet property="matchHeaderStackView" destination="2dx-z8-cQd" id="bmu-Ma-32T"/>

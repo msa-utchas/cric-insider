@@ -36,7 +36,7 @@ class FinishedMatchAdepter {
                     }
                 }
             }
-            let recentMatch = FinishedMatchesModel(fixtureId: fixture.id, status: fixture.status, leagueName: fixture.league?.name, seasonName: fixture.season?.name, round: fixture.round, localTeam: fixture.localteam, visitorTeam: fixture.visitorteam,   localTeamRun: localTeamRuns, visitorTeamRun: VisitorTeamRuns, note: fixture.note, date: formattedDateData?.0, time: formattedDateData?.1
+            let recentMatch = FinishedMatchesModel(fixtureId: fixture.id, status: fixture.status, leagueName: fixture.league?.name, seasonName: fixture.season?.name, round: fixture.round, localTeam: fixture.localteam, visitorTeam: fixture.visitorteam,   localTeamRun: localTeamRuns, visitorTeamRun: VisitorTeamRuns, note: fixture.note, date: formattedDateData?.0, time: formattedDateData?.1, matchType: fixture.type
                
             
 
@@ -62,5 +62,6 @@ struct FinishedMatchesModel{
     let note: String?
     let date: String?
     let time: String?
+    let matchType: String?
 }
 

@@ -15,6 +15,8 @@ class MatchInfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var localTeamLogo: UIImageView!
     @IBOutlet weak var localTeamName: UILabel!
+   
+    @IBOutlet var labelType: UILabel!
     @IBOutlet weak var visitorTeamLogo: UIImageView!
     @IBOutlet weak var visitorTeamName: UILabel!
     @IBOutlet weak var matchHeaderStackView: UIStackView!

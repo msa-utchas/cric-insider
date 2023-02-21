@@ -14,10 +14,10 @@
             filePath = "CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "MatchInfoCollectionViewCell"
-            landmarkType = "3">
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "matchHeaderStackView"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "60AB5667-BE90-4E09-A9D7-03626DFB8602 - 36e1c52be3144e40"

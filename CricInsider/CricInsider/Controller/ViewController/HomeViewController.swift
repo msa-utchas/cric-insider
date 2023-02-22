@@ -35,7 +35,9 @@ class HomeViewController: UIViewController {
 //        labelFinishedMatchTitle.layer.masksToBounds = true
         
         // MARK: - test
-        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            // Handle the user's authorization response and any errors
+        }
         
         Task{
             await viewModel.getUpcomingMatches()

@@ -29,6 +29,8 @@
 		89548A28299C75E100BADDF3 /* CricInsider.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89548A26299C75E100BADDF3 /* CricInsider.xcdatamodeld */; };
 		89548A2A299C75E300BADDF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89548A29299C75E300BADDF3 /* Assets.xcassets */; };
 		89548A2D299C75E300BADDF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89548A2B299C75E300BADDF3 /* LaunchScreen.storyboard */; };
+		896AB4A429A60CD3009A2BD3 /* MatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AB4A229A60CD3009A2BD3 /* MatchesTableViewCell.swift */; };
+		896AB4A529A60CD3009A2BD3 /* MatchesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896AB4A329A60CD3009A2BD3 /* MatchesTableViewCell.xib */; };
 		898304EA299CC44800CBBC7E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 898304E9299CC44800CBBC7E /* Alamofire */; };
 		898304ED299CC46400CBBC7E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 898304EC299CC46400CBBC7E /* SDWebImage */; };
 		898304F3299CC5F200CBBC7E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898304F2299CC5F200CBBC7E /* Home.storyboard */; };
@@ -79,6 +81,8 @@
 		89548A29299C75E300BADDF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89548A2C299C75E300BADDF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89548A2E299C75E300BADDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		896AB4A229A60CD3009A2BD3 /* MatchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewCell.swift; sourceTree = "<group>"; };
+		896AB4A329A60CD3009A2BD3 /* MatchesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchesTableViewCell.xib; sourceTree = "<group>"; };
 		898304F2299CC5F200CBBC7E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		898304F4299CC83B00CBBC7E /* SearchPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchPlayer.storyboard; sourceTree = "<group>"; };
 		898304F8299CCCD600CBBC7E /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				D9A6155F29A2515E004FA85B /* ScoreCardTableViewCell.xib */,
 				8926C399299DCA020033E5E1 /* MatchInfoCollectionViewCell.xib */,
 				D9A6156729A25DD8004FA85B /* ScoreCardHeader.xib */,
+				896AB4A329A60CD3009A2BD3 /* MatchesTableViewCell.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 		8926C39B299DCC8B0033E5E1 /* CustomController */ = {
 			isa = PBXGroup;
 			children = (
+				896AB4A229A60CD3009A2BD3 /* MatchesTableViewCell.swift */,
 				8926C39E299DCD470033E5E1 /* MatchInfoCollectionViewCell.swift */,
 				8926C3A0299DDE8A0033E5E1 /* FinishedMatchesTableViewCell.swift */,
 				D9DFE31F29A10BE10079ACFA /* SquadListTableViewCell.swift */,
@@ -368,6 +374,7 @@
 				89548A25299C75E100BADDF3 /* Main.storyboard in Resources */,
 				898304F5299CC83B00CBBC7E /* SearchPlayer.storyboard in Resources */,
 				898304F3299CC5F200CBBC7E /* Home.storyboard in Resources */,
+				896AB4A529A60CD3009A2BD3 /* MatchesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89074F57299CBD3C00256BC5 /* PlayersModel.swift in Sources */,
+				896AB4A429A60CD3009A2BD3 /* MatchesTableViewCell.swift in Sources */,
 				89074F53299CBD1100256BC5 /* FixturesModel.swift in Sources */,
 				893CF06D299F4EC0009DEF6B /* MatchDetailsViewController.swift in Sources */,
 				D9A6154E29A1FBAF004FA85B /* MatchDetailsAdepter.swift in Sources */,

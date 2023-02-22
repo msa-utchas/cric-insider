@@ -44,4 +44,5 @@ struct UpcomingMatchModel{
     let visitorTeamImagePath: String?
     let dateObject: Date?
     let matchType: String?
+    
 }

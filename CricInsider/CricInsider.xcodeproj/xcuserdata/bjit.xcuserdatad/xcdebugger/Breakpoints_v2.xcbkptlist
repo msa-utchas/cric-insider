@@ -94,8 +94,8 @@
             filePath = "CricInsider/Controller/CustomController/MatchInfoCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "MatchInfoCollectionViewCell"
             landmarkType = "3">
             <Locations>

@@ -167,6 +167,7 @@
             </constraints>
             <size key="customSize" width="510" height="258"/>
             <connections>
+                <outlet property="labelMatchStatus" destination="SdS-He-Gis" id="qpD-Uf-kME"/>
                 <outlet property="labelStarsIn" destination="i4k-BV-NK4" id="Icj-Zb-DAK"/>
                 <outlet property="labelType" destination="drp-DY-yyI" id="h0D-eW-cUr"/>
                 <outlet property="leagueAndSeasonName" destination="xqS-1K-Uej" id="Xs6-el-Asr"/>

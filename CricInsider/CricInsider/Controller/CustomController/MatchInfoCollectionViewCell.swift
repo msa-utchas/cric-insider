@@ -16,6 +16,7 @@ class MatchInfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var localTeamLogo: UIImageView!
     @IBOutlet weak var localTeamName: UILabel!
    
+    @IBOutlet weak var labelMatchStatus: UILabel!
     @IBOutlet var labelType: UILabel!
     @IBOutlet weak var visitorTeamLogo: UIImageView!
     @IBOutlet weak var visitorTeamName: UILabel!
@@ -23,6 +24,7 @@ class MatchInfoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var matchSubHeaderStackView: UIStackView!
     var matchStartTime: Date!
+    var matchStatus: String?
     var timer: Timer?
     var viewModel = HomeViewModel()
     
@@ -47,6 +49,7 @@ class MatchInfoCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupXib()
+        
         startTimer()
         
     }

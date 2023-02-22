@@ -178,6 +178,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.localTeamLogo.sd_setImage(with: URL(string: upcomingMatchList[indexPath.row].localTeamImagePath ?? ""))
         cell.matchStartTime = upcomingMatchList[indexPath.row].dateObject
         cell.labelType.text = upcomingMatchList[indexPath.row].matchType
+        if(upcomingMatchList[indexPath.row].status != "NS"){
+            cell.labelMatchStatus.text = "Live"
+        }
+        else{
+            cell.labelMatchStatus.text = "Upcoming"
+        }
+        cell.matchStatus = upcomingMatchList[indexPath.row].status
         //cell.inputViewController?.loadView()
         //cell.viewModel.startTimer(matchStartTime: upcomingMatchList[indexPath.row].dateObject!)
         

@@ -236,8 +236,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "binder()"
-            landmarkType = "7">
+            landmarkName = "SquadsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -252,7 +252,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "binder()"
+            landmarkName = "segmentControlChangeTeamAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -268,7 +268,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "binder()"
+            landmarkName = "segmentControlChangeTeamAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -634,8 +634,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "identifier"
-            landmarkType = "24">
+            landmarkName = "SquadListTableViewCell"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "962BAC36-4F50-41C6-A994-EC4D2B15CE2F - 73dc9252be31062f"

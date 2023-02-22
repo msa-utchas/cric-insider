@@ -31,6 +31,8 @@
 		89548A2D299C75E300BADDF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89548A2B299C75E300BADDF3 /* LaunchScreen.storyboard */; };
 		896AB4A429A60CD3009A2BD3 /* MatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AB4A229A60CD3009A2BD3 /* MatchesTableViewCell.swift */; };
 		896AB4A529A60CD3009A2BD3 /* MatchesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896AB4A329A60CD3009A2BD3 /* MatchesTableViewCell.xib */; };
+		896AB4A729A61C36009A2BD3 /* Matches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896AB4A629A61C36009A2BD3 /* Matches.storyboard */; };
+		896AB4A929A62408009A2BD3 /* DateWiseMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AB4A829A62408009A2BD3 /* DateWiseMatchViewController.swift */; };
 		898304EA299CC44800CBBC7E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 898304E9299CC44800CBBC7E /* Alamofire */; };
 		898304ED299CC46400CBBC7E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 898304EC299CC46400CBBC7E /* SDWebImage */; };
 		898304F3299CC5F200CBBC7E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898304F2299CC5F200CBBC7E /* Home.storyboard */; };
@@ -83,6 +85,8 @@
 		89548A2E299C75E300BADDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		896AB4A229A60CD3009A2BD3 /* MatchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewCell.swift; sourceTree = "<group>"; };
 		896AB4A329A60CD3009A2BD3 /* MatchesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchesTableViewCell.xib; sourceTree = "<group>"; };
+		896AB4A629A61C36009A2BD3 /* Matches.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Matches.storyboard; sourceTree = "<group>"; };
+		896AB4A829A62408009A2BD3 /* DateWiseMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateWiseMatchViewController.swift; sourceTree = "<group>"; };
 		898304F2299CC5F200CBBC7E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		898304F4299CC83B00CBBC7E /* SearchPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchPlayer.storyboard; sourceTree = "<group>"; };
 		898304F8299CCCD600CBBC7E /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				8926C396299DC5EC0033E5E1 /* CustomView */,
 				898304F2299CC5F200CBBC7E /* Home.storyboard */,
 				898304F4299CC83B00CBBC7E /* SearchPlayer.storyboard */,
+				896AB4A629A61C36009A2BD3 /* Matches.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				D9D4EED4299D16FD002407C0 /* SearchPlayerViewController.swift */,
 				893CF06C299F4EC0009DEF6B /* MatchDetailsViewController.swift */,
 				898304FD299CE1CB00CBBC7E /* HomeViewController.swift */,
+				896AB4A829A62408009A2BD3 /* DateWiseMatchViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			files = (
 				8926C39A299DCA020033E5E1 /* MatchInfoCollectionViewCell.xib in Resources */,
 				D9A6156029A2515E004FA85B /* ScoreCardTableViewCell.xib in Resources */,
+				896AB4A729A61C36009A2BD3 /* Matches.storyboard in Resources */,
 				89548A2D299C75E300BADDF3 /* LaunchScreen.storyboard in Resources */,
 				D9A6156829A25DD8004FA85B /* ScoreCardHeader.xib in Resources */,
 				89548A2A299C75E300BADDF3 /* Assets.xcassets in Resources */,
@@ -412,6 +419,7 @@
 				898304FB299CCD6700CBBC7E /* ApiManager.swift in Sources */,
 				D9DFE31E29A0FAE20079ACFA /* ScoreCardContainerViewController.swift in Sources */,
 				89074F51299CBCFE00256BC5 /* FixtureModel.swift in Sources */,
+				896AB4A929A62408009A2BD3 /* DateWiseMatchViewController.swift in Sources */,
 				D9A6155029A21BCB004FA85B /* PlayersRepository.swift in Sources */,
 				D9D4EED5299D16FD002407C0 /* SearchPlayerViewController.swift in Sources */,
 				D9A6156629A25C5C004FA85B /* ScoreCardHeader.swift in Sources */,

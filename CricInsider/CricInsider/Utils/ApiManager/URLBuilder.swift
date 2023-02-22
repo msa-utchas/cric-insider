@@ -4,9 +4,9 @@ class URLBuilder {
     //ICTEnAzbmSy2cjmU392cgNuyriPZ19WIOFctfQP6NI3d6UFQEB9TBfZG3pEc
     let baseURL = "https://cricket.sportmonks.com/api/v2.0"
     //let apiToken: String = "h0J6t9SxB02l6U0nRmOiagSZmymozNYQ7GFaTAwmiJ5gSFwIDUC3JJpjtwg7"
-    //let apiToken: String = "11xEeZHm5pQSsuUxi6n4JbD1zxY3RYmAHbVKYtZFTP2QqrsXxeB5zxEydna8"
+    let apiToken: String = "11xEeZHm5pQSsuUxi6n4JbD1zxY3RYmAHbVKYtZFTP2QqrsXxeB5zxEydna8"
     static let shared = URLBuilder()
-    let apiToken: String = "ICTEnAzbmSy2cjmU392cgNuyriPZ19WIOFctfQP6NI3d6UFQEB9TBfZG3pEc"
+    //let apiToken: String = "ICTEnAzbmSy2cjmU392cgNuyriPZ19WIOFctfQP6NI3d6UFQEB9TBfZG3pEc"
     
 
     private init() {}
@@ -67,6 +67,18 @@ class URLBuilder {
         let endpoint = "/fixtures/\(id)"
         let queryItems = [
             URLQueryItem(name: "include", value: "lineup,bowling.bowler,batting.batsman,localteam,visitorteam,runs,league,season,venue,manofmatch"),
+            URLQueryItem(name: "api_token", value: apiToken)
+        ]
+        return createURL(endpoint: endpoint, queryItems: queryItems)
+    }
+    
+    
+    func getDateWiseFixtureUrl(startDate: String, endDate: String)->URL?{
+        let endpoint = "/fixtures"
+        let queryItems = [
+            URLQueryItem(name: "include", value: "localteam,visitorteam,league,season"),
+            URLQueryItem(name: "filter[starts_between]", value: "\(startDate),\(endDate)"),
+            URLQueryItem(name: "sort", value: "starting_at"),
             URLQueryItem(name: "api_token", value: apiToken)
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)

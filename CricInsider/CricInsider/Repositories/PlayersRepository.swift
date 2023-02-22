@@ -21,7 +21,7 @@ class PlayersRepository: SearchPlayerDataRepository{
     private let context = CoreDataManager.shared.context
     
     func checkPlayerAvailabilityInCoreData()->Int  {
-        var count = 10
+        var count = 0
         do {
             try privateContext.performAndWait {[weak self] in
                 guard let self = self else {return}
@@ -60,7 +60,7 @@ class PlayersRepository: SearchPlayerDataRepository{
     
     
     func savePlayerData(playerInfo: PlayersModel) async -> Result<Bool, Error>{
-        let deleteResult = await deleteAllData()
+        let deleteResult = deleteAllData()
         switch deleteResult{
         case .success(let flag):
             print("Data deleted successfully: \(flag)")
@@ -86,7 +86,7 @@ class PlayersRepository: SearchPlayerDataRepository{
             return .failure(error)
         }
     }
-    func deleteAllData()async -> Result<Bool, Error> {
+    func deleteAllData() -> Result<Bool, Error> {
         do {
             try  privateContext.performAndWait {[weak self] in
                 guard let self = self else {return}

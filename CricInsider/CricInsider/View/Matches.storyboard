@@ -36,6 +36,9 @@
                                                         <buttonConfiguration key="configuration" style="filled" title="Scarch Match">
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="searchMatchAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="V7j-Uk-0U3"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

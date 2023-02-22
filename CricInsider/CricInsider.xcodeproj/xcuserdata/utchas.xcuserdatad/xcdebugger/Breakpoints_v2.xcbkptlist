@@ -202,9 +202,9 @@
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "getMatchDetails(id:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getDateWiseMatches(date:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,9 +218,9 @@
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "getMatchDetails(id:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getDateWiseMatches(date:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -282,9 +282,9 @@
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "getMatchDetails(id:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getDateWiseMatches(date:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -380,7 +380,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "tableView(_:heightForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -396,7 +396,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "tableView(_:heightForHeaderInSection:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -444,7 +444,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "tableView(_:heightForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -727,9 +727,9 @@
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "getMatchDetails(id:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getDateWiseMatches(date:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -775,9 +775,9 @@
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "getMatchDetails(id:)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getDateWiseMatches(date:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -838,9 +838,200 @@
             filePath = "CricInsider/Repositories/FixturesRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "getMatchDetails(id:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getDateWiseMatches(date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F18A0709-0096-4498-A84F-48A558844BF6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Repositories/FixturesRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getDateWiseMatches(date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "796F2D34-639F-472E-B63E-7AF368E9038C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Repositories/FixturesRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getDateWiseMatches(date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0947156F-EC29-45D0-9E8F-4AF88C3C1799"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "binder()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0947156F-EC29-45D0-9E8F-4AF88C3C1799 - ce144c85c3033723"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;CricInsider.MatchInfoModel&gt;&gt;) -&gt; () in CricInsider.DateWiseMatchViewController.binder() -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "0947156F-EC29-45D0-9E8F-4AF88C3C1799 - 31c26a4c2255e801"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;CricInsider.MatchInfoModel&gt;&gt;) -&gt; () in CricInsider.DateWiseMatchViewController.binder() -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BC4238B-5350-489C-87A2-9E108AEEB42D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "searchMatchAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4BC4238B-5350-489C-87A2-9E108AEEB42D - 5674580fe04cf3b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.DateWiseMatchViewController.searchMatchAction(Any) -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "4BC4238B-5350-489C-87A2-9E108AEEB42D - ce2741d8a968adb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.DateWiseMatchViewController.searchMatchAction(Any) -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "4BC4238B-5350-489C-87A2-9E108AEEB42D - 5f9097b62a063fa9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.DateWiseMatchViewController.searchMatchAction(Any) -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "46848FF1-804B-4005-A300-2CBCCF885867"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Repositories/FixturesRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getDateWiseMatches(date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08D4099C-A94D-4F4D-B6FC-736428D0A9EB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Repositories/FixturesRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getDateWiseMatches(date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "449D3042-888B-439E-9A85-B113E36ED59A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "binder()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

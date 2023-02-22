@@ -127,6 +127,7 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
         cell.teamBImageView.sd_setImage(with: URL(string: match.visitorTeam?.image_path ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelDate.text = ((match.date ?? "") + " " + (match.time ?? ""))
         cell.labelType.text = match.matchType
+        cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -190,7 +191,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width, height:collectionViewMatches.bounds.height)
     }

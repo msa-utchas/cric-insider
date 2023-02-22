@@ -89,7 +89,8 @@ class MatchDetailsAdepter{
             localTeamRun: localTeamRuns,
             visitorTeamRun: VisitorTeamRuns,
             matchType: fixtureModel.data.type,
-            round: fixtureModel.data.round, date: startDate, venue: fixtureModel.data.venue
+            round: fixtureModel.data.round, date: startDate, venue: fixtureModel.data.venue, localTeamCodeName: fixtureModel.data.localteam?.code, visitorTeamCodeName: fixtureModel.data.visitorteam?.code
+            
     
         )
     }
@@ -114,6 +115,8 @@ struct MatchDetailsModel{
     let round: String?
     let date: String?
     let venue: Venue?
+    let localTeamCodeName:String?
+    let visitorTeamCodeName:String?
 
 
 }

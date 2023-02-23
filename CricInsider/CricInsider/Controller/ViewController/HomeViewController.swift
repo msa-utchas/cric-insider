@@ -2,6 +2,7 @@
 import UIKit
 import Combine
 import SDWebImage
+import UserNotifications
 
 class HomeViewController: UIViewController {
     
@@ -34,10 +35,8 @@ class HomeViewController: UIViewController {
 //        labelFinishedMatchTitle.layer.cornerRadius = 10
 //        labelFinishedMatchTitle.layer.masksToBounds = true
         
-        // MARK: - test
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            // Handle the user's authorization response and any errors
-        }
+       
+    
         
         Task{
             await viewModel.getUpcomingMatches()
@@ -45,6 +44,36 @@ class HomeViewController: UIViewController {
         }
         
         binder()
+        
+        
+        let content = UNMutableNotificationContent()
+        content.title = "My Notification Title"
+        content.body = "This is the notification body"
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+
+        
+        let request = UNNotificationRequest(identifier: "myNotification", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                // Handle any errors
+            } else {
+                print("notify added ")
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     }
     

@@ -5,6 +5,7 @@
 //  Created by BJIT on 15/2/23.
 //
 import UIKit
+import UserNotifications
 import CoreData
 
 @main
@@ -17,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
             print(url.absoluteString)
         }
+        
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in }
         
         return true
     }

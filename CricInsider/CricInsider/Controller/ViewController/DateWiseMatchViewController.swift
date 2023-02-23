@@ -9,7 +9,10 @@ import UIKit
 import Combine
 
 class DateWiseMatchViewController: UIViewController {
+    @IBOutlet weak var textBackView: UIView!
     
+    @IBOutlet weak var activityContainerView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var backView: UIView!
     let viewModel = DateWiseMatchViewModel()
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -17,8 +20,13 @@ class DateWiseMatchViewController: UIViewController {
     var cancelable: Set<AnyCancellable> = []
     var matchData: [MatchInfoModel] = []
 
-    override func viewDidLoad() {
+    override func viewDidLoad(){
+        
         super.viewDidLoad()
+        view.isUserInteractionEnabled = false
+        activityIndicator.startAnimating()
+        textBackView.layer.cornerRadius = 4
+        textBackView.addShadow()
         backView.addShadow()
         tableViewMatchList.dataSource = self
         tableViewMatchList.delegate = self
@@ -26,6 +34,10 @@ class DateWiseMatchViewController: UIViewController {
         tableViewMatchList.register(nib, forCellReuseIdentifier: MatchesTableViewCell.identifier)
         Task {
             await viewModel.getDateWiseMatches(date: datePicker.date)
+            view.isUserInteractionEnabled = true
+            activityIndicator.stopAnimating()
+            activityContainerView.isHidden = true
+            
         }
         binder()
        
@@ -33,7 +45,13 @@ class DateWiseMatchViewController: UIViewController {
     
     @IBAction func searchMatchAction(_ sender: Any) {
         Task {
+            activityContainerView.isHidden = false
+            view.isUserInteractionEnabled = false
+            activityIndicator.startAnimating()
             await viewModel.getDateWiseMatches(date: datePicker.date)
+            view.isUserInteractionEnabled = true
+            activityIndicator.stopAnimating()
+            activityContainerView.isHidden = true
         }
     }
     func binder(){

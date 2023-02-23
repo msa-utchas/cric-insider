@@ -13,7 +13,8 @@ class MatchInfoViewController: UIViewController {
     @IBOutlet weak var venueBackgroundView: UIView!
     private var cancelable: Set<AnyCancellable> = []
     let matchInfoViewModel = MatchDetailsViewModel.shared
-
+    var timer = Timer()
+    
    
     @IBOutlet var labelDate: UILabel!
     @IBOutlet weak var teamBImageView: UIImageView!
@@ -73,5 +74,8 @@ class MatchInfoViewController: UIViewController {
             }
         }.store(in: &cancelable)
     }
+    
+    
+    
 
 }

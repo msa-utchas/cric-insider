@@ -3,6 +3,7 @@ import UIKit
 import Combine
 import SDWebImage
 import UserNotifications
+import Alamofire
 
 class HomeViewController: UIViewController {
     
@@ -39,6 +40,7 @@ class HomeViewController: UIViewController {
     
         
         Task{
+            
             await viewModel.getUpcomingMatches()
 
 

@@ -130,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TestImage.gif" translatesAutoresizingMaskIntoConstraints="NO" id="4Rx-gd-mwJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4Rx-gd-mwJ">
                                 <rect key="frame" x="102" y="112" width="170" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -176,7 +176,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TestImage.gif" width="50" height="50"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="rectangle.and.text.magnifyingglass.rtl" catalog="system" width="128" height="89"/>
         <namedColor name="custom1">
             <color red="0.059000000357627869" green="0.086000002920627594" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -89,7 +89,11 @@ class MatchDetailsAdepter{
             localTeamRun: localTeamRuns,
             visitorTeamRun: VisitorTeamRuns,
             matchType: fixtureModel.data.type,
-            round: fixtureModel.data.round, date: startDate, venue: fixtureModel.data.venue, localTeamCodeName: fixtureModel.data.localteam?.code, visitorTeamCodeName: fixtureModel.data.visitorteam?.code
+            round: fixtureModel.data.round,
+            date: startDate,
+            venue: fixtureModel.data.venue,
+            localTeamCodeName: fixtureModel.data.localteam?.code,
+            visitorTeamCodeName: fixtureModel.data.visitorteam?.code
             
     
         )

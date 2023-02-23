@@ -71,7 +71,7 @@ class HomeViewModel{
             if match.status == "NS"{
                 let content = UNMutableNotificationContent()
                 content.title = "Match Reminder"
-                content.body = "Match between \(match.localTeamName ?? "N\\A") vs \(match.visitorTeamName ?? "N\\A") is starting in 30 minutes"
+                content.body = "Match between \(match.localTeamName ?? "N\\A") vs \(match.visitorTeamName ?? "N\\A") is starting at \(match.dateObject?.formatted() ?? "N\\A")"
                 content.sound = UNNotificationSound.default
                 guard let matchStartTime = match.dateObject else {return}
                 let date = Calendar.current.date(byAdding: .minute, value: -30, to: matchStartTime)

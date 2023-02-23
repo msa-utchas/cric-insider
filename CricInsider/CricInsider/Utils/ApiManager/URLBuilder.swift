@@ -4,9 +4,9 @@ class URLBuilder {
     //ICTEnAzbmSy2cjmU392cgNuyriPZ19WIOFctfQP6NI3d6UFQEB9TBfZG3pEc
     let baseURL = "https://cricket.sportmonks.com/api/v2.0"
     //let apiToken: String = "h0J6t9SxB02l6U0nRmOiagSZmymozNYQ7GFaTAwmiJ5gSFwIDUC3JJpjtwg7"
-    let apiToken: String = "11xEeZHm5pQSsuUxi6n4JbD1zxY3RYmAHbVKYtZFTP2QqrsXxeB5zxEydna8"
+    //let apiToken: String = "11xEeZHm5pQSsuUxi6n4JbD1zxY3RYmAHbVKYtZFTP2QqrsXxeB5zxEydna8"
     static let shared = URLBuilder()
-    //let apiToken: String = "ICTEnAzbmSy2cjmU392cgNuyriPZ19WIOFctfQP6NI3d6UFQEB9TBfZG3pEc"
+    let apiToken: String = "ICTEnAzbmSy2cjmU392cgNuyriPZ19WIOFctfQP6NI3d6UFQEB9TBfZG3pEc"
     
 
     private init() {}
@@ -39,7 +39,7 @@ class URLBuilder {
         let endpoint = "/fixtures"
         let queryItems = [
             URLQueryItem(name: "include", value: "winnerteam,localteam,visitorteam,stage,season,league,runs,lineup"),
-            URLQueryItem(name: "filter[status]", value: "NS,1st Innings,2nd Innings,3rd Innings,4th Innings"),
+            URLQueryItem(name: "filter[status]", value: "NS,1st Innings,2nd Innings"),
             URLQueryItem(name: "sort", value: "starting_at"),
             URLQueryItem(name: "api_token", value: apiToken)
         ]

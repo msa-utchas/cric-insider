@@ -10,10 +10,13 @@ class URLBuilder {
     
 
     private init() {}
-
+//career
     func getPlayerURL(playerID: Int) -> URL? {
         let endpoint = "/players/\(playerID)"
-        let queryItems = [URLQueryItem(name: "api_token", value: apiToken)]
+        let queryItems = [
+            URLQueryItem(name: "api_token", value: apiToken),
+            URLQueryItem(name: "include", value: "country,career")
+        ]
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
 

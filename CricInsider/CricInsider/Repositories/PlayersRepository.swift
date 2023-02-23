@@ -28,7 +28,7 @@ class PlayersRepository: SearchPlayerDataRepository{
                 let fetchRequest = NSFetchRequest<PlayersInfo>(entityName: "PlayersInfo")
                 count = try self.privateContext.fetch(fetchRequest).count
             }
-
+            
         } catch {
             debugPrint(error)
         }
@@ -44,12 +44,12 @@ class PlayersRepository: SearchPlayerDataRepository{
                 fetchRequest.predicate = NSPredicate(format: "fullName CONTAINS[cd] %@", searchText)
                 result = try self.privateContext.fetch(fetchRequest)
             }
-
+            
             return .success(result)
         } catch {
             return .failure(error)
         }
-
+        
     }
     
     func getAllPlayers() async -> Result<PlayersModel,Error>{
@@ -65,14 +65,14 @@ class PlayersRepository: SearchPlayerDataRepository{
         case .success(let flag):
             print("Data deleted successfully: \(flag)")
             do {
-                 try privateContext.performAndWait {[weak self] in
+                try privateContext.performAndWait {[weak self] in
                     guard let self = self else {return}
-                     for player in playerInfo.data! {
-                         let playerData = PlayersInfo(context: self.privateContext)
+                    for player in playerInfo.data! {
+                        let playerData = PlayersInfo(context: self.privateContext)
                         playerData.id = Int32(player.id ?? 0)
-                         playerData.fullName = player.fullname ?? "Not Available"
-                         playerData.imagePath = player.image_path  ?? "Not Available"
-                         playerData.country = player.country?.name ?? "Not Available"
+                        playerData.fullName = player.fullname ?? "Not Available"
+                        playerData.imagePath = player.image_path  ?? "Not Available"
+                        playerData.country = player.country?.name ?? "Not Available"
                     }
                     try self.privateContext.save()
                     try self.context.save()
@@ -81,7 +81,7 @@ class PlayersRepository: SearchPlayerDataRepository{
             } catch {
                 return .failure(error)
             }
-        
+            
         case .failure(let error):
             return .failure(error)
         }
@@ -99,6 +99,20 @@ class PlayersRepository: SearchPlayerDataRepository{
             return .success(true)
         } catch {
             return .failure(error)
+        }
+    }
+    
+    static func getPlayerDetails(for id: Int) async{
+        let url = URLBuilder.shared.getPlayerURL(playerID: id)
+        let result: Result<PlayerModel,Error> = await ApiManager.shared.fetchDataFromApi(url: url)
+        switch result{
+            
+        case .success(let data):
+            let careerInfo = PlayerCareerAdepter.adapt(player: data)
+            print(careerInfo)
+            
+        case .failure(let error):
+            print(error)
         }
     }
 }

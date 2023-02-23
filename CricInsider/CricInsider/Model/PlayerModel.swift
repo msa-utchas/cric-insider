@@ -16,6 +16,7 @@ struct Player: Codable{
     let updatedAt: String?
     let lineup : Lineup?
     let country: Country?
+    let career: [Career]
 }
 struct Lineup: Codable {
     let team_id: Int?
@@ -33,6 +34,35 @@ struct Country:Codable {
     let name: String?
     let imagep_path: String?
     let updatedAt: String?
+}
+
+
+
+
+
+
+struct Career: Codable{
+    struct Bowling: Codable {
+        let matches: Int?
+        let overs: Double?
+        let innings: Int?
+        let econ_rate: Double?
+        let runs: Int?
+        let wickets: Int?
+    }
+    struct  Batting: Codable {
+        let matches: Int?
+        let innings: Int?
+        let runs_scored: Int?
+        let strike_rate: Double?
+        let balls_faced: Double?
+        let average: Double?
+    }
+
+    let type: String?
+    let bowling: Bowling?
+    let batting: Batting?
+
 }
 
 

@@ -43,6 +43,7 @@
 		D912795829A53DAC006BF1B8 /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912795729A53DAC006BF1B8 /* UIViewExtention.swift */; };
 		D94C837329A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */; };
 		D953EAAE29A14931006E47F4 /* FinishedMatchAdepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */; };
+		D96138BD29A7CF4200F3FD05 /* PlayerCareerAdepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96138BC29A7CF4200F3FD05 /* PlayerCareerAdepter.swift */; };
 		D99DA5D129A65E96007139D7 /* DateWiseMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA5D029A65E96007139D7 /* DateWiseMatchViewModel.swift */; };
 		D99DA5D329A665E6007139D7 /* MatchInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA5D229A665E6007139D7 /* MatchInfoAdapter.swift */; };
 		D9A6154E29A1FBAF004FA85B /* MatchDetailsAdepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6154D29A1FBAF004FA85B /* MatchDetailsAdepter.swift */; };
@@ -97,6 +98,7 @@
 		D912795729A53DAC006BF1B8 /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchAdepter.swift; sourceTree = "<group>"; };
+		D96138BC29A7CF4200F3FD05 /* PlayerCareerAdepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCareerAdepter.swift; sourceTree = "<group>"; };
 		D99DA5D029A65E96007139D7 /* DateWiseMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateWiseMatchViewModel.swift; sourceTree = "<group>"; };
 		D99DA5D229A665E6007139D7 /* MatchInfoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoAdapter.swift; sourceTree = "<group>"; };
 		D9A6154D29A1FBAF004FA85B /* MatchDetailsAdepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsAdepter.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */,
 				D9A6154D29A1FBAF004FA85B /* MatchDetailsAdepter.swift */,
 				D99DA5D229A665E6007139D7 /* MatchInfoAdapter.swift */,
+				D96138BC29A7CF4200F3FD05 /* PlayerCareerAdepter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				896AB4A929A62408009A2BD3 /* DateWiseMatchViewController.swift in Sources */,
 				D9A6155029A21BCB004FA85B /* PlayersRepository.swift in Sources */,
 				D9D4EED5299D16FD002407C0 /* SearchPlayerViewController.swift in Sources */,
+				D96138BD29A7CF4200F3FD05 /* PlayerCareerAdepter.swift in Sources */,
 				D9A6156629A25C5C004FA85B /* ScoreCardHeader.swift in Sources */,
 				D9A6155229A22504004FA85B /* SearchPlayerViewModel.swift in Sources */,
 				89548A20299C75E100BADDF3 /* SceneDelegate.swift in Sources */,

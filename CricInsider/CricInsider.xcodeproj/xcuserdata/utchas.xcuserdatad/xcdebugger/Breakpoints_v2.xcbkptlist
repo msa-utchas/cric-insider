@@ -188,8 +188,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "getFinishedMatches()"
-            landmarkType = "7">
+            landmarkName = "HomeViewModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1032,6 +1032,131 @@
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "binder()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CEECA46-362D-4E65-89DB-90885B2C7AEF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/ViewController/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3033BDF6-7B67-4830-B361-05B4FCE3A9A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Controller/ViewController/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3033BDF6-7B67-4830-B361-05B4FCE3A9A5 - 3ab9e0fb63e2f7c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.HomeViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1544">
+               </Location>
+               <Location
+                  uuid = "3033BDF6-7B67-4830-B361-05B4FCE3A9A5 - 4342f481526eabd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.HomeViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "3033BDF6-7B67-4830-B361-05B4FCE3A9A5 - c86ff92f449a9fd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.HomeViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "3033BDF6-7B67-4830-B361-05B4FCE3A9A5 - 91cefd55bb1c1ef4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) await resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.HomeViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "3033BDF6-7B67-4830-B361-05B4FCE3A9A5 - 8cbd4abdc5d1cff7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(11) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.HomeViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "CricInsider"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C6C7772-5305-46C6-B263-F34553051E91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricInsider/Repositories/PlayersRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "getPlayerDetails(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

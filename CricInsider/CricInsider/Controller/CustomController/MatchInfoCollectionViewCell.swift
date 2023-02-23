@@ -76,17 +76,8 @@ class MatchInfoCollectionViewCell: UICollectionViewCell {
         timer?.invalidate()
     }
 
-    func updateTimeRemaining() {
-        // Calculate the time remaining
-        let timeRemaining = matchStartTime.timeIntervalSinceNow
-        
-        // Update the cell with the time remaining
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.day, .hour, .minute, .second]
-        formatter.unitsStyle = .abbreviated
-        let timeRemainingString = formatter.string(from: timeRemaining)!
-        labelStarsIn.text = "Match Starts In: " + timeRemainingString
-    }
+   
+    
     deinit{
         timer?.invalidate()
     }

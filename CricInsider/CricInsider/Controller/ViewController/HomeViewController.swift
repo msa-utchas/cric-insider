@@ -40,40 +40,30 @@ class HomeViewController: UIViewController {
         
         Task{
             await viewModel.getUpcomingMatches()
+
+
+
             await viewModel.getFinishedMatches()
+            // setup userDefault for notification if notification set today or not
+            
+            if let date = UserDefaults.standard.object(forKey: "Notification-Setup-Time") as? Date {
+                let calendar = Calendar.current
+                if calendar.isDateInToday(date) {
+                    print("Notification already set for today")
+                } else {
+                    await viewModel.setupNotificationForUpcomingMatches()
+                }
+            } else {
+                await viewModel.setupNotificationForUpcomingMatches()
+            }
+
+           
+
+
         }
         
         binder()
-        
-        
-        let content = UNMutableNotificationContent()
-        content.title = "My Notification Title"
-        content.body = "This is the notification body"
-        content.sound = UNNotificationSound.default
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
-
-        
-        let request = UNNotificationRequest(identifier: "myNotification", content: content, trigger: trigger)
-
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                // Handle any errors
-            } else {
-                print("notify added ")
-            }
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+           
         
     }
     

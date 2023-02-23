@@ -88,7 +88,7 @@ extension DateWiseMatchViewController: UITableViewDataSource, UITableViewDelegat
         cell.labelVisitorTeamFlag.sd_setImage(with: URL(string: data.visitorTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLocalTeamName.text = data.localTeamName
         cell.labelNote.text = data.note
-        print(data.note)
+    
         cell.labelLocalTeamFlag.sd_setImage(with: URL(string: data.localTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLeagueNameWithSeason.text = (data.leagueName ?? "") + "," + (data.seasonName ?? "")
         

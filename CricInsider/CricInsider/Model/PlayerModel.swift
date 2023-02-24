@@ -16,7 +16,7 @@ struct Player: Codable{
     let updatedAt: String?
     let lineup : Lineup?
     let country: Country?
-    let career: [Career]
+    let career: [Career]?
 }
 struct Lineup: Codable {
     let team_id: Int?

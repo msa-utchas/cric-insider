@@ -15,7 +15,10 @@ protocol SearchPlayerDataRepository{
     func getAllPlayers() async -> Result<PlayersModel,Error>
 }
 
-class PlayersRepository: SearchPlayerDataRepository{
+protocol PlayerCareerRepository{
+     func getPlayerDetails(for id: Int) async -> Result<PlayerCareerModel,Error>
+}
+class PlayersRepository: SearchPlayerDataRepository, PlayerCareerRepository{
     
     private let privateContext = CoreDataManager.shared.privateContext
     private let context = CoreDataManager.shared.context
@@ -102,17 +105,17 @@ class PlayersRepository: SearchPlayerDataRepository{
         }
     }
     
-    static func getPlayerDetails(for id: Int) async{
+     func getPlayerDetails(for id: Int) async -> Result<PlayerCareerModel,Error>{
         let url = URLBuilder.shared.getPlayerURL(playerID: id)
         let result: Result<PlayerModel,Error> = await ApiManager.shared.fetchDataFromApi(url: url)
         switch result{
             
         case .success(let data):
             let careerInfo = PlayerCareerAdepter.adapt(player: data)
-            print(careerInfo)
+            return .success(careerInfo)
             
         case .failure(let error):
-            print(error)
+            return .failure(error)
         }
     }
 }

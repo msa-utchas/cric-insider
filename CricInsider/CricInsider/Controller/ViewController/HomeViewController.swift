@@ -62,8 +62,7 @@ class HomeViewController: UIViewController {
 //            let url = URLBuilder.shared.getPlayerURL(playerID: 2)
 //            let dataarray: Result<PlayerModel,Error> = await ApiManager.shared.fetchDataFromApi(url: url)
 //            debugPrint(dataarray)
-        
-            await PlayersRepository.getPlayerDetails(for: 239)
+    
 
 
         }

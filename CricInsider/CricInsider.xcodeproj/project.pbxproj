@@ -40,6 +40,10 @@
 		898304F9299CCCD600CBBC7E /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898304F8299CCCD600CBBC7E /* URLBuilder.swift */; };
 		898304FB299CCD6700CBBC7E /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898304FA299CCD6700CBBC7E /* ApiManager.swift */; };
 		898304FE299CE1CB00CBBC7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898304FD299CE1CB00CBBC7E /* HomeViewController.swift */; };
+		89A69AFE29A862AE00962B26 /* PlayerDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A69AFD29A862AE00962B26 /* PlayerDetailsTableViewCell.xib */; };
+		89A69B0029A8668000962B26 /* PlayerDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A69AFF29A8668000962B26 /* PlayerDetailsTableViewCell.swift */; };
+		89A69B0229A8700C00962B26 /* ViewPlayerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A69B0129A8700C00962B26 /* ViewPlayerInfoViewController.swift */; };
+		89A69B0429A8797700962B26 /* ViewPlayerInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A69B0329A8797700962B26 /* ViewPlayerInfoViewModel.swift */; };
 		D912795829A53DAC006BF1B8 /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912795729A53DAC006BF1B8 /* UIViewExtention.swift */; };
 		D94C837329A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */; };
 		D953EAAE29A14931006E47F4 /* FinishedMatchAdepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */; };
@@ -95,6 +99,10 @@
 		898304F8299CCCD600CBBC7E /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		898304FA299CCD6700CBBC7E /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		898304FD299CE1CB00CBBC7E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		89A69AFD29A862AE00962B26 /* PlayerDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		89A69AFF29A8668000962B26 /* PlayerDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		89A69B0129A8700C00962B26 /* ViewPlayerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlayerInfoViewController.swift; sourceTree = "<group>"; };
+		89A69B0329A8797700962B26 /* ViewPlayerInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlayerInfoViewModel.swift; sourceTree = "<group>"; };
 		D912795729A53DAC006BF1B8 /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchAdepter.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 				893CF073299F7A7D009DEF6B /* MatchDetailsViewModel.swift */,
 				D9A6155129A22504004FA85B /* SearchPlayerViewModel.swift */,
 				D99DA5D029A65E96007139D7 /* DateWiseMatchViewModel.swift */,
+				89A69B0329A8797700962B26 /* ViewPlayerInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 				8926C399299DCA020033E5E1 /* MatchInfoCollectionViewCell.xib */,
 				D9A6156729A25DD8004FA85B /* ScoreCardHeader.xib */,
 				896AB4A329A60CD3009A2BD3 /* MatchesTableViewCell.xib */,
+				89A69AFD29A862AE00962B26 /* PlayerDetailsTableViewCell.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 				D9A6156129A252E3004FA85B /* ScoreCardTableViewCell.swift */,
 				D9A6156529A25C5C004FA85B /* ScoreCardHeader.swift */,
 				D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */,
+				89A69AFF29A8668000962B26 /* PlayerDetailsTableViewCell.swift */,
 			);
 			path = CustomController;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 				893CF06C299F4EC0009DEF6B /* MatchDetailsViewController.swift */,
 				898304FD299CE1CB00CBBC7E /* HomeViewController.swift */,
 				896AB4A829A62408009A2BD3 /* DateWiseMatchViewController.swift */,
+				89A69B0129A8700C00962B26 /* ViewPlayerInfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -384,6 +396,7 @@
 				8926C39A299DCA020033E5E1 /* MatchInfoCollectionViewCell.xib in Resources */,
 				D9A6156029A2515E004FA85B /* ScoreCardTableViewCell.xib in Resources */,
 				896AB4A729A61C36009A2BD3 /* Matches.storyboard in Resources */,
+				89A69AFE29A862AE00962B26 /* PlayerDetailsTableViewCell.xib in Resources */,
 				89548A2D299C75E300BADDF3 /* LaunchScreen.storyboard in Resources */,
 				D9A6156829A25DD8004FA85B /* ScoreCardHeader.xib in Resources */,
 				89548A2A299C75E300BADDF3 /* Assets.xcassets in Resources */,
@@ -401,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A69B0029A8668000962B26 /* PlayerDetailsTableViewCell.swift in Sources */,
 				89074F57299CBD3C00256BC5 /* PlayersModel.swift in Sources */,
 				896AB4A429A60CD3009A2BD3 /* MatchesTableViewCell.swift in Sources */,
 				89074F53299CBD1100256BC5 /* FixturesModel.swift in Sources */,
@@ -418,6 +432,7 @@
 				8926C3A4299E14A70033E5E1 /* DateExtensions.swift in Sources */,
 				D9DFE32029A10BE10079ACFA /* SquadListTableViewCell.swift in Sources */,
 				898304F9299CCCD600CBBC7E /* URLBuilder.swift in Sources */,
+				89A69B0229A8700C00962B26 /* ViewPlayerInfoViewController.swift in Sources */,
 				89548A1E299C75E100BADDF3 /* AppDelegate.swift in Sources */,
 				893CF070299F790B009DEF6B /* MatchInfoViewController.swift in Sources */,
 				D9A6156229A252E3004FA85B /* ScoreCardTableViewCell.swift in Sources */,
@@ -432,6 +447,7 @@
 				89074F51299CBCFE00256BC5 /* FixtureModel.swift in Sources */,
 				896AB4A929A62408009A2BD3 /* DateWiseMatchViewController.swift in Sources */,
 				D9A6155029A21BCB004FA85B /* PlayersRepository.swift in Sources */,
+				89A69B0429A8797700962B26 /* ViewPlayerInfoViewModel.swift in Sources */,
 				D9D4EED5299D16FD002407C0 /* SearchPlayerViewController.swift in Sources */,
 				D96138BD29A7CF4200F3FD05 /* PlayerCareerAdepter.swift in Sources */,
 				D9A6156629A25C5C004FA85B /* ScoreCardHeader.swift in Sources */,

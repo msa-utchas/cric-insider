@@ -555,8 +555,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
-            landmarkName = "getAllPlayers()"
-            landmarkType = "7">
+            landmarkName = "PlayersRepository"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "55BB1CFB-B169-4BC5-9193-9A1C1E2B371D - 7fe0ea28fa120a47"
@@ -888,8 +888,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "binder()"
-            landmarkType = "7">
+            landmarkName = "DateWiseMatchViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "0947156F-EC29-45D0-9E8F-4AF88C3C1799 - ce144c85c3033723"
@@ -936,7 +936,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "searchMatchAction(_:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1031,7 +1031,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "binder()"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1148,7 +1148,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9C6C7772-5305-46C6-B263-F34553051E91"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CricInsider/Repositories/PlayersRepository.swift"

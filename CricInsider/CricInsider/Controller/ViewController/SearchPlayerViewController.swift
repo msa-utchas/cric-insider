@@ -30,7 +30,7 @@ class SearchPlayerViewController: UIViewController {
             await viewModel.callApiAndSaveDataIfNeeded()
         }
         
-
+        
         print(count)
         
     }
@@ -50,10 +50,12 @@ extension SearchPlayerViewController:UITableViewDataSource, UITableViewDelegate{
         cell.labelName.text = playerData[indexPath.row].fullName
         cell.labelCountryName.text = playerData[indexPath.row].country
         cell.imageViewProfile.sd_setImage(with: URL(string: playerData[indexPath.row].imagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
-
+        
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.setSelectedPlayerId(id: Int(playerData[indexPath.row].id))
+    }
     
 }
 
@@ -89,7 +91,23 @@ extension SearchPlayerViewController{
             DispatchQueue.main.async {
                 self.tableViewSearchedPlayerList.reloadData()
             }
-
+            
         }.store(in: &cancelable)
+        
+        viewModel.$selectedPlayerId.sink(){[weak self] id in
+            guard let self = self else {return}
+            
+            if let id = id{
+                let vc = self.storyboard?.instantiateViewController(identifier: ViewPlayerInfoViewController.identifier) as! ViewPlayerInfoViewController
+                vc.loadViewIfNeeded()
+                Task{
+                    await vc.viewModel.getPlayerData(id:id)
+                  }
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }.store(in: &cancelable)
+        
     }
+    
 }

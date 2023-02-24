@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" name="custom1"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-Ca-iHt">
-                                <rect key="frame" x="10" y="74" width="373" height="40"/>
+                                <rect key="frame" x="10" y="118" width="373" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="V4V-f3-9rV"/>
                                 </constraints>
@@ -31,7 +31,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-vY-RVQ">
-                                <rect key="frame" x="0.0" y="139" width="393" height="630"/>
+                                <rect key="frame" x="0.0" y="183" width="393" height="586"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchedPlayerTableViewCell" id="pju-nN-NE9" customClass="SearchedPlayerTableViewCell" customModule="CricInsider" customModuleProvider="target">
@@ -132,7 +132,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-tA-stO">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enV-xF-zQT" userLabel="profilebackview">
                                         <rect key="frame" x="10" y="10" width="373" height="180"/>
@@ -151,14 +151,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bangladesh()" translatesAutoresizingMaskIntoConstraints="NO" id="upk-CV-xFs">
-                                                <rect key="frame" x="130" y="50.333333333333343" width="20" height="15"/>
+                                                <rect key="frame" x="130" y="50.333333333333329" width="20" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="WLN-Wz-lyn"/>
                                                     <constraint firstAttribute="width" constant="20" id="ueu-T0-gl2"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bnagladehs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMs-ZB-zQU">
-                                                <rect key="frame" x="155" y="50.333333333333343" width="63" height="13.333333333333336"/>
+                                                <rect key="frame" x="155" y="50.333333333333329" width="63" height="13.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -270,7 +270,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Naa-Lh-cj8">
-                                        <rect key="frame" x="10" y="200" width="373" height="466"/>
+                                        <rect key="frame" x="10" y="200" width="373" height="559"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -321,12 +321,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sBj-K6-Lfh" kind="relationship" relationship="rootViewController" id="cnn-kN-eQV"/>
+                        <segue destination="mWa-MK-82A" kind="relationship" relationship="rootViewController" id="rdD-Qt-ER0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="889-N5-UND" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="761"/>
+            <point key="canvasLocation" x="240" y="928"/>
         </scene>
     </scenes>
     <resources>

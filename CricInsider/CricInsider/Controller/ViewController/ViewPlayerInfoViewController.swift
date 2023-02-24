@@ -14,6 +14,7 @@ class ViewPlayerInfoViewController: UIViewController {
     private var cancelable: Set<AnyCancellable> = []
     var playerInfo: PlayerCareerModel?
     let viewModel =  ViewPlayerInfoViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,9 +23,6 @@ class ViewPlayerInfoViewController: UIViewController {
         
         tableViewStatistics.register(UINib(nibName: PlayerDetailsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PlayerDetailsTableViewCell.identifier)
         binder()
-        Task{
-            await viewModel.getPlayerData(id: 239)
-        }
         
     }
     
@@ -62,98 +60,109 @@ extension ViewPlayerInfoViewController: UITableViewDataSource,UITableViewDelegat
         if indexPath.section == 0{
             
             
-            if (indexPath.row == 0){
+            if indexPath.row == 0 {
                 cell.labelFormat.text = "Matches"
-                cell.labelODI.text = String(playerInfo?.odiCareer?.batting?.matches ?? 0)
-                cell.labelT20.text = String(playerInfo?.t20Career?.batting?.matches ?? 0)
-                cell.labelTest.text = String(playerInfo?.testCareer?.batting?.matches ?? 0)
-                cell.labelT20I.text = String(playerInfo?.t20iCareer?.batting?.matches ?? 0)
-            }
-            else if (indexPath.row == 1){
+                cell.labelODI.text = formatIntValue(playerInfo?.odiCareer?.batting?.matches)
+                cell.labelT20.text = formatIntValue(playerInfo?.t20Career?.batting?.matches)
+                cell.labelTest.text = formatIntValue(playerInfo?.testCareer?.batting?.matches)
+                cell.labelT20I.text = formatIntValue(playerInfo?.t20iCareer?.batting?.matches)
+            } else if indexPath.row == 1 {
                 cell.labelFormat.text = "Innings"
-                cell.labelODI.text = String(playerInfo?.odiCareer?.batting?.innings ?? 0)
-                cell.labelT20.text = String(playerInfo?.t20Career?.batting?.innings ?? 0)
-                cell.labelTest.text = String(playerInfo?.testCareer?.batting?.innings ?? 0)
-                cell.labelT20I.text = String(playerInfo?.t20iCareer?.batting?.innings ?? 0)
-            }
-            else if (indexPath.row == 2){
+                cell.labelODI.text = formatIntValue(playerInfo?.odiCareer?.batting?.innings)
+                cell.labelT20.text = formatIntValue(playerInfo?.t20Career?.batting?.innings)
+                cell.labelTest.text = formatIntValue(playerInfo?.testCareer?.batting?.innings)
+                cell.labelT20I.text = formatIntValue(playerInfo?.t20iCareer?.batting?.innings)
+            } else if indexPath.row == 2 {
                 cell.labelFormat.text = "Runs"
-                cell.labelODI.text = String(playerInfo?.odiCareer?.batting?.runs_scored ?? 0)
-                cell.labelT20.text = String(playerInfo?.t20Career?.batting?.runs_scored ?? 0)
-                cell.labelTest.text = String(playerInfo?.testCareer?.batting?.runs_scored ?? 0)
-                cell.labelT20I.text = String(playerInfo?.t20iCareer?.batting?.runs_scored ?? 0)
-            }
-            else if (indexPath.row == 3){
+                cell.labelODI.text = formatIntValue(playerInfo?.odiCareer?.batting?.runs_scored)
+                cell.labelT20.text = formatIntValue(playerInfo?.t20Career?.batting?.runs_scored)
+                cell.labelTest.text = formatIntValue(playerInfo?.testCareer?.batting?.runs_scored)
+                cell.labelT20I.text = formatIntValue(playerInfo?.t20iCareer?.batting?.runs_scored)
+            } else if indexPath.row == 3 {
                 cell.labelFormat.text = "Balls Faced"
-                cell.labelODI.text = String(playerInfo?.odiCareer?.batting?.balls_faced ?? 0)
-                cell.labelT20.text = String(playerInfo?.t20Career?.batting?.balls_faced ?? 0)
-                cell.labelTest.text = String(playerInfo?.testCareer?.batting?.balls_faced ?? 0)
-                cell.labelT20I.text = String(playerInfo?.t20iCareer?.batting?.balls_faced ?? 0)
-            }
-            else if (indexPath.row == 4){
+                cell.labelODI.text = formatDoubleValue(playerInfo?.odiCareer?.batting?.balls_faced)
+                cell.labelT20.text = formatDoubleValue(playerInfo?.t20Career?.batting?.balls_faced)
+                cell.labelTest.text = formatDoubleValue(playerInfo?.testCareer?.batting?.balls_faced)
+                cell.labelT20I.text = formatDoubleValue(playerInfo?.t20iCareer?.batting?.balls_faced)
+            } else if indexPath.row == 4 {
                 cell.labelFormat.text = "Average"
-                cell.labelODI.text = String(format: "%.2f",playerInfo?.odiCareer?.batting?.average ?? 0)
-                cell.labelT20.text = String(format: "%.2f",playerInfo?.t20Career?.batting?.average ?? 0)
-                cell.labelTest.text = String(format: "%.2f",playerInfo?.testCareer?.batting?.average ?? 0)
-                cell.labelT20I.text = String(format: "%.2f",playerInfo?.t20iCareer?.batting?.average ?? 0)
-            }
-            else if (indexPath.row == 5){
+                cell.labelODI.text = formatDoubleValue(playerInfo?.odiCareer?.batting?.average)
+                cell.labelT20.text = formatDoubleValue(playerInfo?.t20Career?.batting?.average)
+                cell.labelTest.text = formatDoubleValue(playerInfo?.testCareer?.batting?.average)
+                cell.labelT20I.text = formatDoubleValue(playerInfo?.t20iCareer?.batting?.average)
+            } else if indexPath.row == 5 {
                 cell.labelFormat.text = "Strike Rate"
-                cell.labelODI.text = String(format: "%.2f",playerInfo?.odiCareer?.batting?.strike_rate ?? 0)
-                cell.labelT20.text = String(format: "%.2f",playerInfo?.t20Career?.batting?.strike_rate ?? 0)
-                cell.labelTest.text = String(format: "%.2f",playerInfo?.testCareer?.batting?.strike_rate ?? 0)
-                cell.labelT20I.text = String(format: "%.2f",playerInfo?.t20iCareer?.batting?.strike_rate ?? 0)
+                cell.labelODI.text = formatDoubleValue(playerInfo?.odiCareer?.batting?.strike_rate)
+                cell.labelT20.text = formatDoubleValue(playerInfo?.t20Career?.batting?.strike_rate)
+                cell.labelTest.text = formatDoubleValue(playerInfo?.testCareer?.batting?.strike_rate)
+                cell.labelT20I.text = formatDoubleValue(playerInfo?.t20iCareer?.batting?.strike_rate)
             }
-            
         }
         else{
             if (indexPath.row == 0){
                 cell.labelFormat.text = "Matches"
-                cell.labelODI.text = String(playerInfo?.odiCareer?.bowling?.matches ?? 0)
-                cell.labelT20.text = String(playerInfo?.t20Career?.bowling?.matches ?? 0)
-                cell.labelTest.text = String(playerInfo?.testCareer?.bowling?.matches ?? 0)
-                cell.labelT20I.text = String(playerInfo?.t20iCareer?.bowling?.matches ?? 0)
+                cell.labelODI.text = formatIntValue(playerInfo?.odiCareer?.bowling?.matches)
+                cell.labelT20.text = formatIntValue(playerInfo?.t20Career?.bowling?.matches)
+                cell.labelTest.text = formatIntValue(playerInfo?.testCareer?.bowling?.matches)
+                cell.labelT20I.text = formatIntValue(playerInfo?.t20iCareer?.bowling?.matches)
             }
             else if (indexPath.row == 1){
                 cell.labelFormat.text = "Innings"
-                cell.labelODI.text = String(playerInfo?.odiCareer?.bowling?.innings ?? 0)
-                cell.labelT20.text = String(playerInfo?.t20Career?.bowling?.innings ?? 0)
-                cell.labelTest.text = String(playerInfo?.testCareer?.bowling?.innings ?? 0)
-                cell.labelT20I.text = String(playerInfo?.t20iCareer?.bowling?.innings ?? 0)
+                cell.labelODI.text = formatIntValue(playerInfo?.odiCareer?.bowling?.innings)
+                cell.labelT20.text = formatIntValue(playerInfo?.t20Career?.bowling?.innings)
+                cell.labelTest.text = formatIntValue(playerInfo?.testCareer?.bowling?.innings)
+                cell.labelT20I.text = formatIntValue(playerInfo?.t20iCareer?.bowling?.innings)
             }
             else if (indexPath.row == 2){
                 cell.labelFormat.text = "Overs"
-                cell.labelODI.text = String(format: "%.2f",playerInfo?.odiCareer?.bowling?.overs ?? 0)
-                cell.labelT20.text = String(format: "%.2f",playerInfo?.t20Career?.bowling?.overs ?? 0)
-                cell.labelTest.text = String(format: "%.2f",playerInfo?.testCareer?.bowling?.overs ?? 0)
-                cell.labelT20I.text = String(format: "%.2f",playerInfo?.t20iCareer?.bowling?.overs ?? 0)
+                cell.labelODI.text = formatDoubleValue(playerInfo?.odiCareer?.bowling?.overs)
+                cell.labelT20.text = formatDoubleValue(playerInfo?.t20Career?.bowling?.overs)
+                cell.labelTest.text = formatDoubleValue(playerInfo?.testCareer?.bowling?.overs)
+                cell.labelT20I.text = formatDoubleValue(playerInfo?.t20iCareer?.bowling?.overs)
             }
             else if (indexPath.row == 3){
                 cell.labelFormat.text = "Runs"
-                cell.labelODI.text = String(playerInfo?.odiCareer?.bowling?.runs ?? 0)
-                cell.labelT20.text = String(playerInfo?.t20Career?.bowling?.runs ?? 0)
-                cell.labelTest.text = String(playerInfo?.testCareer?.bowling?.runs ?? 0)
-                cell.labelT20I.text = String(playerInfo?.t20iCareer?.bowling?.runs ?? 0)
+                cell.labelODI.text = formatIntValue(playerInfo?.odiCareer?.bowling?.runs)
+                cell.labelT20.text = formatIntValue(playerInfo?.t20Career?.bowling?.runs)
+                cell.labelTest.text = formatIntValue(playerInfo?.testCareer?.bowling?.runs)
+                cell.labelT20I.text = formatIntValue(playerInfo?.t20iCareer?.bowling?.runs)
             }
             else if (indexPath.row == 4){
                 cell.labelFormat.text = "Wickets"
-                cell.labelODI.text = String(playerInfo?.odiCareer?.bowling?.wickets ?? 0)
-                cell.labelT20.text = String(playerInfo?.t20Career?.bowling?.wickets ?? 0)
-                cell.labelTest.text = String(playerInfo?.testCareer?.bowling?.wickets ?? 0)
-                cell.labelT20I.text = String(playerInfo?.t20iCareer?.bowling?.wickets ?? 0)
+                cell.labelODI.text = formatIntValue(playerInfo?.odiCareer?.bowling?.wickets)
+                cell.labelT20.text = formatIntValue(playerInfo?.t20Career?.bowling?.wickets)
+                cell.labelTest.text = formatIntValue(playerInfo?.testCareer?.bowling?.wickets)
+                cell.labelT20I.text = formatIntValue(playerInfo?.t20iCareer?.bowling?.wickets)
             }
             else if (indexPath.row == 5){
                 cell.labelFormat.text = "Economy"
-                cell.labelODI.text = String(format: "%.2f",playerInfo?.odiCareer?.bowling?.econ_rate ?? 0)
-                cell.labelT20.text = String(format: "%.2f",playerInfo?.t20Career?.bowling?.econ_rate ?? 0)
-                cell.labelTest.text = String(format: "%.2f",playerInfo?.testCareer?.bowling?.econ_rate ?? 0)
-                cell.labelT20I.text = String(format: "%.2f",playerInfo?.t20iCareer?.bowling?.econ_rate ?? 0)
+                cell.labelODI.text = formatDoubleValue(playerInfo?.odiCareer?.bowling?.econ_rate)
+                cell.labelT20.text = formatDoubleValue(playerInfo?.t20Career?.bowling?.econ_rate)
+                cell.labelTest.text = formatDoubleValue(playerInfo?.testCareer?.bowling?.econ_rate)
+                cell.labelT20I.text = formatDoubleValue(playerInfo?.t20iCareer?.bowling?.econ_rate)
             }
         }
-            
-            return cell
-        }
-
+        
+        return cell
+    }
     
+    func formatIntValue(_ value: Int?, defaultString: String = "N/A") -> String {
+        guard let value = value else {
+            return defaultString
+        }
+        if String(value) == "nan"{
+            return defaultString
+        }
+        return String(value)
+    }
+    func formatDoubleValue(_ value: Double?, format: String = "%.2f", defaultString: String = "N/A") -> String {
+        guard let value = value else {
+            return defaultString
+        }
+        if String(value) == "nan"{
+            return defaultString
+        }
+        return String(format: format, value)
+    }
     
 }

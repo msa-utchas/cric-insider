@@ -25,6 +25,12 @@ class ViewPlayerInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set white border to image
+        imageViewProfileImage.layer.borderWidth = 1
+        imageViewProfileImage.layer.masksToBounds = false
+        imageViewProfileImage.layer.borderColor = UIColor.white.cgColor
+//        imageViewProfileImage.layer.cornerRadius = 
+        imageViewProfileImage.clipsToBounds = true
         
         tableViewStatistics.dataSource = self
         tableViewStatistics.delegate = self
@@ -43,12 +49,12 @@ class ViewPlayerInfoViewController: UIViewController {
             if let data = data{
                 self.playerInfo = data
                 DispatchQueue.main.async {
-                    self.labelName.text = data.fullname
-                    self.labelCountryName.text = data.country?.name
-                    self.labelRole.text = data.position?.name
-                    self.labelBirthDate.text = data.dateofbirth
-                    self.labelBatingStyle.text = data.battingstyle
-                    self.labelBowlingStyle.text = data.bowlingstyle
+                    self.labelName.text = data.fullname ?? "N\\A"
+                    self.labelCountryName.text = data.country?.name ?? "N\\A"
+                    self.labelRole.text = data.position?.name ?? "N\\A"
+                    self.labelBirthDate.text = data.dateofbirth ?? "N\\A"
+                    self.labelBatingStyle.text = data.battingstyle ?? "N\\A"
+                    self.labelBowlingStyle.text = data.bowlingstyle ?? "N\\A"
                     self.imageViewProfileImage.sd_setImage(with: URL(string: data.image_path ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
                     self.labelCountryImage.sd_setImage(with: URL(string: data.country?.image_path ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
                     
@@ -78,6 +84,7 @@ extension ViewPlayerInfoViewController: UITableViewDataSource,UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewStatistics.dequeueReusableCell(withIdentifier: PlayerDetailsTableViewCell.identifier, for: indexPath) as!PlayerDetailsTableViewCell
+        cell.selectionStyle = .none
         if indexPath.section == 0{
             
             
@@ -170,9 +177,9 @@ extension ViewPlayerInfoViewController: UITableViewDataSource,UITableViewDelegat
         let cell = tableViewStatistics.dequeueReusableHeaderFooterView(withIdentifier: PlayerDetailsHeader.identifier) as! PlayerDetailsHeader
         return cell
     }
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        100
-//    }
+    //func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        50
+    //}
     func formatIntValue(_ value: Int?, defaultString: String = "N/A") -> String {
         guard let value = value else {
             return defaultString

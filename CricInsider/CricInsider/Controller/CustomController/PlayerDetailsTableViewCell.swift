@@ -13,7 +13,8 @@ class PlayerDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var labelTest: UILabel!
     @IBOutlet weak var labelODI: UILabel!
     @IBOutlet weak var labelFormat: UILabel!
- 
+    @IBOutlet weak var playerDetailsBackgroundView: UIView!
+    
     @IBOutlet weak var labelT20I: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,7 @@ class PlayerDetailsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+     
      
     }
 

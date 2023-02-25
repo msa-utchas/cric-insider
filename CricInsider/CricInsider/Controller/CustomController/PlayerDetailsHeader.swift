@@ -9,11 +9,14 @@ import UIKit
 
 class PlayerDetailsHeader: UITableViewHeaderFooterView {
 
-       
-        static let identifier = "PlayerDetailsHeader"
+    @IBOutlet weak var labelFormat: UILabel!
+    
+    @IBOutlet weak var xibBackView: UIView!
+    static let identifier = "PlayerDetailsHeader"
         override func awakeFromNib() {
             super.awakeFromNib()
             // Initialization code
+            xibBackView.addShadow()
         }
 
         

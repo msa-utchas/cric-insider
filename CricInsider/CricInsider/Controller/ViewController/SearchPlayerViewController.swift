@@ -10,6 +10,8 @@ import SDWebImage
 import Combine
 
 class SearchPlayerViewController: UIViewController {
+    @IBOutlet weak var viewBackground: UIView!
+    @IBOutlet weak var labelSearchPlayerText: UILabel!
     var playerData: [PlayersInfo] = []
     let viewModel = SearchPlayerViewModel()
     var count: Int = 10
@@ -20,6 +22,9 @@ class SearchPlayerViewController: UIViewController {
     @IBOutlet weak var tableViewSearchedPlayerList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewBackground.addShadow()
+        labelSearchPlayerText.layer.masksToBounds = true
+        labelSearchPlayerText.layer.cornerRadius = 8
         binder()
         searchTextField.delegate = self
         tableViewSearchedPlayerList.delegate = self

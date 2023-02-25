@@ -99,6 +99,20 @@ class LeagueWiseMatchesViewController: UIViewController {
             }
             
         }.store(in: &cancelable)
+        viewModel.$selectedIndexData.sink(){[weak self] data in
+        guard let self else {return}
+            if let data = data{
+                let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+                let viewController = storyBoard.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
+                viewController.loadViewIfNeeded()
+                viewController.matchDetailsViewModel.matchID = data.fixtureId
+                Task{
+                    await viewController.matchDetailsViewModel.setMatchDetails(id: data.fixtureId ?? 47099)
+                }
+                self.navigationController?.pushViewController(viewController, animated: true)
+                
+            }
+        }.store(in: &cancelable)
     }
    
     
@@ -151,6 +165,9 @@ extension LeagueWiseMatchesViewController: UITableViewDataSource, UITableViewDel
         
 
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.setSelectedIndexData(data: matchData[indexPath.row])
     }
     
 }

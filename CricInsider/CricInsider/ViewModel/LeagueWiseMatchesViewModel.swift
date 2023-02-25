@@ -10,8 +10,9 @@ import Combine
 class LeagueWiseMatchesViewModel {
     var leagueWiseFixtureRepository: LeagueWiseFixtureRepository
     @Published var matchesInfo: [MatchInfoModel]? = []
-    @Published var isLoading: Bool?
+   
     @Published var leaguesList: [League]?
+    @Published var selectedIndexData: MatchInfoModel?
     
     init(leagueWiseFixtureRepository : LeagueWiseFixtureRepository = FixturesRepository()) {
         self.leagueWiseFixtureRepository = leagueWiseFixtureRepository
@@ -28,7 +29,7 @@ class LeagueWiseMatchesViewModel {
         }
     }
     func getMatchesInfo(leagueId: Int, status: String) async {
-        isLoading = true
+     
         let data = await leagueWiseFixtureRepository.getLeagueWiseFixtures(id: leagueId, status: status)
         switch data{
         case .success(let matches):
@@ -37,6 +38,10 @@ class LeagueWiseMatchesViewModel {
             print(error.localizedDescription)
 
         }
-        isLoading = false
+       
     }
+    func setSelectedIndexData(data : MatchInfoModel){
+        selectedIndexData = data
+    }
+    
 }

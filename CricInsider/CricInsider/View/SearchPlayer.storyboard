@@ -297,6 +297,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="tLW-65-6vC"/>
                     <connections>
+                        <outlet property="imageViewProfileImage" destination="6PY-19-cau" id="Hjm-xh-yC7"/>
+                        <outlet property="labelBatingStyle" destination="PuV-5X-FSU" id="3dC-hq-azS"/>
+                        <outlet property="labelBirthDate" destination="C5Z-uw-FxJ" id="q4i-6d-cAm"/>
+                        <outlet property="labelBowlingStyle" destination="JOY-Ck-sRn" id="GW9-J5-tXC"/>
+                        <outlet property="labelCountryImage" destination="upk-CV-xFs" id="bBH-Rk-LMV"/>
+                        <outlet property="labelCountryName" destination="QMs-ZB-zQU" id="ps5-E3-b9m"/>
+                        <outlet property="labelName" destination="uDG-2Y-xoz" id="56y-0z-EeA"/>
+                        <outlet property="labelRole" destination="Sek-ix-8D2" id="7SS-4O-w1a"/>
                         <outlet property="tableViewStatistics" destination="Naa-Lh-cj8" id="OmZ-ko-kzP"/>
                     </connections>
                 </viewController>

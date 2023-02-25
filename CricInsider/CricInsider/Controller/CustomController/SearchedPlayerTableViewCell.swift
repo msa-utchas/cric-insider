@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchedPlayerTableViewCell: UITableViewCell {
-    static let Identifier: String = "SearchedPlayerTableViewCell"
+    static let identifier: String = "SearchedPlayerTableViewCell"
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var imageViewProfile: UIImageView!

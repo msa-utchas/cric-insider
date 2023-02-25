@@ -9,6 +9,14 @@ import UIKit
 import Combine
 
 class ViewPlayerInfoViewController: UIViewController {
+    @IBOutlet weak var labelCountryImage: UIImageView!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelCountryName: UILabel!
+    @IBOutlet weak var labelBirthDate: UILabel!
+    @IBOutlet weak var labelRole: UILabel!
+    @IBOutlet weak var labelBatingStyle: UILabel!
+    @IBOutlet weak var labelBowlingStyle: UILabel!
+    @IBOutlet weak var imageViewProfileImage: UIImageView!
     @IBOutlet weak var tableViewStatistics: UITableView!
     static let identifier  = "ViewPlayerInfoViewController"
     private var cancelable: Set<AnyCancellable> = []
@@ -22,6 +30,9 @@ class ViewPlayerInfoViewController: UIViewController {
         tableViewStatistics.delegate = self
         
         tableViewStatistics.register(UINib(nibName: PlayerDetailsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PlayerDetailsTableViewCell.identifier)
+        
+        
+        tableViewStatistics.register(UINib(nibName: PlayerDetailsHeader.identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: PlayerDetailsHeader.identifier)
         binder()
         
     }
@@ -32,6 +43,15 @@ class ViewPlayerInfoViewController: UIViewController {
             if let data = data{
                 self.playerInfo = data
                 DispatchQueue.main.async {
+                    self.labelName.text = data.fullname
+                    self.labelCountryName.text = data.country?.name
+                    self.labelRole.text = data.position?.name
+                    self.labelBirthDate.text = data.dateofbirth
+                    self.labelBatingStyle.text = data.battingstyle
+                    self.labelBowlingStyle.text = data.bowlingstyle
+                    self.imageViewProfileImage.sd_setImage(with: URL(string: data.image_path ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
+                    self.labelCountryImage.sd_setImage(with: URL(string: data.country?.image_path ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
+                    
                     self.tableViewStatistics.reloadData()
                 }
             }
@@ -54,6 +74,7 @@ extension ViewPlayerInfoViewController: UITableViewDataSource,UITableViewDelegat
         }
         return 0
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewStatistics.dequeueReusableCell(withIdentifier: PlayerDetailsTableViewCell.identifier, for: indexPath) as!PlayerDetailsTableViewCell
@@ -145,7 +166,13 @@ extension ViewPlayerInfoViewController: UITableViewDataSource,UITableViewDelegat
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableViewStatistics.dequeueReusableHeaderFooterView(withIdentifier: PlayerDetailsHeader.identifier) as! PlayerDetailsHeader
+        return cell
+    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        100
+//    }
     func formatIntValue(_ value: Int?, defaultString: String = "N/A") -> String {
         guard let value = value else {
             return defaultString
@@ -159,7 +186,7 @@ extension ViewPlayerInfoViewController: UITableViewDataSource,UITableViewDelegat
         guard let value = value else {
             return defaultString
         }
-        if String(value) == "nan"{
+        if String(value) == "nan" {
             return defaultString
         }
         return String(format: format, value)

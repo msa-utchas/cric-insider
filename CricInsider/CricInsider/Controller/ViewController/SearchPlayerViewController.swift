@@ -26,6 +26,7 @@ class SearchPlayerViewController: UIViewController {
         tableViewSearchedPlayerList.dataSource = self
         //tableViewTopConstraint.constant = -10
         tableViewSearchedPlayerList.layer.cornerRadius = 10
+        tableViewSearchedPlayerList.register(UINib(nibName: PlayerDetailsHeader.identifier, bundle: nil), forCellReuseIdentifier: PlayerDetailsHeader.identifier)
         Task{
             await viewModel.callApiAndSaveDataIfNeeded()
         }
@@ -46,7 +47,7 @@ extension SearchPlayerViewController:UITableViewDataSource, UITableViewDelegate{
         return "Player List"
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableViewSearchedPlayerList.dequeueReusableCell(withIdentifier: SearchedPlayerTableViewCell.Identifier, for: indexPath) as! SearchedPlayerTableViewCell
+        let cell = tableViewSearchedPlayerList.dequeueReusableCell(withIdentifier: SearchedPlayerTableViewCell.identifier, for: indexPath) as! SearchedPlayerTableViewCell
         cell.labelName.text = playerData[indexPath.row].fullName
         cell.labelCountryName.text = playerData[indexPath.row].country
         cell.imageViewProfile.sd_setImage(with: URL(string: playerData[indexPath.row].imagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
@@ -56,6 +57,7 @@ extension SearchPlayerViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.setSelectedPlayerId(id: Int(playerData[indexPath.row].id))
     }
+    
     
 }
 

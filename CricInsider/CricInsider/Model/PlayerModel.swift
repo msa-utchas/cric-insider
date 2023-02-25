@@ -32,7 +32,7 @@ struct Country:Codable {
     let resource: String?
     let id, continent_id: Int?
     let name: String?
-    let imagep_path: String?
+    let image_path: String?
     let updatedAt: String?
 }
 

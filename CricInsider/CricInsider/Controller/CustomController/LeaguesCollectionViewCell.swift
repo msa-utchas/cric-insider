@@ -18,6 +18,18 @@ class LeaguesCollectionViewCell: UICollectionViewCell {
         
     }
     
-  
+    override var isSelected: Bool {
+            didSet {
+                if isSelected {
+                    // Change appearance when selected
+                    self.viewBackground.backgroundColor = UIColor(named: "custom1")
+                    self.imageViewCodeName.textColor = .white
+                } else {
+                    // Change appearance when deselected
+                    self.imageViewCodeName.textColor = .black
+                    self.viewBackground.backgroundColor = .white
+                }
+            }
+        }
     
 }

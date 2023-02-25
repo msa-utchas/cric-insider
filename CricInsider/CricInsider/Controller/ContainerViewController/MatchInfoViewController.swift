@@ -1,10 +1,3 @@
-//
-//  MatchInfoViewController.swift
-//  CricInsider
-//
-//  Created by BJIT on 17/2/23.
-//
-
 import UIKit
 import Combine
 import SDWebImage

@@ -225,8 +225,8 @@
                                             <action selector="getSelectedMatchSegment:" destination="4ln-ob-L28" eventType="valueChanged" id="bpG-gh-hSp"/>
                                         </connections>
                                     </segmentedControl>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yyd-5B-WcC">
-                                        <rect key="frame" x="0.0" y="220" width="393" height="446"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yyd-5B-WcC">
+                                        <rect key="frame" x="0.0" y="225" width="393" height="441"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -238,7 +238,7 @@
                                     <constraint firstItem="2yv-zS-COR" firstAttribute="centerX" secondItem="rDe-DF-7oj" secondAttribute="centerX" id="QEv-S9-TDb"/>
                                     <constraint firstItem="Yyd-5B-WcC" firstAttribute="leading" secondItem="rDe-DF-7oj" secondAttribute="leading" id="RBX-84-31n"/>
                                     <constraint firstAttribute="trailing" secondItem="Yyd-5B-WcC" secondAttribute="trailing" id="RD5-df-gbH"/>
-                                    <constraint firstItem="Yyd-5B-WcC" firstAttribute="top" secondItem="2yv-zS-COR" secondAttribute="bottom" id="U2E-tT-WAZ"/>
+                                    <constraint firstItem="Yyd-5B-WcC" firstAttribute="top" secondItem="2yv-zS-COR" secondAttribute="bottom" constant="5" id="U2E-tT-WAZ"/>
                                     <constraint firstItem="2yv-zS-COR" firstAttribute="top" secondItem="Jsi-ff-CbR" secondAttribute="bottom" id="WCt-7T-Zmu"/>
                                     <constraint firstItem="Jsi-ff-CbR" firstAttribute="leading" secondItem="rDe-DF-7oj" secondAttribute="leading" id="aPt-3l-9kQ"/>
                                     <constraint firstItem="2yv-zS-COR" firstAttribute="leading" secondItem="rDe-DF-7oj" secondAttribute="leading" id="maE-uh-uGV"/>

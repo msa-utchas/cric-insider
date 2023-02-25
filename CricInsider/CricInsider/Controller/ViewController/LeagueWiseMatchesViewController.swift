@@ -84,8 +84,9 @@ class LeagueWiseMatchesViewController: UIViewController {
         viewModel.$matchesInfo.sink{[weak self] data in
             guard let self else {return}
             if let data = data{
-                self.matchData = data
+                
                 DispatchQueue.main.async {
+                    self.matchData = data
                     self.tableViewMatches.reloadData()
                 }
             }
@@ -111,10 +112,15 @@ extension LeagueWiseMatchesViewController: UICollectionViewDataSource, UICollect
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedLeagueId = leagueList[indexPath.row].id
+        let cell = collectionView.cellForItem(at: indexPath) as! LeaguesCollectionViewCell
+        cell.isSelected = true
         Task{
             await viewModel.getMatchesInfo(leagueId: selectedLeagueId, status: selectedStatus)
         }
     }
+    
+    
+    
 }
 
 extension LeagueWiseMatchesViewController: UITableViewDataSource, UITableViewDelegate {

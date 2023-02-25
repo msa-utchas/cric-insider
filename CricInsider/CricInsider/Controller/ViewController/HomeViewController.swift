@@ -1,4 +1,3 @@
-
 import UIKit
 import Combine
 import SDWebImage
@@ -8,68 +7,35 @@ import Alamofire
 class HomeViewController: UIViewController {
     
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewFinishedMatches: UITableView!
     @IBOutlet weak var collectionBackgroundHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewMatches: UICollectionView!
     
-    
     private var cancelable: Set<AnyCancellable> = []
     var viewModel = HomeViewModel()
-    //var finishedMatches: [Data]? = []
     var upcomingMatchList: [UpcomingMatchModel] = []
     var finishedMatches: [FinishedMatchesModel] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+      
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewFinishedMatches.dataSource = self
         tableViewFinishedMatches.delegate = self
+        
         collectionViewMatches.delegate = self
         collectionViewMatches.dataSource = self
         collectionViewMatches.register(UINib(nibName: MatchInfoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MatchInfoCollectionViewCell.identifier)
         collectionViewFlowLayoutSetup()
-        //self.navigationController?.isNavigationBarHidden = true
-//        labelFinishedMatchTitle.layer.cornerRadius = 10
-//        labelFinishedMatchTitle.layer.masksToBounds = true
-       
         
-       
-    
-        
-        Task{
-            
-            await viewModel.getUpcomingMatches()
-
-
-
-            await viewModel.getFinishedMatches()
-            // setup userDefault for notification if notification set today or not
-            
-            if let date = UserDefaults.standard.object(forKey: "Notification-Setup-Time") as? Date {
-                let calendar = Calendar.current
-                if calendar.isDateInToday(date) {
-                    print("Notification already set for today")
-                } else {
-                    await viewModel.setupNotificationForUpcomingMatches()
-                }
-            } else {
-                await viewModel.setupNotificationForUpcomingMatches()
-            }
-//            let url = URLBuilder.shared.getPlayerURL(playerID: 2)
-//            let dataarray: Result<PlayerModel,Error> = await ApiManager.shared.fetchDataFromApi(url: url)
-//            debugPrint(dataarray)
-    
-
-
-        }
-        
+        getDataFromApi()
         binder()
-           
-        
     }
     
     fileprivate func collectionViewFlowLayoutSetup() {
@@ -111,7 +77,6 @@ class HomeViewController: UIViewController {
                 self.tableViewFinishedMatches.reloadData()
             }
             
-            
         }.store(in: &cancelable)
         
         viewModel.$finishedMatchSelectedID.sink{[weak self] selectedId in
@@ -125,6 +90,13 @@ class HomeViewController: UIViewController {
                 }
                 self.navigationController?.pushViewController(viewController, animated: true)
                 
+            }
+            
+        }.store(in: &cancelable)
+        viewModel.$errorMessage.sink(){[weak self] message in
+            guard let self = self else {return}
+            if let message = message{
+                self.showAlert(title: "Network Error", message: message)
             }
             
         }.store(in: &cancelable)
@@ -145,13 +117,13 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
         let match = finishedMatches[indexPath.row]
         cell.labelLeagueInfo.text = match.leagueName ?? "__"
         cell.labelWiningInfo.text = match.note ?? "__"
-//        cell..text = match.localTeam?.code
-//        cell.labelTeamB.text = match.visitorTeam?.code
+        //        cell..text = match.localTeam?.code
+        //        cell.labelTeamB.text = match.visitorTeam?.code
         cell.labelTeamAName.text = match.localTeam?.code ?? ""
         cell.labelTeamBName.text = match.visitorTeam?.code ?? ""
         cell.labelTeamAScore.text = String(match.localTeamRun?.score ?? 0) + "-" + String(match.localTeamRun?.wickets ?? 0) + "(" + String(match.localTeamRun?.overs ?? 0.0) + ")"
         cell.labelTeamBScore.text = String(match.visitorTeamRun?.score ?? 0) + "-" + String(match.visitorTeamRun?.wickets ?? 0) + "(" + String(match.visitorTeamRun?.overs ?? 0.0) + ")"
-
+        
         cell.teamAImageView.sd_setImage(with: URL(string: match.localTeam?.image_path ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
         cell.teamBImageView.sd_setImage(with: URL(string: match.visitorTeam?.image_path ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelDate.text = ((match.date ?? "") + " " + (match.time ?? ""))
@@ -165,7 +137,7 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate{
             viewModel.setTableViewSelectedIndex(fixtureId: fixtureId)
         }
     }
- }
+}
 
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -220,7 +192,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width, height:collectionViewMatches.bounds.height)
     }
@@ -233,3 +205,43 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
 }
+
+
+
+extension HomeViewController{
+    
+    func getDataFromApi(){
+        Task{
+            activityIndicator.startAnimating()
+            if  NetworkReachabilityManager()!.isReachable{
+                
+                view.isUserInteractionEnabled = false
+                await viewModel.getUpcomingMatches()
+                await viewModel.getFinishedMatches()
+                if let date = UserDefaults.standard.object(forKey: "Notification-Setup-Time") as? Date {
+                    let calendar = Calendar.current
+                    if !calendar.isDateInToday(date) {
+                        await viewModel.setupNotificationForUpcomingMatches()
+                    }
+                } else {
+                    await viewModel.setupNotificationForUpcomingMatches()
+                }
+                activityIndicator.stopAnimating()
+                view.isUserInteractionEnabled = true
+            }
+            else{
+                showAlert(title: "Network Error", message: "Please check your internet connection and try again")
+            }
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {[weak self] _ in
+            guard let self = self else {return}
+            self.getDataFromApi()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+}
+

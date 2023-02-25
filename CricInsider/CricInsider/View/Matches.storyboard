@@ -244,20 +244,29 @@
                                     <constraint firstItem="2yv-zS-COR" firstAttribute="leading" secondItem="rDe-DF-7oj" secondAttribute="leading" id="maE-uh-uGV"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AYC-AP-ttj">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XvQ-Fp-cCe"/>
                         <color key="backgroundColor" name="custom1"/>
                         <constraints>
+                            <constraint firstItem="XvQ-Fp-cCe" firstAttribute="trailing" secondItem="AYC-AP-ttj" secondAttribute="trailing" id="2nZ-aD-a44"/>
+                            <constraint firstItem="XvQ-Fp-cCe" firstAttribute="bottom" secondItem="AYC-AP-ttj" secondAttribute="bottom" id="KcI-nu-szU"/>
+                            <constraint firstItem="AYC-AP-ttj" firstAttribute="leading" secondItem="XvQ-Fp-cCe" secondAttribute="leading" id="MNW-Bd-V9n"/>
                             <constraint firstItem="rDe-DF-7oj" firstAttribute="leading" secondItem="XvQ-Fp-cCe" secondAttribute="leading" id="VtG-2t-W1z"/>
                             <constraint firstItem="XvQ-Fp-cCe" firstAttribute="trailing" secondItem="rDe-DF-7oj" secondAttribute="trailing" id="YzY-lL-v7W"/>
                             <constraint firstItem="rDe-DF-7oj" firstAttribute="leading" secondItem="XvQ-Fp-cCe" secondAttribute="leading" id="amz-2l-nO8"/>
                             <constraint firstItem="rDe-DF-7oj" firstAttribute="top" secondItem="XvQ-Fp-cCe" secondAttribute="top" id="fZY-e8-3wE"/>
                             <constraint firstItem="rDe-DF-7oj" firstAttribute="top" secondItem="XvQ-Fp-cCe" secondAttribute="top" id="iyQ-Hh-JIU"/>
                             <constraint firstItem="XvQ-Fp-cCe" firstAttribute="bottom" secondItem="rDe-DF-7oj" secondAttribute="bottom" id="oL6-kI-X2F"/>
+                            <constraint firstItem="AYC-AP-ttj" firstAttribute="top" secondItem="XvQ-Fp-cCe" secondAttribute="top" id="wdZ-cY-6Ca"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L3P-0C-a6w"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="AYC-AP-ttj" id="Bc4-qW-W2I"/>
                         <outlet property="collectionViewLeague" destination="Jsi-ff-CbR" id="gvP-3P-Qgn"/>
                         <outlet property="matchSegmentControl" destination="2yv-zS-COR" id="tmA-ei-6Qn"/>
                         <outlet property="tableViewMatches" destination="Yyd-5B-WcC" id="IBo-Ua-sIF"/>
@@ -265,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dh-25-uwB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2078.6259541984732" y="-185.21126760563382"/>
+            <point key="canvasLocation" x="2228" y="-88"/>
         </scene>
         <!--Matches-->
         <scene sceneID="VJN-hu-N4T">

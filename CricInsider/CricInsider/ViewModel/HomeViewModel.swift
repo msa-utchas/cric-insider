@@ -16,6 +16,7 @@ class HomeViewModel{
     @Published var finishedMatches:[FinishedMatchesModel] = []
     @Published var upcomingMatchSelectedID : Int?
     @Published var finishedMatchSelectedID : Int?
+    @Published var errorMessage: String?
     
     
     var timer: Timer?
@@ -33,8 +34,8 @@ class HomeViewModel{
         case .success(let data):
             await setUpNotification(data: data)
             
-        case .failure(_):
-            print("hello")
+        case .failure(let error):
+            errorMessage = error.localizedDescription
         }
     }
     
@@ -44,7 +45,8 @@ class HomeViewModel{
         case .success(let data):
             upcomingMatches = data
         case .failure(let error):
-            debugPrint(error.localizedDescription)
+            print(error.localizedDescription)
+            errorMessage = "Something went Wrong. Please try again"
         }
         
     }
@@ -55,6 +57,7 @@ class HomeViewModel{
             finishedMatches = data
         case .failure(let error):
             debugPrint(error.localizedDescription)
+            errorMessage = "Something went Wrong. Please try again"
         }
         
     }

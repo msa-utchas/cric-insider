@@ -12,6 +12,7 @@ import SDWebImage
 
 class LeagueWiseMatchesViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var matchSegmentControl: UISegmentedControl!
     @IBOutlet weak var tableViewMatches: UITableView!
     @IBOutlet weak var collectionViewLeague: UICollectionView!
@@ -47,6 +48,9 @@ class LeagueWiseMatchesViewController: UIViewController {
         }
         
     }
+    
+    
+    
     @IBAction func getSelectedMatchSegment(_ sender: Any) {
         switch matchSegmentControl.selectedSegmentIndex {
         case 0:
@@ -59,9 +63,12 @@ class LeagueWiseMatchesViewController: UIViewController {
             selectedStatus = "NS"
         }
         Task{
-            await viewModel.getMatchesInfo(leagueId: selectedLeagueId, status: selectedStatus)
-        }
-    }
+            if let selectedLeagueId = selectedLeagueId{
+                await viewModel.getMatchesInfo(leagueId: selectedLeagueId, status: selectedStatus)
+                
+            }
+}        }
+    
     
     func binder() {
         viewModel.$leaguesList.sink{[weak self] data in
@@ -146,4 +153,14 @@ extension LeagueWiseMatchesViewController: UITableViewDataSource, UITableViewDel
         return cell
     }
     
+}
+extension LeagueWiseMatchesViewController {
+    
+    func showAlert(title: String, message: String, retry: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }

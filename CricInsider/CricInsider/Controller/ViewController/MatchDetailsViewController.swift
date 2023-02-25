@@ -16,9 +16,14 @@ class MatchDetailsViewController: UIViewController {
     
     @IBOutlet weak var matchInfoSegmentControl: UISegmentedControl!
     @IBOutlet weak var scoreCardContainerView: UIView!
+    
     var selectedFixtureId: Int!
+    var matchStatus:String!
+    
     var matchDetailsViewModel = MatchDetailsViewModel.shared
     var cancelable: Set<AnyCancellable> = []
+    var timer = Timer()
+    var timerStatus: Bool = false
     override func viewDidLoad() {
 
         super.viewDidLoad()

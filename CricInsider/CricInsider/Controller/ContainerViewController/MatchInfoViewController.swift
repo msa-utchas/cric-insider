@@ -13,8 +13,7 @@ class MatchInfoViewController: UIViewController {
     @IBOutlet weak var venueBackgroundView: UIView!
     private var cancelable: Set<AnyCancellable> = []
     let matchInfoViewModel = MatchDetailsViewModel.shared
-    var timer = Timer()
-    var timerStatus: Bool = false
+ 
     
     @IBOutlet weak var matchStatus: UILabel!
     
@@ -73,48 +72,27 @@ class MatchInfoViewController: UIViewController {
                     self.matchStatus.text = matchDetails.status
                     if (matchDetails.status == "NS"){
                         self.matchStatus.text = "Upcoming"
-                        
                     }
                       
-                    if (matchDetails.status == "1st Innings" || matchDetails.status == "2nd Innings" ){
-                        if !self.timerStatus{
-                            self.startTimer()
-                            self.timerStatus = true
-                        }
-                        
-                        
-                    }
-                    else{
-                        self.timer.invalidate()
-                    }
-                    
-                    
-                    
                 }
                 
             }
         }.store(in: &cancelable)
     }
     
-    func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { [weak self] _ in
-            guard let self = self else {return}
-            Task{
-                await self.matchInfoViewModel.setMatchDetails(id: self.matchInfoViewModel.matchID!)
-                print("hello")
-            }
-            
-            
-        })
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("timer Stoped")
-  
-        timer.invalidate()
-    }
-    deinit{
-        timer.invalidate()
-    }
+//    func startTimer() {
+//        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { [weak self] _ in
+//            guard let self = self else {return}
+//            Task{
+//                print("api")
+//                await self.matchInfoViewModel.setMatchDetails(id: self.matchInfoViewModel.matchID!)
+//                print("hello")
+//            }
+//
+//
+//        })
+//    }
+    
+    
     
 }

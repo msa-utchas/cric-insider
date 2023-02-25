@@ -80,6 +80,7 @@ struct League: Codable {
     let updated_at: String?
 }
 
+
 // MARK: - Season
 struct Season: Codable {
     let resource: String?

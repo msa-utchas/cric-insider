@@ -198,10 +198,10 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-ff-CbR">
-                                        <rect key="frame" x="0.0" y="10" width="393" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="eNP-iT-TAt"/>
+                                            <constraint firstAttribute="height" constant="180" id="eNP-iT-TAt"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NXW-ca-Ki7">
                                             <size key="itemSize" width="128" height="128"/>
@@ -212,7 +212,7 @@
                                         <cells/>
                                     </collectionView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2yv-zS-COR">
-                                        <rect key="frame" x="0.0" y="210" width="393" height="41"/>
+                                        <rect key="frame" x="0.0" y="180" width="393" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="RoT-Ob-Edr"/>
                                         </constraints>
@@ -221,16 +221,19 @@
                                             <segment title="Recent"/>
                                             <segment title="Live"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="getSelectedMatchSegment:" destination="4ln-ob-L28" eventType="valueChanged" id="bpG-gh-hSp"/>
+                                        </connections>
                                     </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yyd-5B-WcC">
-                                        <rect key="frame" x="0.0" y="250" width="393" height="416"/>
+                                        <rect key="frame" x="0.0" y="220" width="393" height="446"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Jsi-ff-CbR" firstAttribute="centerX" secondItem="rDe-DF-7oj" secondAttribute="centerX" id="Ag0-fX-Q21"/>
-                                    <constraint firstItem="Jsi-ff-CbR" firstAttribute="top" secondItem="rDe-DF-7oj" secondAttribute="top" constant="10" id="LVu-Mw-6Y8"/>
+                                    <constraint firstItem="Jsi-ff-CbR" firstAttribute="top" secondItem="rDe-DF-7oj" secondAttribute="top" id="LVu-Mw-6Y8"/>
                                     <constraint firstAttribute="bottom" secondItem="Yyd-5B-WcC" secondAttribute="bottom" id="OHd-5U-ukT"/>
                                     <constraint firstItem="2yv-zS-COR" firstAttribute="centerX" secondItem="rDe-DF-7oj" secondAttribute="centerX" id="QEv-S9-TDb"/>
                                     <constraint firstItem="Yyd-5B-WcC" firstAttribute="leading" secondItem="rDe-DF-7oj" secondAttribute="leading" id="RBX-84-31n"/>

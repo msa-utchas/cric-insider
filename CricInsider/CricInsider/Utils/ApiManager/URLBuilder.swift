@@ -108,5 +108,26 @@ class URLBuilder {
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
-    
+
+
+
+    func getAllLeaguesUrl() -> URL?{
+        let endpoint = "/leagues"
+        let queryItems = [
+            URLQueryItem(name: "api_token", value: apiToken)
+        ]
+        return createURL(endpoint: endpoint, queryItems: queryItems)
+    }
+
+    func getFixtureByLeagueId(leagueId: Int, status: String)-> URL?{
+        let endpoint = "/fixtures"
+        let queryItems = [
+            URLQueryItem(name: "include", value: "localteam,visitorteam,league,season"),
+            URLQueryItem(name: "sort", value: "starting_at"),
+            URLQueryItem(name: "api_token", value: apiToken),
+            URLQueryItem(name: "filter[status]", value: "\(status)"),
+            URLQueryItem(name: "filter[league_id]", value: "\(leagueId)")
+        ]
+        return createURL(endpoint: endpoint, queryItems: queryItems)
+    }
 }

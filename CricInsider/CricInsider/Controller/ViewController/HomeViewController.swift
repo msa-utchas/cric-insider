@@ -93,8 +93,9 @@ class HomeViewController: UIViewController {
             if let selectedID = selectedID{
                 let viewController = self.storyboard?.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
                 viewController.loadViewIfNeeded()
+                viewController.matchDetailsViewModel.matchID = selectedID
                 Task{
-                    viewController.matchDetailsViewModel.matchID = selectedID
+                    
                     await viewController.matchDetailsViewModel.setMatchDetails(id: selectedID)
                 }
                 self.navigationController?.pushViewController(viewController, animated: true)

@@ -44,6 +44,9 @@
 		89A69B0029A8668000962B26 /* PlayerDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A69AFF29A8668000962B26 /* PlayerDetailsTableViewCell.swift */; };
 		89A69B0229A8700C00962B26 /* ViewPlayerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A69B0129A8700C00962B26 /* ViewPlayerInfoViewController.swift */; };
 		89A69B0429A8797700962B26 /* ViewPlayerInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A69B0329A8797700962B26 /* ViewPlayerInfoViewModel.swift */; };
+		D906A8D929A9EEF0004D81E2 /* LeaguesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D906A8D729A9EEF0004D81E2 /* LeaguesCollectionViewCell.xib */; };
+		D906A8DB29A9F113004D81E2 /* LeaguesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D906A8DA29A9F113004D81E2 /* LeaguesCollectionViewCell.swift */; };
+		D906A8DD29A9F22F004D81E2 /* LeagueWiseMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D906A8DC29A9F22F004D81E2 /* LeagueWiseMatchesViewController.swift */; };
 		D912795829A53DAC006BF1B8 /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912795729A53DAC006BF1B8 /* UIViewExtention.swift */; };
 		D929B34629A92BBB002DB101 /* PlayerDetailsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D929B34529A92BBB002DB101 /* PlayerDetailsHeader.xib */; };
 		D929B34829A92C70002DB101 /* PlayerDetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D929B34729A92C70002DB101 /* PlayerDetailsHeader.swift */; };
@@ -106,6 +109,9 @@
 		89A69AFF29A8668000962B26 /* PlayerDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		89A69B0129A8700C00962B26 /* ViewPlayerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlayerInfoViewController.swift; sourceTree = "<group>"; };
 		89A69B0329A8797700962B26 /* ViewPlayerInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlayerInfoViewModel.swift; sourceTree = "<group>"; };
+		D906A8D729A9EEF0004D81E2 /* LeaguesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesCollectionViewCell.xib; sourceTree = "<group>"; };
+		D906A8DA29A9F113004D81E2 /* LeaguesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesCollectionViewCell.swift; sourceTree = "<group>"; };
+		D906A8DC29A9F22F004D81E2 /* LeagueWiseMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueWiseMatchesViewController.swift; sourceTree = "<group>"; };
 		D912795729A53DAC006BF1B8 /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		D929B34529A92BBB002DB101 /* PlayerDetailsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailsHeader.xib; sourceTree = "<group>"; };
 		D929B34729A92C70002DB101 /* PlayerDetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsHeader.swift; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 				896AB4A329A60CD3009A2BD3 /* MatchesTableViewCell.xib */,
 				89A69AFD29A862AE00962B26 /* PlayerDetailsTableViewCell.xib */,
 				D929B34B29A93533002DB101 /* PlayerCareerHeader.xib */,
+				D906A8D729A9EEF0004D81E2 /* LeaguesCollectionViewCell.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -225,6 +232,7 @@
 				D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */,
 				89A69AFF29A8668000962B26 /* PlayerDetailsTableViewCell.swift */,
 				D929B34729A92C70002DB101 /* PlayerDetailsHeader.swift */,
+				D906A8DA29A9F113004D81E2 /* LeaguesCollectionViewCell.swift */,
 			);
 			path = CustomController;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 				898304FD299CE1CB00CBBC7E /* HomeViewController.swift */,
 				896AB4A829A62408009A2BD3 /* DateWiseMatchViewController.swift */,
 				89A69B0129A8700C00962B26 /* ViewPlayerInfoViewController.swift */,
+				D906A8DC29A9F22F004D81E2 /* LeagueWiseMatchesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -410,6 +419,7 @@
 				89A69AFE29A862AE00962B26 /* PlayerDetailsTableViewCell.xib in Resources */,
 				89548A2D299C75E300BADDF3 /* LaunchScreen.storyboard in Resources */,
 				D9A6156829A25DD8004FA85B /* ScoreCardHeader.xib in Resources */,
+				D906A8D929A9EEF0004D81E2 /* LeaguesCollectionViewCell.xib in Resources */,
 				89548A2A299C75E300BADDF3 /* Assets.xcassets in Resources */,
 				89548A25299C75E100BADDF3 /* Main.storyboard in Resources */,
 				898304F5299CC83B00CBBC7E /* SearchPlayer.storyboard in Resources */,
@@ -440,6 +450,7 @@
 				8926C3A9299E1D6D0033E5E1 /* UpcomingMatchesAdapter.swift in Sources */,
 				893CF074299F7A7D009DEF6B /* MatchDetailsViewModel.swift in Sources */,
 				8926C39F299DCD470033E5E1 /* MatchInfoCollectionViewCell.swift in Sources */,
+				D906A8DB29A9F113004D81E2 /* LeaguesCollectionViewCell.swift in Sources */,
 				8926C3A4299E14A70033E5E1 /* DateExtensions.swift in Sources */,
 				D9DFE32029A10BE10079ACFA /* SquadListTableViewCell.swift in Sources */,
 				898304F9299CCCD600CBBC7E /* URLBuilder.swift in Sources */,
@@ -457,6 +468,7 @@
 				898304FB299CCD6700CBBC7E /* ApiManager.swift in Sources */,
 				D9DFE31E29A0FAE20079ACFA /* ScoreCardContainerViewController.swift in Sources */,
 				89074F51299CBCFE00256BC5 /* FixtureModel.swift in Sources */,
+				D906A8DD29A9F22F004D81E2 /* LeagueWiseMatchesViewController.swift in Sources */,
 				896AB4A929A62408009A2BD3 /* DateWiseMatchViewController.swift in Sources */,
 				D9A6155029A21BCB004FA85B /* PlayersRepository.swift in Sources */,
 				89A69B0429A8797700962B26 /* ViewPlayerInfoViewModel.swift in Sources */,

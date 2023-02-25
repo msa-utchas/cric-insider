@@ -67,6 +67,12 @@ class MatchInfoCollectionViewCell: UICollectionViewCell {
             let time = self.viewModel.updateTimeRemaining(matchStartTime: (self.matchStartTime!))
             DispatchQueue.main.async {[weak self] in
                 guard let self = self else {return}
+                //check time is negative or not
+                if time.contains("-") {
+                    self.stopTimer()
+                    self.labelStarsIn.text = "Match Started"
+                }
+
                 self.labelStarsIn.text = time
             }
             

@@ -94,6 +94,7 @@ class HomeViewController: UIViewController {
                 let viewController = self.storyboard?.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
                 viewController.loadViewIfNeeded()
                 Task{
+                    viewController.matchDetailsViewModel.matchID = selectedID
                     await viewController.matchDetailsViewModel.setMatchDetails(id: selectedID)
                 }
                 self.navigationController?.pushViewController(viewController, animated: true)
@@ -118,6 +119,7 @@ class HomeViewController: UIViewController {
                 let viewController = self.storyboard?.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
                 viewController.loadViewIfNeeded()
                 Task{
+                    viewController.matchDetailsViewModel.matchID =  selectedID
                     await viewController.matchDetailsViewModel.setMatchDetails(id: selectedID)
                 }
                 self.navigationController?.pushViewController(viewController, animated: true)

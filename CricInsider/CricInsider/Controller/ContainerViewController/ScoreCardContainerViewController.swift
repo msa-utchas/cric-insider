@@ -33,13 +33,14 @@ extension ScoreCardContainerViewController {
             guard let self = self else {
                 return
             }
-            self.localTeamBatting = matchDetails?.localTeamBatting ?? []
-            self.localTeamBowling = matchDetails?.localTeamBowling ?? []
-            self.visitorTeamBatting = matchDetails?.visitorTeamBatting ?? []
-            self.visitorTeamBowling = matchDetails?.visitorTeamBowling ?? []
-            self.localTeamName = matchDetails?.localTeamName
-            self.visitorTeamName = matchDetails?.visitorTeamName
+            
             DispatchQueue.main.async {
+                self.localTeamBatting = matchDetails?.localTeamBatting ?? []
+                self.localTeamBowling = matchDetails?.localTeamBowling ?? []
+                self.visitorTeamBatting = matchDetails?.visitorTeamBatting ?? []
+                self.visitorTeamBowling = matchDetails?.visitorTeamBowling ?? []
+                self.localTeamName = matchDetails?.localTeamName
+                self.visitorTeamName = matchDetails?.visitorTeamName
                 self.scoreCardTableView.reloadData()
             }
             

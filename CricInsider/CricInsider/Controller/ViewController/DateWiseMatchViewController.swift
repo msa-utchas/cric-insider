@@ -13,6 +13,7 @@ class DateWiseMatchViewController: UIViewController {
     
     @IBOutlet weak var activityContainerView: UIView!
     
+    @IBOutlet weak var leagueWiseMatchesBackView: UIView!
     @IBOutlet weak var backView: UIView!
     let viewModel = DateWiseMatchViewModel()
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -25,7 +26,7 @@ class DateWiseMatchViewController: UIViewController {
         
         super.viewDidLoad()
         view.isUserInteractionEnabled = false
-
+        leagueWiseBackView.addShadow()
         textBackView.layer.cornerRadius = 4
         textBackView.addShadow()
         backView.addShadow()
@@ -37,7 +38,7 @@ class DateWiseMatchViewController: UIViewController {
             await viewModel.getDateWiseMatches(date: datePicker.date)
             view.isUserInteractionEnabled = true
 
-            activityContainerView.isHidden = true
+            //activityContainerView.isHidden = true
             
         }
         binder()

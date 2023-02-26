@@ -16,6 +16,18 @@ extension ViewPlayerInfoViewController: UITableViewDataSource,UITableViewDelegat
         return 0
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableViewStatistics.dequeueReusableHeaderFooterView(withIdentifier: PlayerDetailsHeader.identifier) as! PlayerDetailsHeader
+        if section == 0{
+            cell.labelFormat.text = "Batting"
+        }
+        else
+        {
+            cell.labelFormat.text = "Bowling"
+        }
+        return cell
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewStatistics.dequeueReusableCell(withIdentifier: PlayerDetailsTableViewCell.identifier, for: indexPath) as!PlayerDetailsTableViewCell
@@ -109,10 +121,7 @@ extension ViewPlayerInfoViewController: UITableViewDataSource,UITableViewDelegat
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableViewStatistics.dequeueReusableHeaderFooterView(withIdentifier: PlayerDetailsHeader.identifier) as! PlayerDetailsHeader
-        return cell
-    }
+   
     
     func formatIntValue(_ value: Int?, defaultString: String = "N/A") -> String {
         guard let value = value else {

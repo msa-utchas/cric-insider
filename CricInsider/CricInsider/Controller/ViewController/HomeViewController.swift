@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         collectionViewMatches.dataSource = self
         collectionViewMatches.register(UINib(nibName: MatchInfoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MatchInfoCollectionViewCell.identifier)
         collectionViewFlowLayoutSetup()
-        
+
         getDataFromApi()
         binder()
     }

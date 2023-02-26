@@ -25,6 +25,7 @@ class LeagueWiseMatchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Cric Insider"
         collectionViewLeague.dataSource = self
         collectionViewLeague.delegate = self
         collectionViewLeague.register(UINib(nibName: LeaguesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: LeaguesCollectionViewCell.identifier)
@@ -156,6 +157,9 @@ extension LeagueWiseMatchesViewController: UITableViewDataSource, UITableViewDel
         cell.labelVisitorTeamName.text = data.visitorTeamName
         cell.labelMatchType.text = data.matchType
         cell.labelStatus.text = data.status
+        if data.status == "NS"{
+            cell.labelStatus.text = "Upcoming"
+        }
         cell.labelVisitorTeamFlag.sd_setImage(with: URL(string: data.visitorTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLocalTeamName.text = data.localTeamName
         cell.labelNote.text = data.note

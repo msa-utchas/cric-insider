@@ -25,6 +25,7 @@ class DateWiseMatchViewController: UIViewController {
     override func viewDidLoad(){
         
         super.viewDidLoad()
+        self.navigationItem.title = "Cric Insider"
         view.isUserInteractionEnabled = false
         leagueWiseBackView.addShadow()
         textBackView.layer.cornerRadius = 4
@@ -104,6 +105,9 @@ extension DateWiseMatchViewController: UITableViewDataSource, UITableViewDelegat
         cell.labelVisitorTeamName.text = data.visitorTeamName
         cell.labelMatchType.text = data.matchType
         cell.labelStatus.text = data.status
+        if data.status == "NS"{
+            cell.labelStatus.text = "Upcoming"
+        }
         cell.labelVisitorTeamFlag.sd_setImage(with: URL(string: data.visitorTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLocalTeamName.text = data.localTeamName
         cell.labelNote.text = data.note

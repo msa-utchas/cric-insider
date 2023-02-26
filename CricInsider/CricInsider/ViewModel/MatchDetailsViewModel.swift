@@ -6,6 +6,7 @@ class MatchDetailsViewModel: ObservableObject {
     static let shared = MatchDetailsViewModel()
     var matchID: Int?
     @Published var matchDetails: MatchDetailsModel?
+    @Published var selectedPlayerId: Int?
     
     init(matchDetailsRepository: MatchDetailsRepository =  FixturesRepository()) {
         self.matchDetailsRepository = matchDetailsRepository
@@ -20,6 +21,10 @@ class MatchDetailsViewModel: ObservableObject {
             print(error.localizedDescription)
         
         }
+    }
+    
+    func setSelectedPlayerId(playerId: Int){
+        selectedPlayerId = playerId
     }
     
 }

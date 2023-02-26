@@ -68,6 +68,23 @@ class SquadsViewController: UIViewController {
             
         }
         .store(in: &cancelable)
+        
+        squadInfoViewModel.$selectedPlayerId.sink{[weak self] playerId in
+            guard let self = self else {
+                return
+            }
+            if let playerId = playerId{
+                let storyBoard = UIStoryboard(name: "SearchPlayer", bundle: nil)
+                let vc = storyBoard.instantiateViewController(identifier: ViewPlayerInfoViewController.identifier) as! ViewPlayerInfoViewController
+                vc.loadViewIfNeeded()
+                Task{
+                    await vc.viewModel.getPlayerData(id: playerId)
+                  }
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+        }.store(in: &cancelable)
     }
 
     
@@ -81,7 +98,6 @@ extension SquadsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return teamName
-        
         
     }
     
@@ -103,10 +119,14 @@ extension SquadsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        squadInfoViewModel.setSelectedPlayerId(playerId: squadData[indexPath.row].id ?? 3)
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 95
     }
-    
+
     
 }

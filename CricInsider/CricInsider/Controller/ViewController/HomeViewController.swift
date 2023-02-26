@@ -39,6 +39,11 @@ class HomeViewController: UIViewController {
     
     fileprivate func collectionViewFlowLayoutSetup() {
         let collectionViewCellLayout = UICollectionViewFlowLayout()
+        let width = (view.frame.size.width)
+        collectionViewCellLayout.itemSize = CGSize(width: width, height: 240)
+        collectionViewCellLayout.minimumLineSpacing = 10
+        collectionViewCellLayout.minimumInteritemSpacing = 10
+        
         collectionViewCellLayout.scrollDirection = .horizontal
         collectionViewMatches.collectionViewLayout = collectionViewCellLayout
     }
@@ -217,9 +222,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height:collectionViewMatches.bounds.height)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        CGSize(width: collectionView.frame.width, height:collectionViewMatches.bounds.height)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let fixtureId = upcomingMatchList[indexPath.row].fixtureId{

@@ -32,7 +32,7 @@ class MatchDetailsViewController: UIViewController {
         matchInfoContainerView.isHidden = false
         squadListContainerView.isHidden = true
         scoreCardContainerView.isHidden = true
-        self.navigationItem.title = "Cric Insider"
+      
     
         binder()
 
@@ -41,14 +41,14 @@ class MatchDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
-        navigationController?.title = "Cric Insider"
+        navigationController?.title = "Match Details"
         navigationController?.navigationBar.tintColor = UIColor.tintColor
         
     }
 
     func binder(){
         matchDetailsViewModel.$matchDetails.sink {[weak self] (data) in
-            guard let self = self else {return}
+            guard self != nil else {return}
 //            if let data = data{
 //                if data.localTeamSquad?.count == 0{
 //                    DispatchQueue.main.async {

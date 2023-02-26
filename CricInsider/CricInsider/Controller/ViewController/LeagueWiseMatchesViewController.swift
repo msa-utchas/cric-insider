@@ -25,7 +25,7 @@ class LeagueWiseMatchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Cric Insider"
+        //self.navigationItem.title = "Cric Insider"
         self.navigationItem.backBarButtonItem?.tintColor = .tintColor
         collectionViewLeague.dataSource = self
         collectionViewLeague.delegate = self

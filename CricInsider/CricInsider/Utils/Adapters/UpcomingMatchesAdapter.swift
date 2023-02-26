@@ -3,13 +3,9 @@ class UpcomingMatchesAdapter {
     
     static func adapt(_ fixturesModel: FixturesModel) -> [UpcomingMatchModel] {
         guard let fixtures = fixturesModel.data else { return [] }
-    
         var upcomingMatches = [UpcomingMatchModel]()
         
-    
         for fixture in fixtures {
-           
-          
             let formattedDateData = Date.formatDateTimeData(fixture.starting_at)
             
             let upcomingMatch = UpcomingMatchModel(
@@ -30,6 +26,7 @@ class UpcomingMatchesAdapter {
         return upcomingMatches
     }
 }
+
 struct UpcomingMatchModel{
     let fixtureId: Int?
     let status: String?
@@ -44,5 +41,4 @@ struct UpcomingMatchModel{
     let visitorTeamImagePath: String?
     let dateObject: Date?
     let matchType: String?
-    
 }

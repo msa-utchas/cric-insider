@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CricInsider-->
+        <!--Date Wise Match View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="DateWiseMatchViewController" customModule="CricInsider" customModuleProvider="target" sceneMemberID="viewController">
@@ -151,7 +151,7 @@
                             <constraint firstItem="op0-Bj-QlK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="uKL-4Q-ECY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="CricInsider" id="RJD-Uu-LUb"/>
+                    <navigationItem key="navigationItem" id="RJD-Uu-LUb"/>
                     <connections>
                         <outlet property="activityIndicator" destination="op0-Bj-QlK" id="7Cl-oL-7oa"/>
                         <outlet property="backView" destination="993-Ae-odD" id="ykF-Y8-jtY"/>

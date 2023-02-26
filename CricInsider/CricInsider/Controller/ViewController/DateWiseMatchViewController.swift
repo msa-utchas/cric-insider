@@ -12,10 +12,11 @@ class DateWiseMatchViewController: UIViewController {
     @IBOutlet weak var textBackView: UIView!
     
     @IBOutlet weak var activityContainerView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var backView: UIView!
     let viewModel = DateWiseMatchViewModel()
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var leagueWiseBackView: UIView!
     @IBOutlet weak var tableViewMatchList: UITableView!
     var cancelable: Set<AnyCancellable> = []
     var matchData: [MatchInfoModel] = []
@@ -24,7 +25,7 @@ class DateWiseMatchViewController: UIViewController {
         
         super.viewDidLoad()
         view.isUserInteractionEnabled = false
-        activityIndicator.startAnimating()
+
         textBackView.layer.cornerRadius = 4
         textBackView.addShadow()
         backView.addShadow()
@@ -35,7 +36,7 @@ class DateWiseMatchViewController: UIViewController {
         Task {
             await viewModel.getDateWiseMatches(date: datePicker.date)
             view.isUserInteractionEnabled = true
-            activityIndicator.stopAnimating()
+
             activityContainerView.isHidden = true
             
         }
@@ -43,15 +44,17 @@ class DateWiseMatchViewController: UIViewController {
        
     }
     
+    @IBAction func showLeagueWiseMatches(_ sender: Any) {
+        let viewController =  self.storyboard?.instantiateViewController(identifier: "LeagueWiseMatchesViewController") as! LeagueWiseMatchesViewController
+        viewController.loadViewIfNeeded()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     @IBAction func searchMatchAction(_ sender: Any) {
         Task {
-            activityContainerView.isHidden = false
-            view.isUserInteractionEnabled = false
-            activityIndicator.startAnimating()
+           
             await viewModel.getDateWiseMatches(date: datePicker.date)
             view.isUserInteractionEnabled = true
-            activityIndicator.stopAnimating()
-            activityContainerView.isHidden = true
+
         }
     }
     func binder(){

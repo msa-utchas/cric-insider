@@ -93,7 +93,7 @@ class MatchDetailsAdepter{
             date: startDate,
             venue: fixtureModel.data.venue,
             localTeamCodeName: fixtureModel.data.localteam?.code,
-            visitorTeamCodeName: fixtureModel.data.visitorteam?.code, status: fixtureModel.data.status
+            visitorTeamCodeName: fixtureModel.data.visitorteam?.code, status: fixtureModel.data.status, manOfMatchName: fixtureModel.data.manofmatch?.fullname, manOfMatchImage: fixtureModel.data.manofmatch?.image_path
             
             
     
@@ -123,6 +123,8 @@ struct MatchDetailsModel{
     let localTeamCodeName:String?
     let visitorTeamCodeName:String?
     let status: String?
+    let manOfMatchName: String?
+    let manOfMatchImage: String?
 
 }
 

@@ -7,6 +7,9 @@ class MatchInfoViewController: UIViewController {
     private var cancelable: Set<AnyCancellable> = []
     let matchInfoViewModel = MatchDetailsViewModel.shared
  
+    @IBOutlet weak var labelMoMName: UILabel!
+    @IBOutlet weak var manOfTheMatchImage: UIImageView!
+    @IBOutlet weak var momHeightConstraiant: NSLayoutConstraint!
     
     @IBOutlet weak var matchStatus: UILabel!
     
@@ -14,6 +17,7 @@ class MatchInfoViewController: UIViewController {
     @IBOutlet weak var teamBImageView: UIImageView!
     @IBOutlet weak var labelLeagueInfo: UILabel!
     @IBOutlet weak var labelTeamBScore: UILabel!
+    @IBOutlet weak var MoMBackground: UIView!
     @IBOutlet weak var labelTeamAScore: UILabel!
     @IBOutlet weak var teamAImageView: UIImageView!
     @IBOutlet weak var labelType: UILabel!
@@ -33,7 +37,7 @@ class MatchInfoViewController: UIViewController {
         
         labelLeagueInfo.layer.cornerRadius = 8
         labelLeagueInfo.layer.masksToBounds = true
-        
+        MoMBackground.addShadow()
         labelType.layer.cornerRadius = 8
         labelType.layer.masksToBounds = true
         // give view background Shadow
@@ -65,6 +69,17 @@ class MatchInfoViewController: UIViewController {
                     self.matchStatus.text = matchDetails.status
                     if (matchDetails.status == "NS"){
                         self.matchStatus.text = "Upcoming"
+                    }
+                    self.labelMoMName.text = matchDetails.manOfMatchName
+                    self.manOfTheMatchImage.sd_setImage(with: URL(string: matchDetails.manOfMatchImage ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
+                    if ( matchDetails.manOfMatchName == nil){
+                        self.momHeightConstraiant.constant = 0
+                        self.MoMBackground.isHidden = true
+                    }
+                    else
+                    {
+                        self.momHeightConstraiant.constant = 70
+                        self.MoMBackground.isHidden = false
                     }
                       
                 }

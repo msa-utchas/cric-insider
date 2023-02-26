@@ -36,11 +36,6 @@ struct Country:Codable {
     let updatedAt: String?
 }
 
-
-
-
-
-
 struct Career: Codable{
     struct Bowling: Codable {
         let matches: Int?

@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 import SDWebImage
-
+import Alamofire
 
 class LeagueWiseMatchesViewController: UIViewController {
     
@@ -25,17 +25,15 @@ class LeagueWiseMatchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationItem.title = "Cric Insider"
+        
         self.navigationItem.backBarButtonItem?.tintColor = .tintColor
         collectionViewLeague.dataSource = self
         collectionViewLeague.delegate = self
         collectionViewLeague.register(UINib(nibName: LeaguesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: LeaguesCollectionViewCell.identifier)
         
-        // setup the layout
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        // setup the layout
-        //seup the with only three acomodation
+        
         let width = (view.frame.size.width - 20) / 3
         layout.itemSize = CGSize(width: width, height: 160)
         layout.minimumLineSpacing = 10
@@ -46,6 +44,7 @@ class LeagueWiseMatchesViewController: UIViewController {
         tableViewMatches.register(UINib(nibName: MatchesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MatchesTableViewCell.identifier)
         binder()
         Task{
+            
             await viewModel.getAllLeagues()
         }
         
@@ -54,7 +53,7 @@ class LeagueWiseMatchesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
-    
+        
         navigationController?.navigationBar.tintColor = UIColor.tintColor
     }
     
@@ -72,10 +71,17 @@ class LeagueWiseMatchesViewController: UIViewController {
         }
         Task{
             if let selectedLeagueId = selectedLeagueId{
-                await viewModel.getMatchesInfo(leagueId: selectedLeagueId, status: selectedStatus)
+                if NetworkReachabilityManager()!.isReachable{
+                    startLoading()
+                    await viewModel.getMatchesInfo(leagueId: selectedLeagueId, status: selectedStatus)
+                    stopLoading()
+                }else{
+                    self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+                }
+                
                 
             }
-}        }
+        }        }
     
     
     func binder() {
@@ -85,12 +91,21 @@ class LeagueWiseMatchesViewController: UIViewController {
                 if data.count > 0{
                     self.selectedLeagueId = data[0].id
                     Task{
-                        await self.viewModel.getMatchesInfo(leagueId: self.selectedLeagueId, status: self.selectedStatus)
+                        if NetworkReachabilityManager()!.isReachable{
+                            self.startLoading()
+                            await self.viewModel.getMatchesInfo(leagueId: self.selectedLeagueId, status: self.selectedStatus)
+                            self.stopLoading()
+                            
+                        }
+                        else{
+                            self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+                        }
                     }
                 }
-                self.leagueList = data
+                
                 
                 DispatchQueue.main.async {
+                    self.leagueList = data
                     self.collectionViewLeague.reloadData()
                 }
             }
@@ -108,7 +123,7 @@ class LeagueWiseMatchesViewController: UIViewController {
             
         }.store(in: &cancelable)
         viewModel.$selectedIndexData.sink(){[weak self] data in
-        guard let self else {return}
+            guard let self else {return}
             if let data = data{
                 let storyBoard = UIStoryboard(name: "Home", bundle: nil)
                 let viewController = storyBoard.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
@@ -122,7 +137,7 @@ class LeagueWiseMatchesViewController: UIViewController {
             }
         }.store(in: &cancelable)
     }
-   
+    
     
     
 }
@@ -138,14 +153,23 @@ extension LeagueWiseMatchesViewController: UICollectionViewDataSource, UICollect
         cell.imageViewCodeName.text = leagueList[indexPath.row].code
         return cell
     }
-
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedLeagueId = leagueList[indexPath.row].id
         let cell = collectionView.cellForItem(at: indexPath) as! LeaguesCollectionViewCell
         cell.isSelected = true
-        Task{
-            await viewModel.getMatchesInfo(leagueId: selectedLeagueId, status: selectedStatus)
+        if NetworkReachabilityManager()!.isReachable{
+            
+            Task{
+                self.startLoading()
+                await viewModel.getMatchesInfo(leagueId: selectedLeagueId, status: selectedStatus)
+                self.stopLoading()
+            }
         }
+        else{
+            self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+        }
+        
     }
     
     
@@ -170,24 +194,47 @@ extension LeagueWiseMatchesViewController: UITableViewDataSource, UITableViewDel
         cell.labelVisitorTeamFlag.sd_setImage(with: URL(string: data.visitorTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLocalTeamName.text = data.localTeamName
         cell.labelNote.text = data.note
-    
+        
         cell.labelLocalTeamFlag.sd_setImage(with: URL(string: data.localTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLeagueNameWithSeason.text = (data.leagueName ?? "") + "," + (data.seasonName ?? "")
         
-
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.setSelectedIndexData(data: matchData[indexPath.row])
+        if NetworkReachabilityManager()!.isReachable{
+            viewModel.setSelectedIndexData(data: matchData[indexPath.row])
+        }else
+        {
+            self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+        }
+        
     }
     
 }
 extension LeagueWiseMatchesViewController {
-    
-    func showAlert(title: String, message: String, retry: @escaping () -> Void) {
+    func checkInternet(){
+        if NetworkReachabilityManager()!.isReachable{
+            return
+        }else{
+            self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+        }
+    }
+    func startLoading(){
+        activityIndicator.startAnimating()
+        collectionViewLeague.isUserInteractionEnabled = false
+        matchSegmentControl.isMomentary = false
+    }
+    func stopLoading(){
+        activityIndicator.stopAnimating()
+        collectionViewLeague.isUserInteractionEnabled = true
+        matchSegmentControl.isMomentary = true
+    }
+    func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
-
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {[weak self] _ in
+            guard let self = self else {return}
+            self.checkInternet()
         }))
         present(alert, animated: true, completion: nil)
     }

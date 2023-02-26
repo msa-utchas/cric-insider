@@ -89,7 +89,6 @@ class HomeViewModel{
                 } catch {
                     print((error.localizedDescription))
                 }
-
             }
         }
     }

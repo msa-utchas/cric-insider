@@ -212,8 +212,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.labelMatchStatus.text = "Upcoming"
         }
         cell.matchStatus = upcomingMatchList[indexPath.row].status
-        //cell.inputViewController?.loadView()
-        //cell.viewModel.startTimer(matchStartTime: upcomingMatchList[indexPath.row].dateObject!)
+
         
         return cell
     }

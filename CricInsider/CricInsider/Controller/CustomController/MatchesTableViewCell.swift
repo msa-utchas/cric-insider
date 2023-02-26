@@ -8,6 +8,7 @@
 import UIKit
 
 class MatchesTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelVisitorTeamName: UILabel!

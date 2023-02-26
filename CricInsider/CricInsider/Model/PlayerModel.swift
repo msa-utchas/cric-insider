@@ -1,8 +1,10 @@
 
 import Foundation
+
 struct PlayerModel: Codable {
     let data: Player?
 }
+
 struct Player: Codable{
     let resource: String?
     let id, country_id: Int?
@@ -18,10 +20,12 @@ struct Player: Codable{
     let country: Country?
     let career: [Career]?
 }
+
 struct Lineup: Codable {
     let team_id: Int?
     let captain, wicketkeeper, substitution: Bool?
 }
+
 struct Position: Codable {
     let resource: String?
     let id: Int?
@@ -53,11 +57,10 @@ struct Career: Codable{
         let balls_faced: Double?
         let average: Double?
     }
-
+    
     let type: String?
     let bowling: Bowling?
     let batting: Batting?
-
 }
 
 

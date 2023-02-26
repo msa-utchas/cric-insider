@@ -14,9 +14,7 @@ class FinishedMatchAdepter {
         var VisitorTeamRuns: Run?
         var recentMatches = [FinishedMatchesModel]()
         
-  
         for fixture in fixtures {
-            
             
             let formattedDateData = Date.formatDateTimeData(fixture.starting_at)
             if let runs = fixture.runs {
@@ -36,16 +34,25 @@ class FinishedMatchAdepter {
                     }
                 }
             }
-            let recentMatch = FinishedMatchesModel(fixtureId: fixture.id, status: fixture.status, leagueName: fixture.league?.name, seasonName: fixture.season?.name, round: fixture.round, localTeam: fixture.localteam, visitorTeam: fixture.visitorteam,   localTeamRun: localTeamRuns, visitorTeamRun: VisitorTeamRuns, note: fixture.note, date: formattedDateData?.0, time: formattedDateData?.1, matchType: fixture.type
-               
-            
-
-          )
+            let recentMatch = FinishedMatchesModel(
+                fixtureId: fixture.id,
+                status: fixture.status,
+                leagueName: fixture.league?.name,
+                seasonName: fixture.season?.name,
+                round: fixture.round,
+                localTeam: fixture.localteam,
+                visitorTeam: fixture.visitorteam,
+                localTeamRun: localTeamRuns,
+                visitorTeamRun: VisitorTeamRuns,
+                note: fixture.note,
+                date: formattedDateData?.0,
+                time: formattedDateData?.1,
+                matchType: fixture.type
+            )
             recentMatches.append(recentMatch)
         }
         return recentMatches
     }
-
 }
 
 struct FinishedMatchesModel{
@@ -56,7 +63,6 @@ struct FinishedMatchesModel{
     let round: String?
     let localTeam : Team?
     let visitorTeam : Team?
-    
     let localTeamRun: Run?
     let visitorTeamRun: Run?
     let note: String?

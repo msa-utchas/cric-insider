@@ -3,16 +3,12 @@ import Combine
 import SDWebImage
 
 class MatchInfoViewController: UIViewController {
+    
     @IBOutlet weak var venueBackgroundView: UIView!
-    private var cancelable: Set<AnyCancellable> = []
-    let matchInfoViewModel = MatchDetailsViewModel.shared
- 
     @IBOutlet weak var labelMoMName: UILabel!
     @IBOutlet weak var manOfTheMatchImage: UIImageView!
     @IBOutlet weak var momHeightConstraiant: NSLayoutConstraint!
-    
     @IBOutlet weak var matchStatus: UILabel!
-    
     @IBOutlet var labelDate: UILabel!
     @IBOutlet weak var teamBImageView: UIImageView!
     @IBOutlet weak var labelLeagueInfo: UILabel!
@@ -25,28 +21,25 @@ class MatchInfoViewController: UIViewController {
     @IBOutlet weak var labelTeamBName: UILabel!
     @IBOutlet weak var viewBackground: UIView!
     @IBOutlet weak var labelStadiumName: UILabel!
-    
     @IBOutlet weak var imageViewStadium: UIImageView!
     @IBOutlet weak var labelCapacity: UILabel!
     @IBOutlet weak var labelCity: UILabel!
-    var time: Timer?
     
+    private var cancelable: Set<AnyCancellable> = []
+    let matchInfoViewModel = MatchDetailsViewModel.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
         binder()
-        
         labelLeagueInfo.layer.cornerRadius = 8
         labelLeagueInfo.layer.masksToBounds = true
         MoMBackground.addShadow()
         labelType.layer.cornerRadius = 8
         labelType.layer.masksToBounds = true
-        // give view background Shadow
         viewBackground.addShadow()
         venueBackgroundView.addShadow()
         
-        
     }
-    
     
     func binder(){
         matchInfoViewModel.$matchDetails.sink { (id) in
@@ -81,26 +74,11 @@ class MatchInfoViewController: UIViewController {
                         self.momHeightConstraiant.constant = 70
                         self.MoMBackground.isHidden = false
                     }
-                      
+                    
                 }
                 
             }
         }.store(in: &cancelable)
     }
-    
-//    func startTimer() {
-//        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { [weak self] _ in
-//            guard let self = self else {return}
-//            Task{
-//                print("api")
-//                await self.matchInfoViewModel.setMatchDetails(id: self.matchInfoViewModel.matchID!)
-//                print("hello")
-//            }
-//
-//
-//        })
-//    }
-    
-    
     
 }

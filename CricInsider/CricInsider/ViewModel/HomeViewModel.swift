@@ -1,10 +1,3 @@
-//
-//  HomeViewModel.swift
-//  CricInsider
-//
-//  Created by BJIT on 15/2/23.
-//
-
 import Foundation
 import Combine
 import UserNotifications
@@ -18,9 +11,7 @@ class HomeViewModel{
     @Published var finishedMatchSelectedID : Int?
     @Published var errorMessage: String?
     
-    
     var timer: Timer?
-    
     
     init(fixtureMatchListRepository: FixtureMatchesListRepository =  FixturesRepository(),dateWiseMatchRepository: DateWiseMatchRepository = FixturesRepository()) {
         self.fixtureMatchListRepository = fixtureMatchListRepository
@@ -69,7 +60,7 @@ class HomeViewModel{
     }
     
     func setUpNotification(data: [MatchInfoModel]) async{
-      
+        
         for match in data{
             if match.status == "NS"{
                 let content = UNMutableNotificationContent()
@@ -85,7 +76,7 @@ class HomeViewModel{
                 do{
                     try await notificationCenter.add(request)
                     UserDefaults.standard.set(date, forKey: "Notification-Setup-Time")
-
+                    
                 } catch {
                     print((error.localizedDescription))
                 }
@@ -94,12 +85,12 @@ class HomeViewModel{
     }
     
     func updateTimeRemaining(matchStartTime: Date)->String {
-           let timeRemaining = matchStartTime.timeIntervalSinceNow
-           let formatter = DateComponentsFormatter()
-           formatter.allowedUnits = [.day, .hour, .minute, .second]
-           formatter.unitsStyle = .abbreviated
-           let timeRemainingString = formatter.string(from: timeRemaining)!
-           return "Match Starts In: " + timeRemainingString
-       }
+        let timeRemaining = matchStartTime.timeIntervalSinceNow
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.day, .hour, .minute, .second]
+        formatter.unitsStyle = .abbreviated
+        let timeRemainingString = formatter.string(from: timeRemaining)!
+        return "Match Starts In: " + timeRemainingString
+    }
     
 }

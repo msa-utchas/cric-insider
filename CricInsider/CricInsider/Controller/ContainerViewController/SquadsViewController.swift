@@ -1,9 +1,3 @@
-//
-//  SquadsViewController.swift
-//  CricInsider
-//
-//  Created by BJIT on 17/2/23.
-//
 
 import UIKit
 import Combine
@@ -79,14 +73,14 @@ class SquadsViewController: UIViewController {
                 vc.loadViewIfNeeded()
                 Task{
                     await vc.viewModel.getPlayerData(id: playerId)
-                  }
+                }
                 
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
         }.store(in: &cancelable)
     }
-
+    
     
 }
 
@@ -127,6 +121,6 @@ extension SquadsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 95
     }
-
+    
     
 }

@@ -1,9 +1,3 @@
-//
-//  LeagueWiseMatchesViewController.swift
-//  CricInsider
-//
-//  Created by Md. Sakibul Alam Utchas on 25/2/23.
-//
 
 import UIKit
 import Combine
@@ -16,12 +10,13 @@ class LeagueWiseMatchesViewController: UIViewController {
     @IBOutlet weak var matchSegmentControl: UISegmentedControl!
     @IBOutlet weak var tableViewMatches: UITableView!
     @IBOutlet weak var collectionViewLeague: UICollectionView!
-    var viewModel = LeagueWiseMatchesViewModel()
+    
     private var cancelable: Set<AnyCancellable> = []
     var leagueList: [League] = []
     var matchData: [MatchInfoModel] = []
     var selectedStatus: String = "NS"
     var selectedLeagueId: Int!
+    var viewModel = LeagueWiseMatchesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +48,8 @@ class LeagueWiseMatchesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
-        
         navigationController?.navigationBar.tintColor = UIColor.tintColor
     }
-    
     
     @IBAction func getSelectedMatchSegment(_ sender: Any) {
         switch matchSegmentControl.selectedSegmentIndex {
@@ -79,9 +72,9 @@ class LeagueWiseMatchesViewController: UIViewController {
                     self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
                 }
                 
-                
             }
-        }        }
+        }
+    }
     
     
     func binder() {
@@ -103,7 +96,6 @@ class LeagueWiseMatchesViewController: UIViewController {
                     }
                 }
                 
-                
                 DispatchQueue.main.async {
                     self.leagueList = data
                     self.collectionViewLeague.reloadData()
@@ -122,6 +114,7 @@ class LeagueWiseMatchesViewController: UIViewController {
             }
             
         }.store(in: &cancelable)
+        
         viewModel.$selectedIndexData.sink(){[weak self] data in
             guard let self else {return}
             if let data = data{
@@ -137,9 +130,6 @@ class LeagueWiseMatchesViewController: UIViewController {
             }
         }.store(in: &cancelable)
     }
-    
-    
-    
 }
 
 extension LeagueWiseMatchesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -159,7 +149,6 @@ extension LeagueWiseMatchesViewController: UICollectionViewDataSource, UICollect
         let cell = collectionView.cellForItem(at: indexPath) as! LeaguesCollectionViewCell
         cell.isSelected = true
         if NetworkReachabilityManager()!.isReachable{
-            
             Task{
                 self.startLoading()
                 await viewModel.getMatchesInfo(leagueId: selectedLeagueId, status: selectedStatus)
@@ -169,11 +158,7 @@ extension LeagueWiseMatchesViewController: UICollectionViewDataSource, UICollect
         else{
             self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
         }
-        
     }
-    
-    
-    
 }
 
 extension LeagueWiseMatchesViewController: UITableViewDataSource, UITableViewDelegate {

@@ -39,19 +39,17 @@ class DateWiseMatchViewController: UIViewController {
             let viewController =  self.storyboard?.instantiateViewController(identifier: "LeagueWiseMatchesViewController") as! LeagueWiseMatchesViewController
             viewController.loadViewIfNeeded()
             self.navigationController?.pushViewController(viewController, animated: true)
-            
         }
         else{
             showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
         }
     }
+    
     @IBAction func searchMatchAction(_ sender: Any) {
-       
-            
         getDataFromApi(date:datePicker.date)
-            
         
     }
+    
     func binder(){
         viewModel.$matchData.sink { [weak self] data in
             guard let self = self else {return}
@@ -62,9 +60,6 @@ class DateWiseMatchViewController: UIViewController {
                     self.tableViewMatchList.reloadData()
                 }
             }
-            
-            
-            
             
         }.store(in: &cancelable)
         
@@ -84,13 +79,12 @@ class DateWiseMatchViewController: UIViewController {
                     self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
                 }
                 
-                
             }
         }.store(in: &cancelable)
     }
     
-    
 }
+
 extension DateWiseMatchViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchData.count
@@ -106,13 +100,12 @@ extension DateWiseMatchViewController: UITableViewDataSource, UITableViewDelegat
         if data.status == "NS"{
             cell.labelStatus.text = "Upcoming"
         }
+        
         cell.labelVisitorTeamFlag.sd_setImage(with: URL(string: data.visitorTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLocalTeamName.text = data.localTeamName
         cell.labelNote.text = data.note
-        
         cell.labelLocalTeamFlag.sd_setImage(with: URL(string: data.localTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLeagueNameWithSeason.text = (data.leagueName ?? "") + "," + (data.seasonName ?? "")
-        
         
         return cell
     }

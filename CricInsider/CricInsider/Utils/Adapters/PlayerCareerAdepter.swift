@@ -1,15 +1,8 @@
-//
-//  PlayerCareerAdepter.swift
-//  CricInsider
-//
-//  Created by Md. Sakibul Alam Utchas on 23/2/23.
-//
 
 import Foundation
 
 class PlayerCareerAdepter {
     static func adapt(player: PlayerModel) -> PlayerCareerModel{
-        
         
         let playerData = player.data
         let playerCareer = playerData?.career ?? []
@@ -29,10 +22,7 @@ class PlayerCareerAdepter {
             testCareer: analyzeCareerData(career: playerCareer, type: "Test/5day"),
             t20iCareer: analyzeCareerData(career: playerCareer, type: "T20I")
         )
-        
-        
         return playerCareerModel
-        
     }
     
     static func analyzeCareerData(career: [Career], type: String) -> Career {
@@ -69,10 +59,10 @@ class PlayerCareerAdepter {
                 }
             }
         }
-        //calculate Strike Rate and Average
+        
+
         strike_rate = (Double(runs_scored) / balls_faced) * 100
         average = Double(runs_scored) / Double(inningsBating)
-        //calculate Economy Rate
         econ_rate = Double(runs) / overs
         
         let careerModel = Career(
@@ -104,18 +94,13 @@ struct PlayerCareerModel: Codable {
     let fullname: String?
     let image_path: String?
     let dateofbirth: String?
-    
     let battingstyle: String?
     let bowlingstyle: String?
     let position: Position?
-    
     let lineup: Lineup?
     let country: Country?
     let t20Career: Career?
     let odiCareer: Career?
     let testCareer: Career?
     let t20iCareer: Career?
-    
-    
-    
 }

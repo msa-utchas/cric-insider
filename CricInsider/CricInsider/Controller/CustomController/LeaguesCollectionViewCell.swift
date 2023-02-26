@@ -1,9 +1,3 @@
-//
-//  LeaguesCollectionViewCell.swift
-//  CricInsider
-//
-//  Created by Md. Sakibul Alam Utchas on 25/2/23.
-//
 
 import UIKit
 
@@ -17,7 +11,7 @@ class LeaguesCollectionViewCell: UICollectionViewCell {
         viewBackground.addShadow()
         
     }
-    
+   
     override var isSelected: Bool {
             didSet {
                 if isSelected {

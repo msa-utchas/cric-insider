@@ -16,7 +16,7 @@ class SearchPlayerViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var playerData: [PlayersInfo] = []
     let viewModel = SearchPlayerViewModel()
-  
+    
     private var cancelable: Set<AnyCancellable> = []
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -35,9 +35,6 @@ class SearchPlayerViewController: UIViewController {
         tableViewSearchedPlayerList.layer.cornerRadius = 10
         tableViewSearchedPlayerList.register(UINib(nibName: PlayerDetailsHeader.identifier, bundle: nil), forCellReuseIdentifier: PlayerDetailsHeader.identifier)
         callDataFromApi()
-        
-        
-  
         
     }
     
@@ -62,7 +59,6 @@ extension SearchPlayerViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.setSelectedPlayerId(id: Int(playerData[indexPath.row].id))
     }
-    
     
 }
 
@@ -100,7 +96,7 @@ extension SearchPlayerViewController{
             }
             
         }.store(in: &cancelable)
-
+        
         viewModel.$selectedPlayerId.sink(){[weak self] id in
             guard let self = self else {return}
             
@@ -110,7 +106,7 @@ extension SearchPlayerViewController{
                     vc.loadViewIfNeeded()
                     Task{
                         await vc.viewModel.getPlayerData(id:id)
-                      }
+                    }
                     
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
@@ -122,9 +118,7 @@ extension SearchPlayerViewController{
         }.store(in: &cancelable)
         
     }
-    
 }
-
 
 extension SearchPlayerViewController{
     func callDataFromApi(){
@@ -140,13 +134,14 @@ extension SearchPlayerViewController{
         }
     }
     func showAlert(title: String, message: String) {
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {[weak self] _ in
             guard let self = self else {return}
             self.callDataFromApi()
             self.searchTextField.text = ""
-
+            
         }))
         present(alert, animated: true, completion: nil)
-    }}
+    }
+    
+}

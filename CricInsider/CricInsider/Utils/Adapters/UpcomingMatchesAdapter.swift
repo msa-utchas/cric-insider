@@ -5,7 +5,15 @@ class UpcomingMatchesAdapter {
         guard let fixtures = fixturesModel.data else { return [] }
         var upcomingMatches = [UpcomingMatchModel]()
         
+        var count = 0
+        
         for fixture in fixtures {
+            
+            if count > 6{
+                break
+            }
+            count += 1
+            
             let formattedDateData = Date.formatDateTimeData(fixture.starting_at)
             
             let upcomingMatch = UpcomingMatchModel(

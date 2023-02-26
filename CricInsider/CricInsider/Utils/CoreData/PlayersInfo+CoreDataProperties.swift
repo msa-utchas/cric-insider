@@ -1,17 +1,8 @@
-//
-//  PlayersInfo+CoreDataProperties.swift
-//  CricInsider
-//
-//  Created by Md. Sakibul Alam Utchas on 19/2/23.
-//
-//
-
 import Foundation
 import CoreData
 
-
 extension PlayersInfo {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<PlayersInfo> {
         return NSFetchRequest<PlayersInfo>(entityName: "PlayersInfo")
     }

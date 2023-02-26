@@ -2,9 +2,11 @@ import Foundation
 import Combine
 
 class MatchDetailsViewModel: ObservableObject {
+    
     private var matchDetailsRepository: MatchDetailsRepository
     static let shared = MatchDetailsViewModel()
     var matchID: Int?
+    
     @Published var matchDetails: MatchDetailsModel?
     @Published var selectedPlayerId: Int?
     

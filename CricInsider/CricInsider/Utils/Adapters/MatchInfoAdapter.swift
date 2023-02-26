@@ -1,21 +1,12 @@
-//
-//  MatchInfoAdapter.swift
-//  CricInsider
-//
-//  Created by Md. Sakibul Alam Utchas on 22/2/23.
-//
-
 import Foundation
+
 class MatchInfoAdapter{
     static func adapt(_ fixturesModel: FixturesModel)->[MatchInfoModel]{
         guard let fixtures = fixturesModel.data else { return [] }
         
         var matchesInfo = [MatchInfoModel]()
         
-        
         for fixture in fixtures {
-            
-            
             let formattedDateData = Date.formatDateTimeData(fixture.starting_at)
             
             let matchInfo = MatchInfoModel(
@@ -32,7 +23,6 @@ class MatchInfoAdapter{
                 dateObject: formattedDateData?.2,
                 matchType: fixture.type,
                 note: fixture.note
-                
             )
             matchesInfo.append(matchInfo)
         }
@@ -40,10 +30,7 @@ class MatchInfoAdapter{
     }
 }
 
-
-
 struct MatchInfoModel{
-    
     let fixtureId: Int?
     let status: String?
     let leagueName: String?
@@ -58,7 +45,5 @@ struct MatchInfoModel{
     let dateObject: Date?
     let matchType: String?
     let note: String?
-    
-    
 }
 

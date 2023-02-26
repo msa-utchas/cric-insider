@@ -55,6 +55,9 @@
 		D929B34C29A93533002DB101 /* PlayerCareerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D929B34B29A93533002DB101 /* PlayerCareerHeader.xib */; };
 		D94C837329A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */; };
 		D953EAAE29A14931006E47F4 /* FinishedMatchAdepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */; };
+		D95F18C829ABC2E3009FBC97 /* ScoreCardContainerViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F18C729ABC2E3009FBC97 /* ScoreCardContainerViewController+TableView.swift */; };
+		D95F18CA29ABC572009FBC97 /* ViewPlayerInfoViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F18C929ABC572009FBC97 /* ViewPlayerInfoViewController+TableView.swift */; };
+		D95F18CC29ABC684009FBC97 /* HomeViewController+Table+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F18CB29ABC684009FBC97 /* HomeViewController+Table+CollectionView.swift */; };
 		D96138BD29A7CF4200F3FD05 /* PlayerCareerAdepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96138BC29A7CF4200F3FD05 /* PlayerCareerAdepter.swift */; };
 		D99DA5D129A65E96007139D7 /* DateWiseMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA5D029A65E96007139D7 /* DateWiseMatchViewModel.swift */; };
 		D99DA5D329A665E6007139D7 /* MatchInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DA5D229A665E6007139D7 /* MatchInfoAdapter.swift */; };
@@ -122,6 +125,9 @@
 		D929B34B29A93533002DB101 /* PlayerCareerHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCareerHeader.xib; sourceTree = "<group>"; };
 		D94C837229A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		D953EAAD29A14931006E47F4 /* FinishedMatchAdepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchAdepter.swift; sourceTree = "<group>"; };
+		D95F18C729ABC2E3009FBC97 /* ScoreCardContainerViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreCardContainerViewController+TableView.swift"; sourceTree = "<group>"; };
+		D95F18C929ABC572009FBC97 /* ViewPlayerInfoViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewPlayerInfoViewController+TableView.swift"; sourceTree = "<group>"; };
+		D95F18CB29ABC684009FBC97 /* HomeViewController+Table+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Table+CollectionView.swift"; sourceTree = "<group>"; };
 		D96138BC29A7CF4200F3FD05 /* PlayerCareerAdepter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCareerAdepter.swift; sourceTree = "<group>"; };
 		D99DA5D029A65E96007139D7 /* DateWiseMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateWiseMatchViewModel.swift; sourceTree = "<group>"; };
 		D99DA5D229A665E6007139D7 /* MatchInfoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoAdapter.swift; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 				896AB4A829A62408009A2BD3 /* DateWiseMatchViewController.swift */,
 				89A69B0129A8700C00962B26 /* ViewPlayerInfoViewController.swift */,
 				D906A8DC29A9F22F004D81E2 /* LeagueWiseMatchesViewController.swift */,
+				D95F18C929ABC572009FBC97 /* ViewPlayerInfoViewController+TableView.swift */,
+				D95F18CB29ABC684009FBC97 /* HomeViewController+Table+CollectionView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 				893CF06F299F790B009DEF6B /* MatchInfoViewController.swift */,
 				893CF071299F793C009DEF6B /* SquadsViewController.swift */,
 				D9DFE31D29A0FAE20079ACFA /* ScoreCardContainerViewController.swift */,
+				D95F18C729ABC2E3009FBC97 /* ScoreCardContainerViewController+TableView.swift */,
 			);
 			path = ContainerViewController;
 			sourceTree = "<group>";
@@ -445,6 +454,7 @@
 				89074F57299CBD3C00256BC5 /* PlayersModel.swift in Sources */,
 				896AB4A429A60CD3009A2BD3 /* MatchesTableViewCell.swift in Sources */,
 				D906A8DF29AA14FC004D81E2 /* LeaguesModel.swift in Sources */,
+				D95F18C829ABC2E3009FBC97 /* ScoreCardContainerViewController+TableView.swift in Sources */,
 				89074F53299CBD1100256BC5 /* FixturesModel.swift in Sources */,
 				893CF06D299F4EC0009DEF6B /* MatchDetailsViewController.swift in Sources */,
 				D9A6154E29A1FBAF004FA85B /* MatchDetailsAdepter.swift in Sources */,
@@ -468,6 +478,7 @@
 				893CF072299F793C009DEF6B /* SquadsViewController.swift in Sources */,
 				89074F5E299CBF5200256BC5 /* CoreDataStack.swift in Sources */,
 				D9D4EEDF299D4BCB002407C0 /* FixturesRepository.swift in Sources */,
+				D95F18CA29ABC572009FBC97 /* ViewPlayerInfoViewController+TableView.swift in Sources */,
 				D9A6155D29A22C3B004FA85B /* PlayersInfo+CoreDataClass.swift in Sources */,
 				D929B34829A92C70002DB101 /* PlayerDetailsHeader.swift in Sources */,
 				D912795829A53DAC006BF1B8 /* UIViewExtention.swift in Sources */,
@@ -486,6 +497,7 @@
 				D9A6155229A22504004FA85B /* SearchPlayerViewModel.swift in Sources */,
 				89548A20299C75E100BADDF3 /* SceneDelegate.swift in Sources */,
 				89074F5C299CBF3E00256BC5 /* CoreDataManager.swift in Sources */,
+				D95F18CC29ABC684009FBC97 /* HomeViewController+Table+CollectionView.swift in Sources */,
 				898304FE299CE1CB00CBBC7E /* HomeViewController.swift in Sources */,
 				89548A28299C75E100BADDF3 /* CricInsider.xcdatamodeld in Sources */,
 				D94C837329A375AB0049A4A7 /* SearchedPlayerTableViewCell.swift in Sources */,

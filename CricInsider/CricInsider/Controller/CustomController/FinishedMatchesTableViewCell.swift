@@ -1,15 +1,9 @@
-//
-//  FinishedMatchesTableViewCell.swift
-//  CricInsider
-//
-//  Created by BJIT on 16/2/23.
-//
 
 import UIKit
 
 class FinishedMatchesTableViewCell: UITableViewCell {
     static let identifier = "FinishedMatchesTableViewCell"
-
+    
     @IBOutlet var labelDate: UILabel!
     @IBOutlet weak var teamBImageView: UIImageView!
     @IBOutlet weak var labelLeagueInfo: UILabel!
@@ -21,6 +15,7 @@ class FinishedMatchesTableViewCell: UITableViewCell {
     @IBOutlet weak var labelTeamAName: UILabel!
     @IBOutlet weak var labelTeamBName: UILabel!
     @IBOutlet weak var viewBackground: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         viewBackground.layer.cornerRadius = 5
@@ -31,11 +26,11 @@ class FinishedMatchesTableViewCell: UITableViewCell {
         contentView.layer.shadowOpacity = 0.8
         contentView.layer.shadowRadius = 4
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

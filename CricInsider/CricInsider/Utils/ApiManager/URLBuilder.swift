@@ -1,16 +1,16 @@
 
 import Foundation
 class URLBuilder {
-    //ICTEnAzbmSy2cjmU392cgNuyriPZ19WIOFctfQP6NI3d6UFQEB9TBfZG3pEc
-    let baseURL = "https://cricket.sportmonks.com/api/v2.0"
-    //let apiToken: String = "h0J6t9SxB02l6U0nRmOiagSZmymozNYQ7GFaTAwmiJ5gSFwIDUC3JJpjtwg7"
-    let apiToken: String = "11xEeZHm5pQSsuUxi6n4JbD1zxY3RYmAHbVKYtZFTP2QqrsXxeB5zxEydna8"
     static let shared = URLBuilder()
+    
+    let baseURL = "https://cricket.sportmonks.com/api/v2.0"
+    let apiToken: String = "11xEeZHm5pQSsuUxi6n4JbD1zxY3RYmAHbVKYtZFTP2QqrsXxeB5zxEydna8"
+    
+    //let apiToken: String = "h0J6t9SxB02l6U0nRmOiagSZmymozNYQ7GFaTAwmiJ5gSFwIDUC3JJpjtwg7"
     //let apiToken: String = "ICTEnAzbmSy2cjmU392cgNuyriPZ19WIOFctfQP6NI3d6UFQEB9TBfZG3pEc"
     
-
     private init() {}
-//career
+    
     func getPlayerURL(playerID: Int) -> URL? {
         let endpoint = "/players/\(playerID)"
         let queryItems = [
@@ -19,7 +19,7 @@ class URLBuilder {
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
-
+    
     func getPlayersURL() -> URL? {
         let endpoint = "/players"
         let queryItems = [
@@ -29,7 +29,7 @@ class URLBuilder {
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
-
+    
     func getFixturesURL() -> URL? {
         let endpoint = "/fixtures"
         let queryItems = [
@@ -59,13 +59,6 @@ class URLBuilder {
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
     
-    
-    
-    
-    
-    
-    
-    
     func getMatchDetails(id : Int) -> URL? {
         let endpoint = "/fixtures/\(id)"
         let queryItems = [
@@ -74,7 +67,6 @@ class URLBuilder {
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
-    
     
     func getDateWiseFixtureUrl(startDate: String, endDate: String)->URL?{
         let endpoint = "/fixtures"
@@ -86,12 +78,6 @@ class URLBuilder {
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
-    
-    
-    
-    
-    
-    
     
     private func createURL(endpoint: String, queryItems: [URLQueryItem]) -> URL? {
         var components = URLComponents(string: baseURL + endpoint)
@@ -108,9 +94,7 @@ class URLBuilder {
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
-
-
-
+    
     func getAllLeaguesUrl() -> URL?{
         let endpoint = "/leagues"
         let queryItems = [
@@ -118,7 +102,7 @@ class URLBuilder {
         ]
         return createURL(endpoint: endpoint, queryItems: queryItems)
     }
-
+    
     func getFixtureByLeagueId(leagueId: Int, status: String)-> URL?{
         let endpoint = "/fixtures"
         let queryItems = [

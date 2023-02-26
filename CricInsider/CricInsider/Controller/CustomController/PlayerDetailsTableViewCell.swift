@@ -1,10 +1,3 @@
-//
-//  PlayerDetailsTableViewCellTableViewCell.swift
-//  CricInsider
-//
-//  Created by BJIT on 24/2/23.
-//
-
 import UIKit
 
 class PlayerDetailsTableViewCell: UITableViewCell {
@@ -23,7 +16,6 @@ class PlayerDetailsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-     
      
     }
 

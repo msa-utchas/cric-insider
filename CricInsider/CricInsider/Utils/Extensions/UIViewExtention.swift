@@ -1,10 +1,3 @@
-//
-//  UIViewExtention.swift
-//  CricInsider
-//
-//  Created by Md. Sakibul Alam Utchas on 21/2/23.
-//
-
 import Foundation
 import UIKit
 

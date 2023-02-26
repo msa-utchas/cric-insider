@@ -9,6 +9,7 @@
 import Foundation
 class MatchDetailsAdepter{
     static func adapt(_ fixtureModel: FixtureModel) -> MatchDetailsModel {
+        
         var localTeamSquad : [Player] = []
         var visitorTeamSquad : [Player] = []
         var localTeamBowling : [Bowling] = []
@@ -17,9 +18,7 @@ class MatchDetailsAdepter{
         var visitorTeamBatting : [Batting] = []
         var localTeamRuns: Run?
         var VisitorTeamRuns: Run?
-        
         let fixture = fixtureModel.data
-        
         let formattedDateData = Date.formatDateTimeData(fixture.starting_at)
         let startDate = ((formattedDateData?.0 ?? "") + " " + (formattedDateData?.1 ?? ""))
         
@@ -51,6 +50,7 @@ class MatchDetailsAdepter{
                 }
             }
         }
+        
         if let bowling = fixtureModel.data.bowling{
             for player in bowling{
                 if (fixtureModel.data.localteam_id == player.team_id){
@@ -61,6 +61,7 @@ class MatchDetailsAdepter{
                 }
             }
         }
+        
         if let batting = fixtureModel.data.batting{
             for player in batting{
                 if (fixtureModel.data.localteam_id == player.team_id){
@@ -71,7 +72,6 @@ class MatchDetailsAdepter{
                 }
             }
         }
-        
         
         return MatchDetailsModel(
             localTeamName: fixtureModel.data.localteam?.name,
@@ -93,14 +93,15 @@ class MatchDetailsAdepter{
             date: startDate,
             venue: fixtureModel.data.venue,
             localTeamCodeName: fixtureModel.data.localteam?.code,
-            visitorTeamCodeName: fixtureModel.data.visitorteam?.code, status: fixtureModel.data.status, manOfMatchName: fixtureModel.data.manofmatch?.fullname, manOfMatchImage: fixtureModel.data.manofmatch?.image_path
+            visitorTeamCodeName: fixtureModel.data.visitorteam?.code,
+            status: fixtureModel.data.status,
+            manOfMatchName: fixtureModel.data.manofmatch?.fullname,
+            manOfMatchImage: fixtureModel.data.manofmatch?.image_path
             
-            
-    
         )
     }
-    
 }
+
 struct MatchDetailsModel{
     let localTeamName: String?
     let visitorTeamName: String?
@@ -125,7 +126,7 @@ struct MatchDetailsModel{
     let status: String?
     let manOfMatchName: String?
     let manOfMatchImage: String?
-
+    
 }
 
 

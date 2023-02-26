@@ -48,45 +48,7 @@ class MatchDetailsViewController: UIViewController {
 
     func binder(){
         matchDetailsViewModel.$matchDetails.sink {[weak self] (data) in
-            guard self != nil else {return}
-//            if let data = data{
-//                if data.localTeamSquad?.count == 0{
-//                    DispatchQueue.main.async {
-//                        // remove segment button
-//                        self.matchInfoSegmentControl.removeSegment(at: 2, animated: true)
-//                    }
-//
-//                }else{
-//                    DispatchQueue.main.async {
-//                        if self.matchInfoSegmentControl.numberOfSegments == 2{
-//                            self.matchInfoSegmentControl.insertSegment(withTitle: "Squad", at: 2, animated: true)
-//                        }
-//
-//                    }
-//                }
-//                if (data.localTeamBowling?.count != 0) || (data.localTeamBatting.count != 0) || (data.visitorTeamBowling?.count != 0) || (data.visitorTeamBatting.count != 0) {
-//                    DispatchQueue.main.async {
-//                        // add segment button if not exist
-//                        if self.matchInfoSegmentControl.numberOfSegments == 2{
-//
-//                            DispatchQueue.main.async {
-//                                self.matchInfoSegmentControl.insertSegment(withTitle: "Score Card", at: 1, animated: true)
-//                            }
-//
-//                        }
-//
-//
-//                    }
-//                }
-//                else {
-//                    DispatchQueue.main.async {
-//
-//                        self.matchInfoSegmentControl.removeSegment(at: 1, animated: true)
-//                    }
-//                }
-//            }
-
-           
+            guard self != nil else {return}   
             
         }.store(in: &cancelable)
     }

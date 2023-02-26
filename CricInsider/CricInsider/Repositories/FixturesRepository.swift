@@ -24,7 +24,6 @@ protocol LeagueWiseFixtureRepository{
 
 class FixturesRepository: FixtureMatchesListRepository,MatchDetailsRepository,DateWiseMatchRepository,LeagueWiseFixtureRepository{
     
-    
     func getAllLeagues() async -> Result<LeaguesModel,Error> {
         let url = URLBuilder.shared.getAllLeaguesUrl()
         let result: Result<LeaguesModel,Error> = await ApiManager.shared.fetchDataFromApi(url: url)
@@ -36,24 +35,15 @@ class FixturesRepository: FixtureMatchesListRepository,MatchDetailsRepository,Da
         }
     }
     
-    
-    
     func getDateWiseMatches(date : Date) async ->Result<[MatchInfoModel], Error> {
-        // format date object to to "2021-09-23" string
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
         let dateString = dateFormatter.string(from: date)
-        
-        
-        
-        
-        
         let startDate = "\(dateString)T00:00:00.000Z"
         let endDate = "\(dateString)T23:59:59.000Z"
         
         let url = URLBuilder.shared.getDateWiseFixtureUrl(startDate: startDate, endDate: endDate)
-        
         
         let result: Result<FixturesModel,Error> = await ApiManager.shared.fetchDataFromApi(url: url)
         
@@ -78,9 +68,6 @@ class FixturesRepository: FixtureMatchesListRepository,MatchDetailsRepository,Da
             return .failure(error)
         }
     }
-    
-    
-    
     
     func getMatchDetails(id: Int) async -> Result<MatchDetailsModel, Error> {
         let url = URLBuilder.shared.getMatchDetails(id: id)

@@ -2,7 +2,6 @@
 import Foundation
 import Combine
 
-
 class ViewPlayerInfoViewModel{
     @Published var playerData: PlayerCareerModel?
     let playerCareerRepository: PlayerCareerRepository

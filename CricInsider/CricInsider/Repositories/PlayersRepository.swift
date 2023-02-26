@@ -16,8 +16,9 @@ protocol SearchPlayerDataRepository{
 }
 
 protocol PlayerCareerRepository{
-     func getPlayerDetails(for id: Int) async -> Result<PlayerCareerModel,Error>
+    func getPlayerDetails(for id: Int) async -> Result<PlayerCareerModel,Error>
 }
+
 class PlayersRepository: SearchPlayerDataRepository, PlayerCareerRepository{
     
     private let privateContext = CoreDataManager.shared.privateContext
@@ -47,12 +48,10 @@ class PlayersRepository: SearchPlayerDataRepository, PlayerCareerRepository{
                 fetchRequest.predicate = NSPredicate(format: "fullName CONTAINS[cd] %@", searchText)
                 result = try self.privateContext.fetch(fetchRequest)
             }
-            
             return .success(result)
         } catch {
             return .failure(error)
         }
-        
     }
     
     func getAllPlayers() async -> Result<PlayersModel,Error>{
@@ -60,7 +59,6 @@ class PlayersRepository: SearchPlayerDataRepository, PlayerCareerRepository{
         let data: Result<PlayersModel,Error> = await ApiManager.shared.fetchDataFromApi(url: url)
         return data
     }
-    
     
     func savePlayerData(playerInfo: PlayersModel) async -> Result<Bool, Error>{
         let deleteResult = deleteAllData()
@@ -89,6 +87,7 @@ class PlayersRepository: SearchPlayerDataRepository, PlayerCareerRepository{
             return .failure(error)
         }
     }
+    
     func deleteAllData() -> Result<Bool, Error> {
         do {
             try  privateContext.performAndWait {[weak self] in
@@ -105,7 +104,7 @@ class PlayersRepository: SearchPlayerDataRepository, PlayerCareerRepository{
         }
     }
     
-     func getPlayerDetails(for id: Int) async -> Result<PlayerCareerModel,Error>{
+    func getPlayerDetails(for id: Int) async -> Result<PlayerCareerModel,Error>{
         let url = URLBuilder.shared.getPlayerURL(playerID: id)
         let result: Result<PlayerModel,Error> = await ApiManager.shared.fetchDataFromApi(url: url)
         switch result{

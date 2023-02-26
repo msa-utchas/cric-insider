@@ -10,12 +10,16 @@ import Foundation
 import Combine
 
 class SearchPlayerViewModel {
+    
     let searchPlayerDataRepository: SearchPlayerDataRepository
+    
     @Published var playerList: [PlayersInfo] = []
     @Published var selectedPlayerId: Int?
+    
     init(searchPlayerDataRepository: SearchPlayerDataRepository = PlayersRepository()) {
         self.searchPlayerDataRepository = searchPlayerDataRepository
     }
+    
     func callApiAndSaveDataIfNeeded() async{
         let data = searchPlayerDataRepository.checkPlayerAvailabilityInCoreData()
         if (data.count < 7){
@@ -28,7 +32,7 @@ class SearchPlayerViewModel {
             }
         }
         else{
-         playerList = Array(data.prefix(4))
+            playerList = Array(data.prefix(4))
         }
     }
     
@@ -42,9 +46,11 @@ class SearchPlayerViewModel {
             debugPrint(error)
         }
     }
+    
     func setSelectedPlayerId(id: Int){
         selectedPlayerId = id
     }
+    
     private func savePlayerToCoreData(data: PlayersModel) async{
         let result =  await searchPlayerDataRepository.savePlayerData(playerInfo: data)
         switch result{

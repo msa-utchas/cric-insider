@@ -27,26 +27,21 @@ class MatchDetailsViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        //matchInfoSegmentControl.setEnabled(false, forSegmentAt: 1)
-        //matchInfoSegmentControl.removeSegment(at: 1, animated: true)
-        //self.navigationController?.isNavigationBarHidden = false
+
         matchDetailsBackgroundView.layer.cornerRadius = 20
         matchInfoContainerView.isHidden = false
         squadListContainerView.isHidden = true
         scoreCardContainerView.isHidden = true
-       self.navigationItem.title = "Cric Insider"
-        //chage the title text color to custom1
-        //self.navigationItem.titleView?.tintColor = UIColor(named: "custom1")
+        self.navigationItem.title = "Cric Insider"
+    
         binder()
 
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         navigationController?.title = "Cric Insider"
-        
-        
-
     }
 
     func binder(){

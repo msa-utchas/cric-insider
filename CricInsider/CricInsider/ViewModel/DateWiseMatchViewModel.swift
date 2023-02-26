@@ -10,6 +10,7 @@ import Foundation
 class DateWiseMatchViewModel{
     @Published var matchData: [MatchInfoModel]?
     var dateWiseMatchRepository: DateWiseMatchRepository
+    @Published var selectedMatch: MatchInfoModel?
     
     init(dateWiseMatchRepository: DateWiseMatchRepository = FixturesRepository()) {
         self.dateWiseMatchRepository = dateWiseMatchRepository
@@ -23,6 +24,9 @@ class DateWiseMatchViewModel{
         case .failure(let error):
             debugPrint(error)
         }
+    }
+    func setSelectedMatch(matchInfo: MatchInfoModel){
+        selectedMatch = matchInfo
     }
 
 }

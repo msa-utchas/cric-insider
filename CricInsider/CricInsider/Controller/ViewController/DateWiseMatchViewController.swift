@@ -21,7 +21,7 @@ class DateWiseMatchViewController: UIViewController {
     @IBOutlet weak var tableViewMatchList: UITableView!
     var cancelable: Set<AnyCancellable> = []
     var matchData: [MatchInfoModel] = []
-
+    
     override func viewDidLoad(){
         
         super.viewDidLoad()
@@ -37,12 +37,12 @@ class DateWiseMatchViewController: UIViewController {
         Task {
             await viewModel.getDateWiseMatches(date: datePicker.date)
             view.isUserInteractionEnabled = true
-
+            
             //activityContainerView.isHidden = true
             
         }
         binder()
-       
+        
     }
     
     @IBAction func showLeagueWiseMatches(_ sender: Any) {
@@ -52,10 +52,10 @@ class DateWiseMatchViewController: UIViewController {
     }
     @IBAction func searchMatchAction(_ sender: Any) {
         Task {
-           
+            
             await viewModel.getDateWiseMatches(date: datePicker.date)
             view.isUserInteractionEnabled = true
-
+            
         }
     }
     func binder(){
@@ -63,7 +63,7 @@ class DateWiseMatchViewController: UIViewController {
             guard let self = self else {return}
             
             if let data = data{
-                self.matchData = data 
+                self.matchData = data
                 DispatchQueue.main.async {
                     self.tableViewMatchList.reloadData()
                 }
@@ -73,9 +73,24 @@ class DateWiseMatchViewController: UIViewController {
             
             
         }.store(in: &cancelable)
+        
+        viewModel.$selectedMatch.sink(){[weak self] data in
+            guard let self = self else {return}
+            if let data = data{
+                let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+                let viewController = storyBoard.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
+                viewController.loadViewIfNeeded()
+                viewController.matchDetailsViewModel.matchID = data.fixtureId
+                Task{
+                    await viewController.matchDetailsViewModel.setMatchDetails(id: data.fixtureId ?? 47099)
+                }
+                self.navigationController?.pushViewController(viewController, animated: true)
+                
+            }
+        }.store(in: &cancelable)
     }
-
-
+    
+    
 }
 extension DateWiseMatchViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,12 +107,16 @@ extension DateWiseMatchViewController: UITableViewDataSource, UITableViewDelegat
         cell.labelVisitorTeamFlag.sd_setImage(with: URL(string: data.visitorTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLocalTeamName.text = data.localTeamName
         cell.labelNote.text = data.note
-    
+        
         cell.labelLocalTeamFlag.sd_setImage(with: URL(string: data.localTeamImagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))
         cell.labelLeagueNameWithSeason.text = (data.leagueName ?? "") + "," + (data.seasonName ?? "")
         
-               
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.setSelectedMatch(matchInfo: matchData[indexPath.row])
     }
     
     

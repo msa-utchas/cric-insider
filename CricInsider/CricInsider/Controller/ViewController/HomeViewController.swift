@@ -13,12 +13,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionBackgroundHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewMatches: UICollectionView!
     
-    private var cancelable: Set<AnyCancellable> = []
     var viewModel = HomeViewModel()
+    
+    private var cancelable: Set<AnyCancellable> = []
     var upcomingMatchList: [UpcomingMatchModel] = []
     var finishedMatches: [FinishedMatchesModel] = []
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,21 +170,23 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if scrollView.contentOffset.y > 0 {
             
             UIView.animate(withDuration: 0.6) { [weak self] in
-                self?.collectionViewMatches.alpha = 0
-                
-                self?.collectionBackgroundHeightConstraint.constant = 0
-                self?.collectionViewHeightConstraint.constant = 80
-                self?.view.layoutIfNeeded()
+                guard let self = self else {return}
+                self.collectionViewMatches.alpha = 0
+            
+                self.collectionBackgroundHeightConstraint.constant = 0
+                self.collectionViewHeightConstraint.constant = 80
+                self.view.layoutIfNeeded()
             }
         }
         
         else {
             UIView.animate(withDuration: 0.4) { [weak self] in
-                self?.collectionViewMatches.alpha = 1
-                self?.collectionBackgroundHeightConstraint.constant = 100
-                self?.collectionViewHeightConstraint.constant = 240
+                guard let self = self else {return}
+                self.collectionViewMatches.alpha = 1
+                self.collectionBackgroundHeightConstraint.constant = 100
+                self.collectionViewHeightConstraint.constant = 240
                 
-                self?.view.layoutIfNeeded()
+                self.view.layoutIfNeeded()
             }
         }
     }

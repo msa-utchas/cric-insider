@@ -886,8 +886,8 @@
             filePath = "CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "DateWiseMatchViewController"
             landmarkType = "3">
             <Locations>
@@ -920,69 +920,6 @@
                   startingLineNumber = "46"
                   endingLineNumber = "46"
                   offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4BC4238B-5350-489C-87A2-9E108AEEB42D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4BC4238B-5350-489C-87A2-9E108AEEB42D - 5674580fe04cf3b7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.DateWiseMatchViewController.searchMatchAction(Any) -&gt; ()"
-                  moduleName = "CricInsider"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "4BC4238B-5350-489C-87A2-9E108AEEB42D - ce2741d8a968adb0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.DateWiseMatchViewController.searchMatchAction(Any) -&gt; ()"
-                  moduleName = "CricInsider"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "4BC4238B-5350-489C-87A2-9E108AEEB42D - 5f9097b62a063fa9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricInsider.DateWiseMatchViewController.searchMatchAction(Any) -&gt; ()"
-                  moduleName = "CricInsider"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/utchas/Desktop/Bjit%20Last/bjit-Last-Project/CricInsider/CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1029,8 +966,8 @@
             filePath = "CricInsider/Controller/ViewController/DateWiseMatchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1253,8 +1190,8 @@
             filePath = "CricInsider/Controller/ViewController/LeagueWiseMatchesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "getSelectedMatchSegment(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1269,8 +1206,8 @@
             filePath = "CricInsider/Controller/ViewController/LeagueWiseMatchesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "getSelectedMatchSegment(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1285,8 +1222,8 @@
             filePath = "CricInsider/Controller/ViewController/LeagueWiseMatchesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1317,8 +1254,8 @@
             filePath = "CricInsider/Controller/ViewController/LeagueWiseMatchesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "binder()"
             landmarkType = "7">
          </BreakpointContent>

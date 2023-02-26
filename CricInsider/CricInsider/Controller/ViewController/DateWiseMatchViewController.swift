@@ -1,18 +1,14 @@
-//
-//  DateWiseMatchViewController.swift
-//  CricInsider
-//
-//  Created by BJIT on 22/2/23.
-//
 
 import UIKit
 import Combine
+import Alamofire
 
 class DateWiseMatchViewController: UIViewController {
     @IBOutlet weak var textBackView: UIView!
     
     @IBOutlet weak var activityContainerView: UIView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var leagueWiseMatchesBackView: UIView!
     @IBOutlet weak var backView: UIView!
     let viewModel = DateWiseMatchViewModel()
@@ -26,7 +22,7 @@ class DateWiseMatchViewController: UIViewController {
         
         super.viewDidLoad()
         self.navigationItem.title = "Cric Insider"
-        view.isUserInteractionEnabled = false
+       
         leagueWiseBackView.addShadow()
         textBackView.layer.cornerRadius = 4
         textBackView.addShadow()
@@ -35,29 +31,29 @@ class DateWiseMatchViewController: UIViewController {
         tableViewMatchList.delegate = self
         let nib = UINib(nibName: MatchesTableViewCell.identifier, bundle: nil)
         tableViewMatchList.register(nib, forCellReuseIdentifier: MatchesTableViewCell.identifier)
-        Task {
-            await viewModel.getDateWiseMatches(date: datePicker.date)
-            view.isUserInteractionEnabled = true
-            
-            //activityContainerView.isHidden = true
-            
-        }
+        
         binder()
+        getDataFromApi(date: datePicker.date)
         
     }
     
     @IBAction func showLeagueWiseMatches(_ sender: Any) {
-        let viewController =  self.storyboard?.instantiateViewController(identifier: "LeagueWiseMatchesViewController") as! LeagueWiseMatchesViewController
-        viewController.loadViewIfNeeded()
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    @IBAction func searchMatchAction(_ sender: Any) {
-        Task {
-            
-            await viewModel.getDateWiseMatches(date: datePicker.date)
-            view.isUserInteractionEnabled = true
+        if NetworkReachabilityManager()!.isReachable{
+            let viewController =  self.storyboard?.instantiateViewController(identifier: "LeagueWiseMatchesViewController") as! LeagueWiseMatchesViewController
+            viewController.loadViewIfNeeded()
+            self.navigationController?.pushViewController(viewController, animated: true)
             
         }
+        else{
+            showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+        }
+    }
+    @IBAction func searchMatchAction(_ sender: Any) {
+       
+            
+        getDataFromApi(date:datePicker.date)
+            
+        
     }
     func binder(){
         viewModel.$matchData.sink { [weak self] data in
@@ -78,14 +74,19 @@ class DateWiseMatchViewController: UIViewController {
         viewModel.$selectedMatch.sink(){[weak self] data in
             guard let self = self else {return}
             if let data = data{
-                let storyBoard = UIStoryboard(name: "Home", bundle: nil)
-                let viewController = storyBoard.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
-                viewController.loadViewIfNeeded()
-                viewController.matchDetailsViewModel.matchID = data.fixtureId
-                Task{
-                    await viewController.matchDetailsViewModel.setMatchDetails(id: data.fixtureId ?? 47099)
+                if NetworkReachabilityManager()!.isReachable{
+                    let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+                    let viewController = storyBoard.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
+                    viewController.loadViewIfNeeded()
+                    viewController.matchDetailsViewModel.matchID = data.fixtureId
+                    Task{
+                        await viewController.matchDetailsViewModel.setMatchDetails(id: data.fixtureId ?? 47099)
+                    }
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                }else{
+                    self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
                 }
-                self.navigationController?.pushViewController(viewController, animated: true)
+                
                 
             }
         }.store(in: &cancelable)
@@ -124,4 +125,26 @@ extension DateWiseMatchViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     
+}
+extension DateWiseMatchViewController{
+    func getDataFromApi(date: Date){
+        Task {
+            if NetworkReachabilityManager()!.isReachable{
+                activityIndicator.startAnimating()
+                await viewModel.getDateWiseMatches(date: datePicker.date)
+                activityIndicator.stopAnimating()            }
+            else{
+                showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+            }
+            
+        }
+    }
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {[weak self] _ in
+            guard let self = self else {return}
+            self.getDataFromApi(date: self.datePicker.date)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }

@@ -26,6 +26,7 @@ class LeagueWiseMatchesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Cric Insider"
+        self.navigationItem.backBarButtonItem?.tintColor = .tintColor
         collectionViewLeague.dataSource = self
         collectionViewLeague.delegate = self
         collectionViewLeague.register(UINib(nibName: LeaguesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: LeaguesCollectionViewCell.identifier)
@@ -50,6 +51,12 @@ class LeagueWiseMatchesViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    
+        navigationController?.navigationBar.tintColor = UIColor.tintColor
+    }
     
     
     @IBAction func getSelectedMatchSegment(_ sender: Any) {

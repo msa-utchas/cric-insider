@@ -17,8 +17,8 @@ class SearchPlayerViewModel {
         self.searchPlayerDataRepository = searchPlayerDataRepository
     }
     func callApiAndSaveDataIfNeeded() async{
-        let count = searchPlayerDataRepository.checkPlayerAvailabilityInCoreData()
-        if (count < 1){
+        let data = searchPlayerDataRepository.checkPlayerAvailabilityInCoreData()
+        if (data.count < 7){
             let data = await searchPlayerDataRepository.getAllPlayers()
             switch data{
             case .success(let playersData):
@@ -26,6 +26,9 @@ class SearchPlayerViewModel {
             case .failure(let error):
                 debugPrint(error)
             }
+        }
+        else{
+         playerList = Array(data.prefix(4))
         }
     }
     

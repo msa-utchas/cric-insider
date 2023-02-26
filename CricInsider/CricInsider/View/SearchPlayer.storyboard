@@ -135,6 +135,9 @@
                                     <constraint firstItem="JP1-vY-RVQ" firstAttribute="top" secondItem="2ot-kH-M8I" secondAttribute="bottom" constant="10" id="uPs-ub-edb"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Og4-Jf-pBl">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BWb-8L-hGt"/>
                         <color key="backgroundColor" name="custom1"/>
@@ -143,11 +146,14 @@
                             <constraint firstItem="Siz-pa-VgD" firstAttribute="bottom" secondItem="BWb-8L-hGt" secondAttribute="bottom" id="NbE-2j-n2h"/>
                             <constraint firstItem="Siz-pa-VgD" firstAttribute="top" secondItem="BWb-8L-hGt" secondAttribute="top" id="XDl-TS-63S"/>
                             <constraint firstItem="Siz-pa-VgD" firstAttribute="leading" secondItem="BWb-8L-hGt" secondAttribute="leading" id="gYT-C7-620"/>
+                            <constraint firstItem="Og4-Jf-pBl" firstAttribute="centerX" secondItem="Fzl-CM-ahh" secondAttribute="centerX" id="ina-8I-4zo"/>
+                            <constraint firstItem="Og4-Jf-pBl" firstAttribute="centerY" secondItem="Fzl-CM-ahh" secondAttribute="centerY" id="meR-I7-cUx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cric Insider" id="NSG-lH-hu4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Og4-Jf-pBl" id="Yyp-dm-QI0"/>
                         <outlet property="labelSearchPlayerText" destination="gzU-cG-22x" id="Yei-FG-hZy"/>
                         <outlet property="searchTextField" destination="TmT-Ca-iHt" id="kLj-N6-P1S"/>
                         <outlet property="tableViewSearchedPlayerList" destination="JP1-vY-RVQ" id="kWM-XW-xUK"/>

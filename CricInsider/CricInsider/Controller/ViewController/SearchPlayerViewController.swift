@@ -12,6 +12,7 @@ import Combine
 class SearchPlayerViewController: UIViewController {
     @IBOutlet weak var viewBackground: UIView!
     @IBOutlet weak var labelSearchPlayerText: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var playerData: [PlayersInfo] = []
     let viewModel = SearchPlayerViewModel()
     var count: Int = 10
@@ -33,7 +34,9 @@ class SearchPlayerViewController: UIViewController {
         tableViewSearchedPlayerList.layer.cornerRadius = 10
         tableViewSearchedPlayerList.register(UINib(nibName: PlayerDetailsHeader.identifier, bundle: nil), forCellReuseIdentifier: PlayerDetailsHeader.identifier)
         Task{
+            activityIndicator.startAnimating()
             await viewModel.callApiAndSaveDataIfNeeded()
+            activityIndicator.stopAnimating()
         }
         
         
@@ -53,6 +56,7 @@ extension SearchPlayerViewController:UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewSearchedPlayerList.dequeueReusableCell(withIdentifier: SearchedPlayerTableViewCell.identifier, for: indexPath) as! SearchedPlayerTableViewCell
+        cell.selectionStyle = .none
         cell.labelName.text = playerData[indexPath.row].fullName
         cell.labelCountryName.text = playerData[indexPath.row].country
         cell.imageViewProfile.sd_setImage(with: URL(string: playerData[indexPath.row].imagePath ?? "placeholder.png"), placeholderImage: UIImage(named: "placeholder.png"))

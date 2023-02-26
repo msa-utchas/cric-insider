@@ -10,7 +10,7 @@ import CoreData
 
 protocol SearchPlayerDataRepository{
     func fuzzySearchPlayerData(searchText: String) async -> Result<[PlayersInfo], Error>
-    func checkPlayerAvailabilityInCoreData()->Int
+    func checkPlayerAvailabilityInCoreData()->[PlayersInfo]
     func savePlayerData(playerInfo: PlayersModel) async -> Result<Bool, Error>
     func getAllPlayers() async -> Result<PlayersModel,Error>
 }
@@ -23,19 +23,19 @@ class PlayersRepository: SearchPlayerDataRepository, PlayerCareerRepository{
     private let privateContext = CoreDataManager.shared.privateContext
     private let context = CoreDataManager.shared.context
     
-    func checkPlayerAvailabilityInCoreData()->Int  {
-        var count = 0
+    func checkPlayerAvailabilityInCoreData()->[PlayersInfo]  {
+        var playersInfo: [PlayersInfo] = []
         do {
             try privateContext.performAndWait {[weak self] in
                 guard let self = self else {return}
                 let fetchRequest = NSFetchRequest<PlayersInfo>(entityName: "PlayersInfo")
-                count = try self.privateContext.fetch(fetchRequest).count
+                playersInfo = try self.privateContext.fetch(fetchRequest)
             }
             
         } catch {
             debugPrint(error)
         }
-        return count
+        return playersInfo
     }
     
     func fuzzySearchPlayerData(searchText: String) async -> Result<[PlayersInfo], Error> {

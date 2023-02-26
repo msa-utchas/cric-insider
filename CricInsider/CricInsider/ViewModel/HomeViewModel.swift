@@ -95,10 +95,7 @@ class HomeViewModel{
     }
     
     func updateTimeRemaining(matchStartTime: Date)->String {
-           // Calculate the time remaining
            let timeRemaining = matchStartTime.timeIntervalSinceNow
-       
-           // Update the cell with the time remaining
            let formatter = DateComponentsFormatter()
            formatter.allowedUnits = [.day, .hour, .minute, .second]
            formatter.unitsStyle = .abbreviated

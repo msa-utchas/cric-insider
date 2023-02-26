@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYr-mV-hdT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYr-mV-hdT">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-S7-m4a">
@@ -157,55 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251.145038167939" y="22.535211267605636"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="yy5-hr-WpE">
-            <objects>
-                <viewController id="vTl-Ud-dTa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kw6-So-JJW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86v-OD-xHs">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGi-go-xBD">
-                                        <rect key="frame" x="8" y="39" width="377" height="142"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Match" translatesAutoresizingMaskIntoConstraints="NO" id="IJa-59-DKy">
-                                                <rect key="frame" x="8" y="43" width="82" height="75"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find Match By Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMa-hV-qfB">
-                                                <rect key="frame" x="87" y="67" width="203" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="wcp-O1-oZm"/>
-                        <color key="backgroundColor" name="custom1"/>
-                        <constraints>
-                            <constraint firstItem="86v-OD-xHs" firstAttribute="leading" secondItem="wcp-O1-oZm" secondAttribute="leading" id="3cR-GP-OmS"/>
-                            <constraint firstItem="86v-OD-xHs" firstAttribute="top" secondItem="wcp-O1-oZm" secondAttribute="top" id="8cm-8S-iuX"/>
-                            <constraint firstItem="wcp-O1-oZm" firstAttribute="bottom" secondItem="86v-OD-xHs" secondAttribute="bottom" id="JDn-Y5-UvH"/>
-                            <constraint firstItem="wcp-O1-oZm" firstAttribute="trailing" secondItem="86v-OD-xHs" secondAttribute="trailing" id="m9Z-7B-hlv"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="oxt-qz-erJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vWt-Hr-Uaf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1796" y="-930"/>
+            <point key="canvasLocation" x="1260" y="-857"/>
         </scene>
         <!--League Wise Matches View Controller-->
         <scene sceneID="M8T-Qd-90H">
@@ -292,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dh-25-uwB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2226.7175572519081" y="-88.028169014084511"/>
+            <point key="canvasLocation" x="2059" y="-857"/>
         </scene>
         <!--Matches-->
         <scene sceneID="VJN-hu-N4T">
@@ -321,7 +273,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Match" width="1920" height="1536"/>
         <image name="arrow.up.forward.app.fill" catalog="system" width="128" height="114"/>
         <image name="figure.cricket" catalog="system" width="89" height="128"/>
         <namedColor name="custom1">

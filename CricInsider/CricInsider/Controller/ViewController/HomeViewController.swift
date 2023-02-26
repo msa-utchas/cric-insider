@@ -18,11 +18,7 @@ class HomeViewController: UIViewController {
     var upcomingMatchList: [UpcomingMatchModel] = []
     var finishedMatches: [FinishedMatchesModel] = []
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-      
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +32,10 @@ class HomeViewController: UIViewController {
         
         getDataFromApi()
         binder()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     
     fileprivate func collectionViewFlowLayoutSetup() {
@@ -57,14 +57,25 @@ class HomeViewController: UIViewController {
         viewModel.$upcomingMatchSelectedID.sink{[weak self] selectedID in
             guard let self = self else {return}
             if let selectedID = selectedID{
-                let viewController = self.storyboard?.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
-                viewController.loadViewIfNeeded()
-                viewController.matchDetailsViewModel.matchID = selectedID
-                Task{
-                    
-                    await viewController.matchDetailsViewModel.setMatchDetails(id: selectedID)
+                if NetworkReachabilityManager()!.isReachable{
+                    self.activityIndicator.startAnimating()
+                    self.tableViewFinishedMatches.isUserInteractionEnabled = false
+                    self.collectionViewMatches.isUserInteractionEnabled = false
+                    let viewController = self.storyboard?.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
+                    viewController.loadViewIfNeeded()
+                    viewController.matchDetailsViewModel.matchID = selectedID
+                    Task{
+                        
+                        await viewController.matchDetailsViewModel.setMatchDetails(id: selectedID)
+                        self.activityIndicator.stopAnimating()
+                        self.tableViewFinishedMatches.isUserInteractionEnabled = true
+                        self.collectionViewMatches.isUserInteractionEnabled = true
+                    }
+                    self.navigationController?.pushViewController(viewController, animated: true)
                 }
-                self.navigationController?.pushViewController(viewController, animated: true)
+                else{
+                    self.showAlert(title: "Network Error", message: "Please check your internet connection and try again")
+                }
                 
             }
             
@@ -81,15 +92,29 @@ class HomeViewController: UIViewController {
         
         viewModel.$finishedMatchSelectedID.sink{[weak self] selectedId in
             guard let self = self else {return}
-            if let selectedID = selectedId{
-                let viewController = self.storyboard?.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
-                viewController.loadViewIfNeeded()
-                Task{
-                    viewController.matchDetailsViewModel.matchID =  selectedID
-                    await viewController.matchDetailsViewModel.setMatchDetails(id: selectedID)
+            
+            if NetworkReachabilityManager()!.isReachable{
+               
+                if let selectedID = selectedId{
+                    self.activityIndicator.startAnimating()
+                    self.tableViewFinishedMatches.isUserInteractionEnabled = false
+                    self.collectionViewMatches.isUserInteractionEnabled = false
+                    let viewController = self.storyboard?.instantiateViewController(identifier: "MatchDetailsViewController") as! MatchDetailsViewController
+                    viewController.loadViewIfNeeded()
+                    Task{
+                        viewController.matchDetailsViewModel.matchID =  selectedID
+                        await viewController.matchDetailsViewModel.setMatchDetails(id: selectedID)
+                        self.activityIndicator.stopAnimating()
+                        self.tableViewFinishedMatches.isUserInteractionEnabled = true
+                        self.collectionViewMatches.isUserInteractionEnabled = true
+                    }
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                    
+
                 }
-                self.navigationController?.pushViewController(viewController, animated: true)
-                
+            }
+            else{
+                self.showAlert(title: "Network Error", message: "Please check your internet connection and try again")
             }
             
         }.store(in: &cancelable)
@@ -150,7 +175,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 
                 self?.collectionBackgroundHeightConstraint.constant = 0
                 self?.collectionViewHeightConstraint.constant = 80
-                //self?.collectionViewMatches.isHidden = true
                 self?.view.layoutIfNeeded()
             }
         }
@@ -207,15 +231,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 
-
 extension HomeViewController{
     
     func getDataFromApi(){
         Task{
             activityIndicator.startAnimating()
+            
             if  NetworkReachabilityManager()!.isReachable{
                 
-                view.isUserInteractionEnabled = false
                 await viewModel.getUpcomingMatches()
                 await viewModel.getFinishedMatches()
                 if let date = UserDefaults.standard.object(forKey: "Notification-Setup-Time") as? Date {
@@ -227,10 +250,12 @@ extension HomeViewController{
                     await viewModel.setupNotificationForUpcomingMatches()
                 }
                 activityIndicator.stopAnimating()
-                view.isUserInteractionEnabled = true
+                
             }
             else{
-                showAlert(title: "Network Error", message: "Please check your internet connection and try again")
+                
+                activityIndicator.stopAnimating()
+                showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
             }
         }
     }

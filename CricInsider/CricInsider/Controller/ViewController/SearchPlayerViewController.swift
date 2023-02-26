@@ -8,6 +8,7 @@
 import UIKit
 import SDWebImage
 import Combine
+import Alamofire
 
 class SearchPlayerViewController: UIViewController {
     @IBOutlet weak var viewBackground: UIView!
@@ -15,7 +16,7 @@ class SearchPlayerViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var playerData: [PlayersInfo] = []
     let viewModel = SearchPlayerViewModel()
-    var count: Int = 10
+  
     private var cancelable: Set<AnyCancellable> = []
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -33,17 +34,12 @@ class SearchPlayerViewController: UIViewController {
         //tableViewTopConstraint.constant = -10
         tableViewSearchedPlayerList.layer.cornerRadius = 10
         tableViewSearchedPlayerList.register(UINib(nibName: PlayerDetailsHeader.identifier, bundle: nil), forCellReuseIdentifier: PlayerDetailsHeader.identifier)
-        Task{
-            activityIndicator.startAnimating()
-            await viewModel.callApiAndSaveDataIfNeeded()
-            activityIndicator.stopAnimating()
-        }
+        callDataFromApi()
         
         
-        print(count)
+  
         
     }
-    
     
 }
 
@@ -104,21 +100,53 @@ extension SearchPlayerViewController{
             }
             
         }.store(in: &cancelable)
-        
+
         viewModel.$selectedPlayerId.sink(){[weak self] id in
             guard let self = self else {return}
             
             if let id = id{
-                let vc = self.storyboard?.instantiateViewController(identifier: ViewPlayerInfoViewController.identifier) as! ViewPlayerInfoViewController
-                vc.loadViewIfNeeded()
-                Task{
-                    await vc.viewModel.getPlayerData(id:id)
-                  }
+                if NetworkReachabilityManager()!.isReachable{
+                    let vc = self.storyboard?.instantiateViewController(identifier: ViewPlayerInfoViewController.identifier) as! ViewPlayerInfoViewController
+                    vc.loadViewIfNeeded()
+                    Task{
+                        await vc.viewModel.getPlayerData(id:id)
+                      }
+                    
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else{
+                    self.showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+                }
                 
-                self.navigationController?.pushViewController(vc, animated: true)
             }
         }.store(in: &cancelable)
         
     }
     
 }
+
+
+extension SearchPlayerViewController{
+    func callDataFromApi(){
+        Task{
+            if NetworkReachabilityManager()!.isReachable{
+                activityIndicator.startAnimating()
+                await viewModel.callApiAndSaveDataIfNeeded()
+                activityIndicator.stopAnimating()
+            }
+            else{
+                showAlert(title: "Network Error", message: "Please check your internet connection and try again.")
+            }
+        }
+    }
+    func showAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {[weak self] _ in
+            guard let self = self else {return}
+            self.callDataFromApi()
+            self.searchTextField.text = ""
+
+        }))
+        present(alert, animated: true, completion: nil)
+    }}

@@ -5,24 +5,21 @@ import Alamofire
 
 class DateWiseMatchViewController: UIViewController {
     @IBOutlet weak var textBackView: UIView!
-    
     @IBOutlet weak var activityContainerView: UIView!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var leagueWiseMatchesBackView: UIView!
     @IBOutlet weak var backView: UIView!
-    let viewModel = DateWiseMatchViewModel()
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var leagueWiseBackView: UIView!
     @IBOutlet weak var tableViewMatchList: UITableView!
+    
+    let viewModel = DateWiseMatchViewModel()
     var cancelable: Set<AnyCancellable> = []
     var matchData: [MatchInfoModel] = []
     
     override func viewDidLoad(){
-        
         super.viewDidLoad()
         self.navigationItem.title = "Cric Insider"
-       
         leagueWiseBackView.addShadow()
         textBackView.layer.cornerRadius = 4
         textBackView.addShadow()
